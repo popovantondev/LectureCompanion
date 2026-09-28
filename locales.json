@@ -1,0 +1,632 @@
+{
+  "LECTURE": {
+    "ru": "ЛЕКЦИЯ",
+    "de": "VORLESUNG",
+    "en": "LECTURE"
+  },
+  "LECTURE  /  Компаньон": {
+    "ru": "ЛЕКЦИЯ  /  Компаньон",
+    "de": "VORLESUNG  /  Begleiter",
+    "en": "LECTURE  /  Companion"
+  },
+  "Скрыть ответы": {
+    "ru": "Скрыть ответы",
+    "de": "Antworten ausblenden",
+    "en": "Hide answers"
+  },
+  "Громкость": {
+    "ru": "Громкость",
+    "de": "Lautstärke",
+    "en": "Volume"
+  },
+  "Скорость ответа": {
+    "ru": "Скорость ответа",
+    "de": "Antworttempo",
+    "en": "Response speed"
+  },
+  "Готов слушать": {
+    "ru": "Готов слушать",
+    "de": "Bereit zum Zuhören",
+    "en": "Ready to listen"
+  },
+  "Новые итоги появятся здесь.": {
+    "ru": "Новые итоги появятся здесь.",
+    "de": "Neue Zusammenfassungen erscheinen hier.",
+    "en": "New summaries appear here."
+  },
+  "История": {
+    "ru": "История",
+    "de": "Verlauf",
+    "en": "History"
+  },
+  "К свежему": {
+    "ru": "К свежему",
+    "de": "Zur neuesten",
+    "en": "Latest"
+  },
+  "Подключение…": {
+    "ru": "Подключение…",
+    "de": "Verbindung…",
+    "en": "Connecting…"
+  },
+  "Подключение": {
+    "ru": "Подключение",
+    "de": "Verbindung",
+    "en": "Connecting"
+  },
+  "Предыдущий итог": {
+    "ru": "Предыдущий итог",
+    "de": "Vorherige Zusammenfassung",
+    "en": "Previous summary"
+  },
+  "Анализ скриншота": {
+    "ru": "Анализ скриншота",
+    "de": "Screenshot analysieren",
+    "en": "Analyze screenshot"
+  },
+  "Разобрать свежий слайд": {
+    "ru": "Разобрать свежий слайд",
+    "de": "Aktuelle Folie analysieren",
+    "en": "Analyze current slide"
+  },
+  "Разобрать презентацию": {
+    "ru": "Разобрать презентацию",
+    "de": "Präsentation analysieren",
+    "en": "Analyze presentation"
+  },
+  "Отправить · Ctrl+Enter": {
+    "ru": "Отправить · Ctrl+Enter",
+    "de": "Senden · Strg+Enter",
+    "en": "Send · Ctrl+Enter"
+  },
+  "Спроси о лекции…": {
+    "ru": "Спроси о лекции…",
+    "de": "Frage zur Lektion…",
+    "en": "Ask about the lecture…"
+  },
+  "Режим: ": {
+    "ru": "Режим: ",
+    "de": "Modus: ",
+    "en": "Mode: "
+  },
+  "быстро": {
+    "ru": "быстро",
+    "de": "schnell",
+    "en": "fast"
+  },
+  "обычно": {
+    "ru": "обычно",
+    "de": "ausgewogen",
+    "en": "balanced"
+  },
+  "вдумчиво": {
+    "ru": "вдумчиво",
+    "de": "gründlich",
+    "en": "deep"
+  },
+  "Не удалось изменить режим: ": {
+    "ru": "Не удалось изменить режим: ",
+    "de": "Modus konnte nicht geändert werden: ",
+    "en": "Could not change mode: "
+  },
+  "Звук помощника": {
+    "ru": "Звук помощника",
+    "de": "Klänge des Begleiters",
+    "en": "Companion sounds"
+  },
+  "Без звука": {
+    "ru": "Без звука",
+    "de": "Stumm",
+    "en": "Muted"
+  },
+  "Быстро": {
+    "ru": "Быстро",
+    "de": "Schnell",
+    "en": "Fast"
+  },
+  "Обычно": {
+    "ru": "Обычно",
+    "de": "Normal",
+    "en": "Balanced"
+  },
+  "Вдумчиво": {
+    "ru": "Вдумчиво",
+    "de": "Gründlich",
+    "en": "Deep"
+  },
+  "Вдумчивый режим — только для твоих вопросов.\nВсе три режима работают локально.": {
+    "ru": "Вдумчивый режим — только для твоих вопросов.\nВсе три режима работают локально.",
+    "de": "Gründlich: nur bei deinen Fragen.\nAlle drei Modi laufen lokal.",
+    "en": "Deep reasoning: only for your questions.\nAll three modes run locally."
+  },
+  "Что сейчас на лекции?": {
+    "ru": "Что сейчас на лекции?",
+    "de": "Was läuft gerade im Unterricht?",
+    "en": "What is happening in the lecture?"
+  },
+  "По клику разбирать слайд": {
+    "ru": "По клику разбирать слайд",
+    "de": "Folie auch per Klick analysieren",
+    "en": "Analyze slide when clicking the robot"
+  },
+  "Звук нового ответа": {
+    "ru": "Звук нового ответа",
+    "de": "Klänge aktivieren",
+    "en": "Enable sounds"
+  },
+  "Громкость уведомлений…": {
+    "ru": "Громкость уведомлений…",
+    "de": "Lautstärke…",
+    "en": "Volume…"
+  },
+  "Мигание нового ответа": {
+    "ru": "Мигание нового ответа",
+    "de": "Neuen Antwort-Eingang anzeigen",
+    "en": "Animate new answer"
+  },
+  "Пауза пересказов": {
+    "ru": "Пауза пересказов",
+    "de": "Zusammenfassungen pausieren",
+    "en": "Pause summaries"
+  },
+  "Включить пересказы": {
+    "ru": "Включить пересказы",
+    "de": "Zusammenfassungen starten",
+    "en": "Enable summaries"
+  },
+  "Показать ответы": {
+    "ru": "Показать ответы",
+    "de": "Antworten anzeigen",
+    "en": "Show answers"
+  },
+  "Скрыть стопку": {
+    "ru": "Скрыть стопку",
+    "de": "Stapel ausblenden",
+    "en": "Hide stack"
+  },
+  "Закрыть помощника": {
+    "ru": "Закрыть помощника",
+    "de": "Begleiter beenden",
+    "en": "Quit companion"
+  },
+  "Язык": {
+    "ru": "Язык",
+    "de": "Sprache",
+    "en": "Language"
+  },
+  "Язык изменён. Новые ответы будут на этом языке.": {
+    "ru": "Язык изменён. Новые ответы будут на этом языке.",
+    "de": "Sprache geändert. Neue Antworten erscheinen auf Deutsch.",
+    "en": "Language changed. New answers will be in English."
+  },
+  "Не удалось сменить язык: ": {
+    "ru": "Не удалось сменить язык: ",
+    "de": "Sprache konnte nicht geändert werden: ",
+    "en": "Could not change language: "
+  },
+  "Локальная модель": {
+    "ru": "Локальная модель",
+    "de": "Lokales Modell",
+    "en": "Local model"
+  },
+  "с": {
+    "ru": "с",
+    "de": "s",
+    "en": "s"
+  },
+  "Вопрос в очереди · следующий": {
+    "ru": "Вопрос в очереди · следующий",
+    "de": "Frage wartet · als Nächstes",
+    "en": "Question queued · next"
+  },
+  "GPU · фоновый разбор слайда": {
+    "ru": "GPU · фоновый разбор слайда",
+    "de": "Bildanalyse im Hintergrund",
+    "en": "Background slide analysis"
+  },
+  "● Слушаю Teams": {
+    "ru": "● Слушаю Teams",
+    "de": "● Teams wird mitgelesen",
+    "en": "● Reading Teams"
+  },
+  "Ⅱ Пересказы на паузе": {
+    "ru": "Ⅱ Пересказы на паузе",
+    "de": "Ⅱ Zusammenfassungen pausiert",
+    "en": "Ⅱ Summaries paused"
+  },
+  "Ошибка · ": {
+    "ru": "Ошибка · ",
+    "de": "Fehler · ",
+    "en": "Error · "
+  },
+  "Прямой канал Teams": {
+    "ru": "Прямой канал Teams",
+    "de": "Teams-Direktverbindung",
+    "en": "Direct Teams feed"
+  },
+  "назад": {
+    "ru": "назад",
+    "de": "zuvor",
+    "en": "ago"
+  },
+  "Последний запрос: ": {
+    "ru": "Последний запрос: ",
+    "de": "Letzte Anfrage: ",
+    "en": "Last request: "
+  },
+  "всего": {
+    "ru": "всего",
+    "de": "gesamt",
+    "en": "total"
+  },
+  "Нет связи с помощником": {
+    "ru": "Нет связи с помощником",
+    "de": "Keine Verbindung zum Begleiter",
+    "en": "Cannot reach the companion"
+  },
+  "Готово · ответ появится в стопке": {
+    "ru": "Готово · ответ появится в стопке",
+    "de": "Fertig · die Antwort erscheint im Stapel",
+    "en": "Done · the answer will appear in the stack"
+  },
+  "Ещё читаю лекцию. Повторный запрос не отправляю.": {
+    "ru": "Ещё читаю лекцию. Повторный запрос не отправляю.",
+    "de": "Der Unterricht wird noch ausgewertet. Keine doppelte Anfrage.",
+    "en": "Still reading the lecture. No duplicate request sent."
+  },
+  "Читаю новые слова преподавателя…": {
+    "ru": "Читаю новые слова преподавателя…",
+    "de": "Neue Aussagen werden ausgewertet…",
+    "en": "Reading the latest speech…"
+  },
+  "Новых слов пока мало или нет. Запрос к модели не понадобился.": {
+    "ru": "Новых слов пока мало или нет. Запрос к модели не понадобился.",
+    "de": "Noch nicht genug neue Aussagen. Keine Modellanfrage nötig.",
+    "en": "Not enough new speech yet. No model request needed."
+  },
+  "Ответ задерживается. Автоматически повторять запрос не буду.": {
+    "ru": "Ответ задерживается. Автоматически повторять запрос не буду.",
+    "de": "Die Antwort dauert länger. Keine automatische Wiederholung.",
+    "en": "The answer is taking longer. It will not be retried automatically."
+  },
+  "Не получилось получить пересказ.\n": {
+    "ru": "Не получилось получить пересказ.\n",
+    "de": "Zusammenfassung fehlgeschlagen.\n",
+    "en": "Could not get a summary.\n"
+  },
+  "Локальные пересказы включены.": {
+    "ru": "Локальные пересказы включены.",
+    "de": "Lokale Zusammenfassungen aktiviert.",
+    "en": "Local summaries enabled."
+  },
+  "Локальные пересказы на паузе. Текущий ответ может ещё прийти.": {
+    "ru": "Локальные пересказы на паузе. Текущий ответ может ещё прийти.",
+    "de": "Zusammenfassungen pausiert. Die laufende Antwort kann noch eintreffen.",
+    "en": "Summaries paused. The current answer may still arrive."
+  },
+  "Вопрос уже обрабатывается. Дождись ответа.": {
+    "ru": "Вопрос уже обрабатывается. Дождись ответа.",
+    "de": "Eine Frage wird bereits bearbeitet. Bitte warten.",
+    "en": "A question is already being processed. Please wait."
+  },
+  "Снимаю свежую презентацию Teams и анализирую локально…": {
+    "ru": "Снимаю свежую презентацию Teams и анализирую локально…",
+    "de": "Aktuelle Teams-Folie wird aufgenommen und lokal analysiert…",
+    "en": "Capturing and locally analyzing the current Teams slide…"
+  },
+  "Не получилось: ": {
+    "ru": "Не получилось: ",
+    "de": "Fehlgeschlagen: ",
+    "en": "Failed: "
+  },
+  "Твой вопрос уже принят. Он идёт перед следующим пересказом.": {
+    "ru": "Твой вопрос уже принят. Он идёт перед следующим пересказом.",
+    "de": "Deine Frage wartet bereits vor der nächsten Zusammenfassung.",
+    "en": "Your question is already queued before the next summary."
+  },
+  "Вопрос слишком длинный: максимум 2000 символов.": {
+    "ru": "Вопрос слишком длинный: максимум 2000 символов.",
+    "de": "Die Frage ist zu lang: maximal 2000 Zeichen.",
+    "en": "Question too long: maximum 2000 characters."
+  },
+  "Отвечаю локально. Если идёт пересказ, сначала дождусь его…": {
+    "ru": "Отвечаю локально. Если идёт пересказ, сначала дождусь его…",
+    "de": "Lokale Antwort. Eine laufende Zusammenfassung wird zuerst beendet…",
+    "en": "Answering locally. Waiting for any current summary to finish…"
+  },
+  "Демонстрация: запросы отключены.": {
+    "ru": "Демонстрация: запросы отключены.",
+    "de": "Demo: Anfragen sind deaktiviert.",
+    "en": "Demo: requests are disabled."
+  },
+  "Подготовка интерфейса…": {
+    "ru": "Подготовка интерфейса…",
+    "de": "Oberfläche wird vorbereitet…",
+    "en": "Preparing the interface…"
+  },
+  "Этап": {
+    "ru": "Этап",
+    "de": "Schritt",
+    "en": "Stage"
+  },
+  "Запуск отменён": {
+    "ru": "Запуск отменён",
+    "de": "Start abgebrochen",
+    "en": "Startup cancelled"
+  },
+  "Компонент завершился. Подробности в папке журналов.": {
+    "ru": "Компонент завершился. Подробности в папке журналов.",
+    "de": "Komponente beendet. Details im Protokollordner.",
+    "en": "Component exited. See the log folder for details."
+  },
+  "Запуск занял слишком долго. Проверь модель и драйвер NPU.": {
+    "ru": "Запуск занял слишком долго. Проверь модель и драйвер NPU.",
+    "de": "Start dauert zu lange. Modell und Gerätetreiber prüfen.",
+    "en": "Startup timed out. Check the model and device drivers."
+  },
+  "Сначала настрой local.json по инструкции INSTALL.ru.md.": {
+    "ru": "Сначала настрой local.json по инструкции INSTALL.ru.md.",
+    "de": "Zuerst local.json nach INSTALL.de.md einrichten.",
+    "en": "Configure local.json following INSTALL.en.md first."
+  },
+  "Проверка локальной модели…": {
+    "ru": "Проверка локальной модели…",
+    "de": "Lokales Modell wird geprüft…",
+    "en": "Checking the local model…"
+  },
+  "Работает старая версия NPU-сервиса. Закрой её перед обновлением.": {
+    "ru": "Работает старая версия NPU-сервиса. Закрой её перед обновлением.",
+    "de": "Älterer Modell-Dienst aktiv. Vor dem Update schließen.",
+    "en": "An older model service is running. Close it before updating."
+  },
+  "Загрузка модели на NPU. Первый запуск дольше…": {
+    "ru": "Загрузка модели на NPU. Первый запуск дольше…",
+    "de": "Modell wird geladen. Der erste Start dauert länger…",
+    "en": "Loading the model. First startup takes longer…"
+  },
+  "Запуск прямого канала Teams…": {
+    "ru": "Запуск прямого канала Teams…",
+    "de": "Teams-Direktverbindung wird gestartet…",
+    "en": "Starting the direct Teams feed…"
+  },
+  "Не найден Node.js. Укажи путь node в local.json.": {
+    "ru": "Не найден Node.js. Укажи путь node в local.json.",
+    "de": "Node.js fehlt. Pfad node in local.json eintragen.",
+    "en": "Node.js not found. Set node in local.json."
+  },
+  "Открываю помощника…": {
+    "ru": "Открываю помощника…",
+    "de": "Begleiter wird geöffnet…",
+    "en": "Opening the companion…"
+  },
+  "Не удалось запустить компонент": {
+    "ru": "Не удалось запустить компонент",
+    "de": "Komponente konnte nicht starten",
+    "en": "Could not start the component"
+  },
+  "Настройка помощника": {
+    "ru": "Настройка помощника",
+    "de": "Begleiter einrichten",
+    "en": "Companion setup"
+  },
+  "Инструкция": {
+    "ru": "Инструкция",
+    "de": "Anleitung",
+    "en": "Instructions"
+  },
+  "Закрыть": {
+    "ru": "Закрыть",
+    "de": "Schließen",
+    "en": "Close"
+  },
+  "Проверка CPU/GPU · один раз": {
+    "ru": "Проверка CPU/GPU · один раз",
+    "de": "CPU/GPU-Test · einmalig",
+    "en": "CPU/GPU benchmark · first run"
+  },
+  "Загрузка модели": {
+    "ru": "Загрузка модели",
+    "de": "Modell laden",
+    "en": "Loading model"
+  },
+  "Ответ на вопрос": {
+    "ru": "Ответ на вопрос",
+    "de": "Frage beantworten",
+    "en": "Answering question"
+  },
+  "Краткий итог": {
+    "ru": "Краткий итог",
+    "de": "Kurzfassung",
+    "en": "Summary"
+  },
+  "Teams · свежий захват": {
+    "ru": "Teams · свежий захват",
+    "de": "Teams · aktuelle Aufnahme",
+    "en": "Teams · fresh capture"
+  },
+  "GPU · разбор презентации": {
+    "ru": "GPU · разбор презентации",
+    "de": "Bildanalyse · Präsentation",
+    "en": "Vision · analyzing presentation"
+  },
+  "Очередь · GPU занят": {
+    "ru": "Очередь · GPU занят",
+    "de": "Warteschlange · GPU belegt",
+    "en": "Queued · GPU busy"
+  },
+  "NPU · обработка текста": {
+    "ru": "NPU · обработка текста",
+    "de": "Modell · Textverarbeitung",
+    "en": "Model · processing text"
+  },
+  "Очередь · NPU занят": {
+    "ru": "Очередь · NPU занят",
+    "de": "Warteschlange · Modell belegt",
+    "en": "Queued · model busy"
+  },
+  "Локальная модель вернула пустой ответ.": {
+    "ru": "Локальная модель вернула пустой ответ.",
+    "de": "Das lokale Modell hat keine Antwort geliefert.",
+    "en": "The local model returned an empty answer."
+  },
+  "Нет ответа": {
+    "ru": "Нет ответа",
+    "de": "Keine Antwort",
+    "en": "No answer"
+  },
+  "По скрину": {
+    "ru": "По скрину",
+    "de": "Auf dem Screenshot",
+    "en": "In the screenshot"
+  },
+  "Не удалось разобрать презентацию.": {
+    "ru": "Не удалось разобрать презентацию.",
+    "de": "Die Präsentation konnte nicht analysiert werden.",
+    "en": "Could not analyze the presentation."
+  },
+  "Свежий скрин Teams недоступен.": {
+    "ru": "Свежий скрин Teams недоступен.",
+    "de": "Keine aktuelle Teams-Aufnahme verfügbar.",
+    "en": "A fresh Teams screenshot is unavailable."
+  },
+  "По речи угадывать содержимое слайда не буду.": {
+    "ru": "По речи угадывать содержимое слайда не буду.",
+    "de": "Folieninhalt wird nicht aus der gesprochenen Sprache erraten.",
+    "en": "I will not guess slide content from the speech."
+  },
+  "Зрение занято; ответ пока по речи и OCR": {
+    "ru": "Зрение занято; ответ пока по речи и OCR",
+    "de": "Bildanalyse belegt; vorerst Sprache und OCR",
+    "en": "Vision busy; using speech and OCR for now"
+  },
+  "Зрение отдыхает: фоновый разбор раз в 3 минуты": {
+    "ru": "Зрение отдыхает: фоновый разбор раз в 3 минуты",
+    "de": "Bildanalyse pausiert: höchstens alle 3 Minuten",
+    "en": "Vision cooldown: at most once every 3 minutes"
+  },
+  "Картинка разбирается в фоне; вопросы доступны": {
+    "ru": "Картинка разбирается в фоне; вопросы доступны",
+    "de": "Bildanalyse läuft im Hintergrund; Fragen sind möglich",
+    "en": "Image analyzed in the background; questions are available"
+  },
+  "Ollama недоступна": {
+    "ru": "Ollama недоступна",
+    "de": "Ollama nicht erreichbar",
+    "en": "Ollama unavailable"
+  },
+  "Модель зрения ещё скачивается": {
+    "ru": "Модель зрения ещё скачивается",
+    "de": "Bildmodell fehlt. Bitte gemäß Anleitung installieren.",
+    "en": "Vision model missing. Install it using the instructions."
+  },
+  "Формат картинки не поддерживается": {
+    "ru": "Формат картинки не поддерживается",
+    "de": "Bildformat nicht unterstützt",
+    "en": "Image format not supported"
+  },
+  "Картинка больше 10 МБ": {
+    "ru": "Картинка больше 10 МБ",
+    "de": "Bild größer als 10 MB",
+    "en": "Image exceeds 10 MB"
+  },
+  "Зрение HTTP ": {
+    "ru": "Зрение HTTP ",
+    "de": "Bildanalyse HTTP ",
+    "en": "Vision HTTP "
+  },
+  "Пустое описание": {
+    "ru": "Пустое описание",
+    "de": "Leere Bildbeschreibung",
+    "en": "Empty image description"
+  },
+  "Локальное зрение: ": {
+    "ru": "Локальное зрение: ",
+    "de": "Lokale Bildanalyse: ",
+    "en": "Local vision: "
+  },
+  "Только OCR: ": {
+    "ru": "Только OCR: ",
+    "de": "Nur OCR: ",
+    "en": "OCR only: "
+  },
+  "Разбор не уложился в заданный лимит. Выбери «Обычно» или задай более короткий вопрос.": {
+    "ru": "Разбор не уложился в заданный лимит. Выбери «Обычно» или задай более короткий вопрос.",
+    "de": "Das Denklimit wurde erreicht. Wähle „Normal“ oder stelle eine kürzere Frage.",
+    "en": "The reasoning limit was reached. Choose “Balanced” or ask a shorter question."
+  },
+  "Подключение к Teams": {
+    "ru": "Подключение к Teams",
+    "de": "Verbindung mit Teams",
+    "en": "Connecting to Teams"
+  },
+  "Канал Teams остановлен": {
+    "ru": "Канал Teams остановлен",
+    "de": "Teams-Verbindung beendet",
+    "en": "Teams feed stopped"
+  },
+  "Свежий захват Teams не завершился": {
+    "ru": "Свежий захват Teams не завершился",
+    "de": "Aktuelle Teams-Aufnahme fehlgeschlagen",
+    "en": "Fresh Teams capture did not finish"
+  },
+  "Презентация недоступна": {
+    "ru": "Презентация недоступна",
+    "de": "Präsentation nicht verfügbar",
+    "en": "Presentation unavailable"
+  },
+  "Презентация Teams — ": {
+    "ru": "Презентация Teams — ",
+    "de": "Teams-Präsentation — ",
+    "en": "Teams presentation — "
+  },
+  "Teams напрямую": {
+    "ru": "Teams напрямую",
+    "de": "Teams direkt",
+    "en": "Direct Teams"
+  },
+  "Включите живые субтитры Teams": {
+    "ru": "Включите живые субтитры Teams",
+    "de": "Liveuntertitel in Teams einschalten",
+    "en": "Enable Teams live captions"
+  },
+  "Подготовка": {
+    "ru": "Подготовка",
+    "de": "Vorbereitung",
+    "en": "Preparing"
+  },
+  "NPU занят, попробуем позже": {
+    "ru": "NPU занят, попробуем позже",
+    "de": "Modell belegt, später erneut versuchen",
+    "en": "Model busy, try again later"
+  },
+  "Демонстрация · без модели": {
+    "ru": "Демонстрация · без модели",
+    "de": "Demo · ohne Modell",
+    "en": "Demo · no model"
+  },
+  "Тема: IP-адреса.\nГлавное: адрес помогает доставлять данные нужному устройству.": {
+    "ru": "Тема: IP-адреса.\nГлавное: адрес помогает доставлять данные нужному устройству.",
+    "de": "Thema: IP-Adressen.\nWichtig: Die Adresse hilft, Daten an das richtige Gerät zu senden.",
+    "en": "Topic: IP addresses.\nMain point: An address helps deliver data to the correct device."
+  },
+  "Тема: локальная сеть.\nГлавное: коммутатор соединяет устройства внутри сети.": {
+    "ru": "Тема: локальная сеть.\nГлавное: коммутатор соединяет устройства внутри сети.",
+    "de": "Thema: Lokales Netzwerk.\nWichtig: Ein Switch verbindet Geräte innerhalb eines Netzwerks.",
+    "en": "Topic: Local networks.\nMain point: A switch connects devices within a network."
+  },
+  "Тема: резервные копии.\nГлавное: отдельная копия позволяет восстановить потерянные файлы.": {
+    "ru": "Тема: резервные копии.\nГлавное: отдельная копия позволяет восстановить потерянные файлы.",
+    "de": "Thema: Backups.\nWichtig: Mit einer separaten Kopie lassen sich verlorene Dateien wiederherstellen.",
+    "en": "Topic: Backups.\nMain point: A separate copy allows lost files to be restored."
+  },
+  "Тема: защита данных.\nГлавное: доступ получают только нужные сотрудники.\nТебе: нового задания нет.": {
+    "ru": "Тема: защита данных.\nГлавное: доступ получают только нужные сотрудники.\nТебе: нового задания нет.",
+    "de": "Thema: Datenschutz.\nWichtig: Nur berechtigte Mitarbeitende erhalten Zugriff.\nFür dich: Keine neue Aufgabe.",
+    "en": "Topic: Data protection.\nMain point: Only authorized staff get access.\nFor you: No new assignment."
+  },
+  "Порт помощника занят. Закрой прежнюю копию перед запуском переносимой версии.": {
+    "ru": "Порт помощника занят. Закрой прежнюю копию перед запуском переносимой версии.",
+    "de": "Ein Begleiter-Dienst läuft bereits. Die vorherige Version vor dem Portable-Start schließen.",
+    "en": "A companion service is already running. Close the previous version before starting Portable."
+  }
+}

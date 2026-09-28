@@ -1,0 +1,6 @@
+{
+  "node": "%LOCALAPPDATA%/LectureRuntime/node/node.exe",
+  "npu_python": "%LOCALAPPDATA%/LectureRuntime/npu-env/Scripts/python.exe",
+  "model_root": "%LOCALAPPDATA%/LectureModels",
+  "ollama": "%LOCALAPPDATA%/Programs/Ollama/ollama.exe"
+}
