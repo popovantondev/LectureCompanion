@@ -1,0 +1,11 @@
+const assert=require('assert');const {LiveSource}=require('./live-source');
+const x=new LiveSource(),now=Date.now();
+x.accept({time:now,captionsAvailable:true,captions:[{id:'a',text:'old',speaker:'Teacher'}]});
+assert.equal(x.delta().text,'');
+x.accept({time:now+1,captionsAvailable:true,captions:[{id:'b',text:'New sentence',speaker:'Teacher'}]});
+const d=x.delta();assert(d.text.includes('New sentence'));assert(!d.text.includes('old'));x.commit(d);assert.equal(x.delta().text,'');
+x.accept({time:now+2,captionsAvailable:true,captions:[{id:'b',text:'New sentence continued',speaker:'Teacher'}]});
+assert(x.delta().text.includes('continued'));assert(!x.delta().text.includes('New sentence'));
+console.log('PASS: baseline excluded, immediate new speech, committed prefix not repeated.');
+let calls=0;global.fetch=async()=>++calls===1?{status:409,text:async()=>''}:{status:200};
+require('./npu-client').generate({}).then(r=>{assert.equal(r.status,200);assert.equal(calls,2);console.log('PASS: NPU busy retries without overlapping generation.');});

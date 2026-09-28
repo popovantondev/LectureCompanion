@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict');
+const {profile}=require('./response-modes');
+assert.equal(profile('fast',true).max_new_tokens,160);
+assert.equal(profile('fast',true).reasoning,false);
+assert.equal(profile('balanced',true).max_new_tokens,240);
+assert.equal(profile('deep',true).reasoning,true);
+assert.equal(profile('deep',true).max_new_tokens,512);
+assert.equal(profile('deep',false).reasoning,false);
+assert.equal(profile('deep',false).max_new_tokens,240);
+assert.equal(profile('invalid').id,'balanced');
+assert.equal(profile('fast',true,true).max_new_tokens,272);
+assert.equal(profile('balanced',true,true).max_new_tokens,408);
+assert.equal(profile('deep',true,true).max_new_tokens,512);
+assert.equal(profile('deep',false,true).reasoning,false);
+const fs=require('node:fs');const source=fs.readFileSync(require.resolve('./server'),'utf8');
+assert(!source.includes('spawn(cli'));assert(!source.includes('gpt-5.6'));assert(!source.includes('timedDelta'));
+console.log('PASS: real mode limits, no automatic thinking, safe fallback, no cloud CLI or archive reader in server.');

@@ -1,0 +1,7 @@
+{
+  "node": "Laufzeit/node/node.exe",
+  "npu_python": "Laufzeit/python/python.exe",
+  "ollama": "Laufzeit/ollama/ollama.exe",
+  "model_root": "Modelle",
+  "ollama_models": "Modelle/ollama"
+}

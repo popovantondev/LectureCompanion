@@ -1,0 +1,17 @@
+const assert=require("node:assert/strict");
+const language=require("./lecture-language"),prompts=require("./answer-prompts");
+assert.equal(language.detect("[09:20:00] Teacher: Der Router verbindet die Netzwerke und wir sehen das Paket."),"de");
+assert.equal(language.detect("The router connects different networks and the switch is inside this network."),"en");
+assert.equal(language.detect("Маршрутизатор соединяет разные сети, а коммутатор работает внутри одной сети."),"ru");
+assert.equal(language.detect("IPv4 TCP UDP LAN"),null);
+assert.equal(language.detect("[09:20:00] Иван Петров: TCP UDP"),null,"Speaker names are not lecture language");
+assert.equal(language.resolve({text:"TCP",context:""}, "de"),"de");
+assert.equal(language.resolve({text:"The router connects the networks.",context:"Der Router ist hier."},"de"),"en");
+assert.equal(language.resolve({text:"",context:""},null),null);
+assert.deepEqual(language.pair("ru","de"),["de","ru"]);
+assert.deepEqual(language.pair("de","de"),["de"]);
+assert.deepEqual(language.pair("ru",null),["ru"]);
+assert.equal(prompts.system("de",false,"de"),prompts.system("de",false,null));
+assert.ok(prompts.system("ru",true,"de").includes("German, then Russian"));
+assert.ok(prompts.vision("en","de").includes("German, then English"));
+console.log("PASS: caption language, speaker exclusion, uncertain fragments, lecture-first bilingual output and same-language deduplication.");
