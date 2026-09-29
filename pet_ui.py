@@ -19,7 +19,7 @@ class QuestionBox(tk.Text):
     def get(self,*args):return super().get(*(args or ('1.0','end-1c')))
     def delete(self,first,last=None):return super().delete('1.0' if first==0 else first,last)
 
-BG='#FAFBFD'; INK='#192534'; MUTED='#778493'; GOLD='#D9EEFB'; LINE='#DCE3EB'
+BG='#FFFFFF'; INK='#14253D'; MUTED='#607087'; SELECTED='#E6F0FF'; LINE='#DBE4F0'; ACCENT='#075DD1'
 
 def run(Base, api):
  class StyledPet(Base):
@@ -57,7 +57,7 @@ def run(Base, api):
         self.sound_button.level=self.volume.get()/100 if self.sound.get() else 0;self.sound_button.paint()
         self.settings_button=IconButton(head,'settings',self.show_mode_settings,size=28,label='Скорость ответа');self.settings_button.pack(side='right',padx=(0,6))
         for widget in (head,title):self.make_window_draggable(self.bubble,widget)
-        tk.Frame(panel,bg='#6ABDE8',height=2,width=32).pack(anchor='w',pady=(10,14))
+        tk.Frame(panel,bg=ACCENT,height=2,width=32).pack(anchor='w',pady=(10,14))
         self.meta=tk.Label(panel,text='Готов слушать',bg=BG,fg=MUTED,font=('Segoe UI',9),anchor='w');self.meta.pack(fill='x')
         self.prompt_label=tk.Label(panel,text='',bg=BG,fg=INK,font=('Segoe UI',10,'bold'),wraplength=390,justify='left');self.prompt_label.pack(fill='x',pady=(8,0))
         self.answer=tk.Label(panel,text='Новые итоги появятся здесь.',bg=BG,fg=INK,font=('Segoe UI',11),wraplength=390,justify='left',anchor='w');self.answer.pack(fill='x',pady=(8,16))
@@ -67,13 +67,13 @@ def run(Base, api):
         self.button(nav,'→',lambda:self.navigate(-1),quiet=True).pack(side='left')
         self.button(nav,'К свежему',lambda:self.navigate(-999),quiet=True).pack(side='right')
         tk.Frame(panel,bg=LINE,height=1).pack(fill='x',pady=(12,10))
-        self.stage=tk.Label(panel,text='Подключение…',bg=BG,fg='#507D79',font=('Segoe UI',9,'bold'),anchor='w',wraplength=390,justify='left');self.stage.pack(fill='x')
+        self.stage=tk.Label(panel,text='Подключение…',bg=BG,fg=ACCENT,font=('Segoe UI',9,'bold'),anchor='w',wraplength=390,justify='left');self.stage.pack(fill='x')
         self.details=tk.Label(panel,text='',bg=BG,fg=MUTED,font=('Segoe UI',8),anchor='w',wraplength=390,justify='left');self.details.pack(fill='x',pady=(4,0))
         self.text=tk.Label(panel,text='',bg=BG,fg=MUTED,font=('Segoe UI',9),wraplength=390,justify='left');self.text.pack(fill='x',pady=(4,0))
         self.back_labels=[]
         for depth,win in enumerate(self.back_windows,1):
             win.attributes('-alpha',(.88,.72,.57)[depth-1])
-            face=('#DDE2E8','#D2D8E0','#C6CED8')[depth-1];win.configure(bg=face)
+            face=('#E6EDF6','#DCE6F2','#CFDCEC')[depth-1];win.configure(bg=face)
             self.card_outlines.append(CardOutline(win,fill=face))
             self.card_outlines[-1].bind('<Button-1>',lambda e,d=depth:self.navigate(d))
             self.card_outlines[-1].bind('<MouseWheel>',lambda e:self.navigate(1 if e.delta>0 else -1))
@@ -155,7 +155,7 @@ def run(Base, api):
         self.render_card();self.telemetry(self.last_telemetry);self.show(tr('Язык изменён. Новые ответы будут на этом языке.'))
 
     def button(self,parent,text,command,quiet=False):
-        button=tk.Button(parent,text=tr(text),command=command,bg=BG if quiet else GOLD,fg=INK,activebackground='#C6E4F6',activeforeground=INK,relief='flat',bd=0,padx=10,pady=6,font=('Segoe UI',9,'bold'),cursor='hand2',takefocus=True)
+        button=tk.Button(parent,text=tr(text),command=command,bg=BG if quiet else SELECTED,fg=INK,activebackground='#B8D3FF',activeforeground=INK,relief='flat',bd=0,padx=10,pady=6,font=('Segoe UI',9,'bold'),cursor='hand2',takefocus=True)
         if text in i18n.CATALOG:self.static_bindings.append((button,text))
         return button
 

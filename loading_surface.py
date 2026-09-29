@@ -41,12 +41,12 @@ class LoadingSurface(LayeredSprite):
     def make_caption(self,elapsed):
         frame=Image.new('RGBA',(280,330))
         draw=ImageDraw.Draw(frame);draw.rounded_rectangle((42,250,238,256),radius=3,fill=(218,230,242,240))
-        if self.step:draw.rounded_rectangle((42,250,42+196*self.step/4,256),radius=3,fill='#66C4F2')
+        if self.step:draw.rounded_rectangle((42,250,42+196*self.step/4,256),radius=3,fill='#075DD1')
         lines=textwrap.wrap(self.label,width=37)[:2]
         for i,line in enumerate(lines):
             half=draw.textlength(line,font=self.font)/2+9;y=276+i*18
-            draw.rounded_rectangle((140-half,y-9,140+half,y+9),radius=8,fill=(248,252,255,220))
-            draw.text((140,y-1),line,font=self.font,anchor='mm',fill='#234056')
-        draw.rounded_rectangle((94,306,186,324),radius=8,fill=(248,252,255,200))
+            draw.rounded_rectangle((140-half,y-9,140+half,y+9),radius=8,fill=(255,255,255,238))
+            draw.text((140,y-1),line,font=self.font,anchor='mm',fill='#14253D')
+        draw.rounded_rectangle((94,306,186,324),radius=8,fill=(255,255,255,220))
         draw.text((140,314),tr('Этап')+f' {min(4,self.step+1)} / 4 · {int(elapsed)} s',font=self.small,anchor='mm',fill='#526C80')
         return frame
