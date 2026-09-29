@@ -21,9 +21,9 @@ Lecture Companion hilft dir, einer IT-Vorlesung in Microsoft Teams zu folgen. Di
 
 ## Download und Start
 
-Der vollständige Portable-Download wird im [GitHub-Releases-Bereich](https://github.com/popovantondev/LectureCompanion/releases) bereitgestellt. Wegen der Dateigrößenbegrenzung von GitHub Releases wird das ZIP in vier Teile aufgeteilt. Lade alle vier Teile und `JoinPortable.cmd` in denselben Ordner herunter und doppelklicke auf `JoinPortable.cmd`. Das Skript prüft die Dateigrößen und die ZIP-Prüfsumme, verwendet nur Windows-Bordmittel und installiert nichts. Danach das erzeugte ZIP vollständig auf eine interne SSD entpacken und `LectureCompanion.exe` starten — keine separate Python-Installation oder Kommandozeile nötig.
+Das Release 2.4 ist derzeit ein Entwurf und enthält noch keine öffentlichen Download-Dateien. Sobald ein vollständiges Portable-Paket veröffentlicht ist, stehen die konkreten ZIP-Teile und Prüfsummen auf der [Releases-Seite](https://github.com/popovantondev/LectureCompanion/releases). Die Schritt-für-Schritt-Anleitung ist bereits als [deutsches Markdown-Handbuch](docs/USER_GUIDE.de.md) lesbar.
 
-- [Deutsche Schritt-für-Schritt-Anleitung](Anleitungen/Deutsch.html)
+- [Deutsche Schritt-für-Schritt-Anleitung](docs/USER_GUIDE.de.md)
 - Windows 11 x64; 32 GB RAM empfohlen. Kompatible Treiber und die Teams-Desktop-App müssen bereits installiert sein.
 - Erster Start und Modellinitialisierung können dauern. Das Paket ist mehrere GiB groß.
 
