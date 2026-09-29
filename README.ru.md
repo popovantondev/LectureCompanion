@@ -35,7 +35,7 @@ Lecture Companion помогает следить за IT-лекциями в Mi
 
 ## Документация и разработка
 
-[Руководство](Anleitungen/Russisch.html) · [Архитектура и сборка](docs/РАЗРАБОТКА.ru.md) · [Отчёт проверок](VERIFICATION.ru.md) · [Подготовка релиза](PUBLIC-REPOSITORY.md)
+[Руководство](docs/USER_GUIDE.ru.md) · [Архитектура и сборка](docs/РАЗРАБОТКА.ru.md) · [Отчёт проверок](VERIFICATION.ru.md) · [Подготовка релиза](PUBLIC-REPOSITORY.md)
 
 Проверки исходников без моделей: `python verify.py --node PATH_TO_NODE`; для интерфейса Windows добавь `--ui`. Синтетическое демо запускается без Teams и моделей — двойным щелчком по `LectureCompanionDemo.exe`.
 
