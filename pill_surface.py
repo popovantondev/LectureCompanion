@@ -45,7 +45,7 @@ class PillSurface(LayeredSprite):
         shadow.putalpha(shadow_mask.filter(ImageFilter.GaussianBlur(5)).point(lambda a:a*32//255))
         frame.alpha_composite(shadow)
         scale=3;face=Image.new('RGBA',(width*scale,height*scale))
-        ImageDraw.Draw(face).rounded_rectangle((0,0,width*scale-1,height*scale-1),radius=min(28,height//2)*scale,fill='#FAFBFD',outline='#DCE3EB',width=scale)
+        ImageDraw.Draw(face).rounded_rectangle((0,0,width*scale-1,height*scale-1),radius=min(28,height//2)*scale,fill='#FFFFFF',outline='#DBE4F0',width=scale)
         face=face.resize((width,height),Image.Resampling.LANCZOS)
         frame.alpha_composite(face,(x,y));self.frame_cache[key]=frame
         if len(self.frame_cache)>40:self.frame_cache.popitem(last=False)

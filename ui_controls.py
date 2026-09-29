@@ -1,9 +1,9 @@
-"""Small, antialiased code-drawn controls, sharing the mascot's pearl/cyan palette."""
+"""Small, antialiased controls in the Lecture Companion navy and blue palette."""
 import tkinter as tk
 from PIL import Image, ImageDraw, ImageTk
 
-BG = '#FAFBFD'
-INK = '#34556D'
+BG = '#FFFFFF'
+INK = '#14253D'
 
 
 class CardOutline(tk.Canvas):
@@ -23,7 +23,7 @@ class CardOutline(tk.Canvas):
         self.last_size=key;scale=3
         face=Image.new('RGB',(key[0]*scale,key[1]*scale),self.fill)
         draw=ImageDraw.Draw(face)
-        draw.rounded_rectangle((scale/2,scale/2,key[0]*scale-scale/2-1,key[1]*scale-scale/2-1),radius=self.radius*scale,outline='#DCE3EB',width=scale)
+        draw.rounded_rectangle((scale/2,scale/2,key[0]*scale-scale/2-1,key[1]*scale-scale/2-1),radius=self.radius*scale,outline='#DBE4F0',width=scale)
         self.picture=ImageTk.PhotoImage(face.resize(key,Image.Resampling.LANCZOS),master=self)
         if len(self.frames)>=12:self.frames.pop(next(iter(self.frames)))
         self.frames[key]=self.picture
@@ -39,7 +39,7 @@ def icon(kind, size=36, hovered=False, selected=False, level=1):
         d.line(box(points), fill=fill, width=round(width*size*scale/36), joint='curve')
     def ellipse(b, fill=None, outline=None, width=1):
         d.ellipse(box(b), fill=fill, outline=outline, width=max(1,round(width*size*scale/36)))
-    circle = '#D9EEFB' if selected or hovered else '#EEF2F6'
+    circle = '#E6F0FF' if selected or hovered else '#F3F6FB'
     if kind == 'close': circle = '#F5E1E4' if hovered else '#EEF2F6'
     ellipse((1,1,35,35),circle)
     if kind == 'close':
@@ -47,13 +47,13 @@ def icon(kind, size=36, hovered=False, selected=False, level=1):
         line((23,13,13,23), '#9C6671' if hovered else '#7D8A98')
     elif kind == 'image':
         d.rounded_rectangle(box((9,10,27,26)),radius=2*scale,outline=INK,width=scale)
-        ellipse((20,13,23,16), '#78C9EE')
+        ellipse((20,13,23,16), '#075DD1')
         line((10,23,15,17,20,23,23,20,26,24))
     elif kind == 'rocket':
-        d.polygon(box((15,20,9,23,10,16,16,13)),fill='#76B9DA')
-        d.polygon(box((17,22,14,28,22,26,24,19)),fill='#76B9DA')
+        d.polygon(box((15,20,9,23,10,16,16,13)),fill='#075DD1')
+        d.polygon(box((17,22,14,28,22,26,24,19)),fill='#075DD1')
         d.polygon(box((13,20,16,12,24,7,29,7,29,12,24,20,17,23)),fill='#FFFFFF',outline=INK,width=scale)
-        ellipse((21,11,25,15),'#79DBF9')
+        ellipse((21,11,25,15),'#075DD1')
         line((12,24,8,28),'#67CFF4',2)
         line((15,26,13,29),'#A5E8FF',1.5)
     elif kind == 'settings':
