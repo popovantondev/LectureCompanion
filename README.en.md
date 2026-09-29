@@ -23,7 +23,7 @@ Lecture Companion helps you follow IT classes in Microsoft Teams. It briefly sum
 
 ## Download and start
 
-Release 2.4 is currently a draft and has no public download files. When a complete Portable package is published, its exact ZIP parts and checksums will be listed on the [Releases page](https://github.com/popovantondev/LectureCompanion/releases). The step-by-step instructions are available now as a readable [English Markdown user guide](docs/USER_GUIDE.en.md).
+Release 2.4 is publicly available as a pre-release. Download all four ZIP parts and `JoinPortable.cmd` from the [v2.4 release page](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4) and save them in the same folder. Double-click `JoinPortable.cmd`; it checks the part sizes and SHA-256 without installing anything. Extract the resulting ZIP fully to an internal SSD, then run `LectureCompanion.exe`. The [English step-by-step guide](https://popovantondev.github.io/LectureCompanion/Guide-en.html) explains how to use the app.
 
 - [English step-by-step guide](docs/USER_GUIDE.en.md)
 - Windows 11 x64; 32 GB RAM recommended. Compatible drivers and the Teams desktop app must already be installed.
