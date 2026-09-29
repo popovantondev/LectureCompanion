@@ -1,8 +1,5 @@
 # Setup — 2.4
 
-The complete Portable edition needs no separate setup. Open the [English step-by-step guide](Anleitungen/English.html) in a browser for requirements, extraction, startup, Teams, controls and troubleshooting.
+Read the full [English Markdown user guide](docs/USER_GUIDE.en.md). Release 2.4 is currently a draft with no public download files; check the Releases page before attempting to download it.
 
-German is the default. [Deutsch](START_HIER.html) · [Русский](Anleitungen/Russisch.html)
-
-Developers: [build guide](docs/DEVELOPMENT.en.md). A small UI-only build does not contain runtimes/models; only the full Portable ZIP is self-contained.
-
+[Deutsch](docs/USER_GUIDE.de.md) · [English](docs/USER_GUIDE.en.md) · [Русский](docs/USER_GUIDE.ru.md)
