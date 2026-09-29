@@ -1,5 +1,7 @@
 # Lecture Companion
 
+[Benutzerhandbuch](https://popovantondev.github.io/LectureCompanion/Guide-de.html)
+
 **Windows 11 · Portable · Version 2.4 · Lokale KI · Release-Preview, nicht signiert**
 
 [Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
