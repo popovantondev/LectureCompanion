@@ -1,0 +1,89 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Практическое руководство по подготовке Lecture Companion, работе вместе с Teams и хранению переносимых файлов."><title>Lecture Companion — РУКОВОДСТВО</title><style>:root{--ink:#14253d;--muted:#607087;--line:#dbe4f0;--blue:#1677ff;--panel:#fff;--canvas:#f3f6fb}
+*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:#075dd1;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#003c91}.shell{width:min(100% - 36px,1000px);margin:0 auto;padding:24px 0 56px}.top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:750;text-decoration:none}.brand img{width:38px;height:38px;object-fit:contain}nav{display:flex;gap:8px;flex-wrap:wrap}nav a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#34445b;text-decoration:none;font-size:14px;font-weight:650}nav a[aria-current=page]{background:#e6f0ff;border-color:#b8d3ff;color:#075dd1}.hero{display:grid;grid-template-columns:1fr 104px;gap:24px;align-items:center;padding:38px 42px;border-radius:28px;background:radial-gradient(circle at 90% 10%,#1f5cad 0,#102c55 34%,#07172e 76%);color:#fff;box-shadow:0 16px 38px #0b2b551f}.kicker{margin:0 0 8px;color:#9bc5ff;font-size:12px;letter-spacing:.14em;font-weight:750}h1{margin:0;font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.03em}.lead{max-width:720px;margin:15px 0 0;color:#e2edff;font-size:18px;line-height:1.55}.hero img{width:104px;height:104px;object-fit:contain;filter:drop-shadow(0 8px 16px #0005)}.button{display:inline-block;margin-top:19px;padding:10px 16px;border:1px solid #ffffff5c;border-radius:12px;background:#fff;color:#0c315e;font-weight:700;text-decoration:none}.overview,.topic{margin:16px 0;padding:26px 30px;background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:0 5px 16px #0b2b5507}.overview p:first-child{margin-top:0}.overview img{display:block;max-width:100%;height:auto;margin:16px auto;border:1px solid var(--line);border-radius:12px}.topic h2{margin:0 0 12px;font-size:22px;line-height:1.3;letter-spacing:-.015em}.topic p{margin:0 0 12px}.topic p:last-child{margin-bottom:0}.topic ul,.topic ol{padding-left:1.35em}.topic li{margin:.35em 0}.topic table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse}.topic th,.topic td{padding:8px 10px;border:1px solid var(--line);text-align:left}.topic th{background:#eef4fc}.topic pre{max-width:100%;overflow:auto;padding:16px;border-radius:12px;background:#0b1b31;color:#e5efff}.topic code{padding:.12em .35em;border-radius:5px;background:#edf2f8}.topic pre code{padding:0;background:transparent;color:inherit}.topic blockquote{margin:12px 0;padding:4px 16px;border-left:3px solid #8bbaff;color:var(--muted)}footer{margin-top:24px;padding:20px 10px;color:var(--muted);text-align:center;font-size:14px}@media(max-width:620px){.shell{width:min(100% - 22px,1000px);padding-top:12px}.top{align-items:flex-start;flex-direction:column}.hero{grid-template-columns:1fr 66px;padding:26px 22px;border-radius:20px;gap:12px}.hero img{width:66px;height:66px}.lead{font-size:16px}.overview,.topic{padding:21px 19px}}@media print{body{background:#fff}.shell{width:100%;padding:0}.top nav,.button{break-inside:avoid}.hero,.topic,.overview{box-shadow:none}.topic{break-inside:avoid}}</style></head><body><div class="shell"><header class="top"><a class="brand" href="Guide-en.html"><span class="brand-mark" aria-hidden="true">L</span><span>Lecture Companion</span></a><nav aria-label="Язык"><a href="Guide-de.html">Deutsch</a><a href="Guide-en.html">English</a><a href="Guide-ru.html" aria-current="page">Русский</a></nav></header><main><section class="hero"><div><p class="kicker">РУКОВОДСТВО · WINDOWS 11 · X64 · 2.4</p><h1>Lecture Companion</h1><p class="lead">Практическое руководство по подготовке Lecture Companion, работе вместе с Teams и хранению переносимых файлов.</p><p class="meta">Windows 11 · x64 · черновик 2.4</p><a class="button" href="https://github.com/popovantondev/LectureCompanion/releases">Статус выпуска</a></div><div class="brand-mark-large" aria-hidden="true">L</div></section><section class="overview">
+
+</section><section class="topic"><h2 id="section">1. Первый запуск — пять шагов</h2>
+<ul>
+<li><p>Сохрани полный ZIP. В Проводнике нажми правой кнопкой → <strong>Извлечь всё…</strong>.</p>
+</li>
+<li><p>Выбери папку с правом записи на <strong>внутреннем SSD</strong>, например Документы/LC2.4. Не запускай внутри ZIP, из Program Files или с медленной флешки.</p>
+</li>
+<li><p>Проверь, что рядом лежат <code>LectureCompanion.exe</code>, <code>_internal</code>, <code>Laufzeit</code>, <code>Modelle</code> и <code>portable.json</code>.</p>
+</li>
+<li><p>Дважды нажми <strong>LectureCompanion.exe</strong>. Для полного архива не нужны установка Python, команды в терминале, API-ключ или скачивание моделей.</p>
+</li>
+<li><p>Дождись робота. Под ним видны этап и время загрузки. Первая подготовка может занять несколько минут. Не запускай несколько копий. Escape отменяет запуск.</p>
+</li>
+</ul>
+</section><section class="topic"><h2 id="section-1">2. Требования и выбор устройства</h2>
+<p><strong>Windows 11 x64; желательно 32 ГБ ОЗУ; внутренний SSD.</strong> Помимо самой папки нужен запас места для кэшей. На 16 ГБ памяти может не хватить одновременно для Teams и моделей. Windows ARM, macOS и Linux эта сборка не поддерживает.</p>
+<p>Совместимый Intel NPU используется первым. Если его нет или модель не запускается, доступные совместимые CPU/GPU через OpenVINO по очереди проверяются на одинаковой короткой задаче. Самый быстрый успешный результат сохраняется. После изменения оборудования, драйвера или модели тест повторяется. CPU может работать медленнее; поддержка GPU зависит от драйвера.</p>
+<p>Драйверы — часть Windows: их нельзя просто запустить из ZIP вместо системной установки. Программа ничего не устанавливает сама. На учебном или рабочем ПК при блокировке обращайся в IT, не обходи защиту.</p>
+</section><section class="topic"><h2 id="teams">3. Подготовка Teams</h2>
+<ul>
+<li><p>Открой <strong>настольный Teams</strong> и нужную встречу.</p>
+</li>
+<li><p>Включи <strong>живые субтитры</strong>. Помощник читает их текст напрямую, микрофон не записывает.</p>
+</li>
+<li><p>Для анализа слайда нужна настоящая демонстрация экрана или окна. Картинка в чате — не презентация.</p>
+</li>
+<li><p>Нажми правой кнопкой на робота и включи пересказы, если они на паузе. Новая речь проверяется примерно раз в минуту; без новых слов лишнего запроса к модели не будет.</p>
+</li>
+</ul>
+<p>Перемещение и перекрытие окна предусмотрены. Но сворачивание, защищённая демонстрация или обновление Teams могут помешать захвату. Тогда должна появиться ошибка, а не выдуманный по разговору слайд. Используй чтение встречи только с нужным разрешением организации. Помощник ничего не пишет в чат Teams.</p>
+</section><section class="topic"><h2 id="section-2">4. Управление роботом</h2>
+<ul>
+<li><p><strong>Клик:</strong> кратко объяснить новую речь. Слайд добавляется только после включения отдельной галочки.</p>
+</li>
+<li><p><strong>Наведение:</strong> под роботом открывается поле вопроса. Подсказка слева. Длинный текст растягивает поле вниз, до восьми видимых строк.</p>
+</li>
+<li><p><strong>Ракета / Ctrl+Enter:</strong> отправить. Enter — перенос строки. До 2000 символов.</p>
+</li>
+<li><p><strong>Значок картинки:</strong> снять и разобрать свежую демонстрацию, не старый архивный скрин.</p>
+</li>
+<li><p><strong>Перетаскивание:</strong> робот и карточки перемещаются вместе. Можно тянуть за заголовок карточки.</p>
+</li>
+<li><p><strong>Стрелки / колёсико:</strong> листать до десяти ответов. Текущий непрозрачный, три предыдущих — серые полупрозрачные. «К свежему» возвращает последний.</p>
+</li>
+<li><p><strong>Правая кнопка:</strong> язык, пауза, звук и закрытие. Меню выше остальных окон помощника.</p>
+</li>
+</ul>
+</section><section class="topic"><h2 id="section-3">5. Язык, скорость и звуки</h2>
+<p><strong>Немецкий выбран по умолчанию.</strong> В меню робота переключи DE, EN или RU. Новые ответы идут сначала на языке субтитров лекции, затем на языке интерфейса. Если языки совпадают, раздел один, без повтора. DE/EN/RU распознаются локально; когда язык неясен и прежнего контекста нет, используется только язык интерфейса. Правило общее для вопросов и слайдов; отдельный запрос на перевод не нужен. Старые ответы не переводятся заново. Уже принятый вопрос завершается на исходном языке.</p>
+<p>Кнопка настроек: <strong>Быстро</strong> — коротко, без дополнительных рассуждений; <strong>Обычно</strong> — сбалансированно; <strong>Вдумчиво</strong> — дополнительные рассуждения только для твоих текстовых вопросов. Автоматические итоги всегда короткие. Переключение не прерывает текущий ответ.</p>
+<p>Нотка открывает громкость. Перечёркнутая выключает звук; три размера выбирают 33, 67 или 100%. Нажатие нотки и отпускание ползунка дают пример. Громкость общая для запуска, ответов, движения и мягкого «вжуха» поля вопроса.</p>
+<p>При обработке по визору бегут синие нули и единицы с паузами. В ожидании робот иногда моргает. Под ответом видны этап, очередь и время обработки.</p>
+</section><section class="topic"><h2 id="section-4">6. Что в папках и где личные данные?</h2>
+<ul>
+<li><p><code>Daten</code> — настройки, десять ответов, положение окон, проверка устройств и журналы; создаётся при первом запуске.</p>
+</li>
+<li><p><code>Modelle</code> — модели и кэши оборудования.</p>
+</li>
+<li><p><code>Laufzeit</code> — Python, Node.js, Ollama и библиотеки.</p>
+</li>
+<li><p><code>_internal</code> — графика и библиотеки интерфейса.</p>
+</li>
+<li><p><code>Anleitungen</code> — инструкции на трёх языках.</p>
+</li>
+</ul>
+<p>Чистый ZIP не содержит настоящих лекций и личных настроек. При сокращении старой длинной истории один раз сохраняется <code>history-before-10.json</code>. Эту личную копию нельзя передавать другим.</p>
+<p>ИИ-запросы остаются локальными. Teams и Windows могут использовать интернет. Windows и сторонние компоненты могут создавать обычные системные кэши вне папки. Переносимость — отсутствие отдельной установки, а не изолированная песочница Windows.</p>
+</section><section class="topic"><h2 id="section-5">7. Если что-то не работает</h2>
+<h4 id="windows">Ничего не появляется / Windows блокирует файл</h4>
+<p>Всё распаковано? Подпапки рядом с EXE? Используй внутренний SSD и папку с правом записи. Проверь источник и приложенную контрольную сумму. Защиту не отключай. EXE не подписан цифровой подписью, на рабочем ПК может потребоваться одобрение IT.</p>
+<h4 id="section-6">Долго грузится</h4>
+<p>Первый запуск и тест устройств дольше обычного. Смотри на этап и время, закрой тяжёлые программы, не запускай ещё одну копию. Ошибки находятся в <code>Daten/npu.log</code>, <code>Daten/server.log</code> и <code>Daten/device-benchmark.json</code>.</p>
+<h4 id="section-7">Нет пересказа или скрина</h4>
+<p>Открыта нужная встреча? Включены субтитры? Были новые слова после прошлого ответа? Идёт настоящая демонстрация? Вопрос ждёт текущую генерацию, затем получает приоритет перед следующим автоматическим итогом.</p>
+<h4 id="teams-1">Teams тормозит</h4>
+<p>Поставь пересказы на паузу и дай запросу закончиться. Выбери «Быстро». Фоновое зрение работает с интервалом не менее трёх минут и затем выгружает модель. Жёсткого лимита «95% GPU» нет. Если текст считается на GPU, текст и зрение обрабатываются по очереди.</p>
+<h4 id="section-8">Модель ошиблась или ответ оборвался</h4>
+<p>Проверь важное по оригиналу. Сократи или уточни вопрос. «Вдумчиво» не гарантирует правильность. При достижении лимита рассуждений платного облачного повтора не будет.</p>
+<h4 id="cpugpu">Повторить тест CPU/GPU</h4>
+<p>Закрой программу. Переименуй <code>Daten/device-benchmark.json</code> в <code>device-benchmark.old.json</code>. При следующем запуске без работающего NPU тест повторится. Модели не удаляй.</p>
+</section><section class="topic"><h2 id="section-9">8. Перенос, обновление и передача</h2>
+<p>Закрой через меню робота и переноси <strong>всю папку</strong>. На другом компьютере всё равно нужны подходящие Windows, память и драйверы; отдельная установка Python и моделей не нужна.</p>
+<p>Обновление распаковывай в новую папку, старую пока оставь. Для своей работы можно перенести <code>Daten</code>, когда обе программы закрыты. Другому человеку отправляй <strong>чистый исходный ZIP</strong>, а не использованную папку с лекциями и журналами.</p>
+<p>На полностью чистом втором компьютере сборка ещё не проверена. Успешные локальные проверки не гарантируют запуск на любом ПК.</p>
+</section><section class="topic"><h2 id="teams-2">9. Демо двойным кликом, без Teams и команд</h2>
+<p><code>LectureCompanion.exe</code> — обычная программа. <code>LectureCompanionDemo.exe</code> открывает вымышленные примеры, не запуская Teams или модели. Подпапки оставь рядом с EXE. Сценарий показа работодателю: <a href="https://github.com/popovantondev/LectureCompanion/blob/main/docs/PORTFOLIO.ru.md">Портфолио и демо за 4 минуты</a>.</p>
+</section></main><footer>Windows 11 · x64 · черновик 2.4 · <a href="https://github.com/popovantondev/LectureCompanion">GitHub</a> · <a href="https://github.com/popovantondev/LectureCompanion/issues/new/choose">Обратная связь</a></footer></div></body></html>
