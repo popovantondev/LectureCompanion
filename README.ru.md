@@ -1,5 +1,7 @@
 # Lecture Companion
 
+[Руководство пользователя](https://popovantondev.github.io/LectureCompanion/Guide-ru.html)
+
 **Windows 11 · Portable · Версия 2.4 · Локальный ИИ · Предрелизная версия без подписи**
 
 [Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
