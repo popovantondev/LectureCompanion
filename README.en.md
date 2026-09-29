@@ -21,9 +21,9 @@ Lecture Companion helps you follow IT classes in Microsoft Teams. It briefly sum
 
 ## Download and start
 
-The complete Portable download is provided on the [GitHub Releases page](https://github.com/popovantondev/LectureCompanion/releases). Because of GitHub's per-file release-asset limit, the ZIP is split into four parts. Download all four parts and `JoinPortable.cmd` into one folder, then double-click the CMD file. It checks the part sizes and ZIP checksum, uses built-in Windows tools, and installs nothing. Extract the resulting ZIP fully to an internal SSD and double-click `LectureCompanion.exe` — no separate Python setup or command line is needed.
+Release 2.4 is currently a draft and has no public download files. When a complete Portable package is published, its exact ZIP parts and checksums will be listed on the [Releases page](https://github.com/popovantondev/LectureCompanion/releases). The step-by-step instructions are available now as a readable [English Markdown user guide](docs/USER_GUIDE.en.md).
 
-- [English step-by-step guide](Anleitungen/English.html)
+- [English step-by-step guide](docs/USER_GUIDE.en.md)
 - Windows 11 x64; 32 GB RAM recommended. Compatible drivers and the Teams desktop app must already be installed.
 - First startup and model initialization may take a while. The package is several GiB.
 
@@ -35,7 +35,7 @@ Answers can be wrong. Protected or minimized Teams windows and Teams updates may
 
 ## Documentation and development
 
-[User guide](Anleitungen/English.html) · [Architecture and build](docs/DEVELOPMENT.en.md) · [Verification report](VERIFICATION.en.md) · [Release checklist](PUBLIC-REPOSITORY.md)
+[User guide](docs/USER_GUIDE.en.md) · [Architecture and build](docs/DEVELOPMENT.en.md) · [Verification report](VERIFICATION.en.md) · [Release checklist](PUBLIC-REPOSITORY.md)
 
 Run model-free source checks with `python verify.py --node PATH_TO_NODE`; add `--ui` for native Windows UI checks. The synthetic demo starts without Teams or model requests: double-click `LectureCompanionDemo.exe`.
 
