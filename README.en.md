@@ -35,7 +35,7 @@ Answers can be wrong. Protected or minimized Teams windows and Teams updates may
 
 ## Documentation and development
 
-[User guide](Anleitungen/English.html) · [Architecture and build](docs/DEVELOPMENT.en.md) · [Verification report](VERIFICATION.en.md) · [Release checklist](PUBLIC-REPOSITORY.md)
+[User guide](docs/USER_GUIDE.en.md) · [Architecture and build](docs/DEVELOPMENT.en.md) · [Verification report](VERIFICATION.en.md) · [Release checklist](PUBLIC-REPOSITORY.md)
 
 Run model-free source checks with `python verify.py --node PATH_TO_NODE`; add `--ui` for native Windows UI checks. The synthetic demo starts without Teams or model requests: double-click `LectureCompanionDemo.exe`.
 
