@@ -5,7 +5,6 @@
 - Lokale Startadresse ohne alte index.html-Abhängigkeit; dauerhafter Regressionstest.
 - Antwort in Unterrichtssprache plus Oberflächensprache; gleiche Sprachen nur einmal, Sprachpaar im Bildcache und in der Warteschlange.
 - LectureCompanionDemo.exe: synthetische Vorführung per Doppelklick ohne Modellstart.
-- Portfolio-Bewertung mit Belegen und deutschem 4-Minuten-Ablauf; Zweit-PC-/Langzeittest ausdrücklich aus diesem Abschluss genommen.
 
 
 - Full Portable layout: Laufzeit, Modelle, Daten, Anleitungen; default German.

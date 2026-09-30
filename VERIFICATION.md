@@ -24,7 +24,8 @@ Der fehlende index.html kann die lokale Startadresse nicht mehr zum Absturz brin
 
 Unterrichtssprache plus Oberflächensprache werden in einem Modellaufruf ausgegeben, ohne doppelte Ausgabe bei gleicher Sprache. Tests prüfen Erkennung, unklare Fragmente, bereits angenommene Fragen, Tokenlimits und Bildcache je Sprachpaar. Echte synthetische DE+RU-Prüfung: Text auf NPU 19,62 s; LAN/WAN-Bild 24,87 s. Beide enthielten tatsächliche Sätze in beiden Sprachen. Einzelmessungen, keine allgemeine Leistungszusage.
 
+LectureCompanionDemo.exe bietet synthetische Beispiele per Doppelklick ohne Teams-Verbindung oder Modellstart.
 
-Zweit-PC- und längerer Unterrichtstest wurden vom Auftraggeber aus dem Abschlussumfang dieser Version genommen; nicht als bestanden gewertet.
+Ein Test auf einem sauberen zweiten Windows-PC und ein längerer Unterrichtstest stehen noch aus.
 
 Die abschließende EXE wurde neu gebaut. LectureCompanionDemo.exe startete allein anhand ihres Dateinamens als Demo; danach waren alle drei Modell-/Serverports frei. Der normale Start verwendete NPU. Drei echte Aufrufpaare von / und /health blieben erfolgreich. Alle 1066 App-Dateien im aktualisierten Ordner stimmten per SHA-256 mit dem frischen Build überein. Die gespeicherte Benutzersprache wurde beibehalten; neue Profile bleiben Deutsch.
