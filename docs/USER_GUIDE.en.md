@@ -112,4 +112,4 @@ A completely clean second-PC Windows installation has not yet been tested. Passi
 
 ## 9. Double-click demo, no Teams or commands
 
-`LectureCompanion.exe` is the normal app. Double-click `LectureCompanionDemo.exe` for fictional examples without starting Teams or model services. Keep both EXEs next to their folders. See [Portfolio and 4-minute demo](docs/PORTFOLIO.en.md).
+`LectureCompanion.exe` is the normal app. Double-click `LectureCompanionDemo.exe` for fictional examples without starting Teams or model services. Keep both EXEs next to their folders.

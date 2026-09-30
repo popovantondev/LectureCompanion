@@ -8,18 +8,21 @@ The localized screenshots in `docs/screenshots/` are synthetic captures of the a
 
 ## Deutsch
 
-Eigenständige KI-generierte Grafik vom 08.09.2026, kein offizielles Disney-/Pixar-Maskottchen oder Logo. Transparenter Hintergrund. Der Projekteigentümer bestätigt, dass die Grafik öffentlich in diesem Repository und in Screenshots gezeigt werden darf. Eine Wiederverwendung ist nicht freigegeben. Keine offizielle Zugehörigkeit behaupten. Der ursprüngliche englische Prompt steht unten.
+`companion.png` ist die Roboterillustration für Lecture Companion. Der
+transparente Hintergrund ermöglicht die Darstellung auf dem Desktop und in
+der Dokumentation. Die oben genannten Nutzungsbedingungen gelten auch für
+Abbildungen in Screenshots. Es besteht keine offizielle Zugehörigkeit zu
+Disney oder Pixar.
 
 ## Русский
 
-Самостоятельная ИИ-графика от 08.09.2026, не официальный персонаж или логотип Disney/Pixar. Фон прозрачный. Владелец проекта подтвердил, что изображение можно показывать публично в этом репозитории и на скриншотах. Повторное использование не разрешено. Не представляй маскота официальным персонажем. Ниже сохранён исходный английский запрос.
+`companion.png` — изображение робота Lecture Companion с прозрачным фоном
+для рабочего стола и документации. Условия использования выше относятся
+также к изображениям на скриншотах. Официальной связи с Disney или Pixar нет.
 
 ## English
 
-`companion.png` is an AI-generated original mascot, not an official Disney/Pixar character or logo. Generated on 2026-09-08 with the built-in image-generation tool. The project owner confirms it may be shown in this public repository and its screenshots, but does not grant reuse permission. It uses a transparent background and is displayed at a smaller size without modifying the original asset.
-
-Prompt used:
-
-> Create one polished original 3D desktop mascot sprite on a genuinely transparent background. A friendly small hovering robot, front-facing, no legs: smooth pearlescent white teardrop body, two slim white fin-shaped arms, a separate rounded oval head with a glossy black face screen, two softly luminous blue oval eyes. Elegant minimal industrial design, gentle expression, premium studio lighting, subtle reflective shading. Whole character visible, centered with small margins. No text, branding, watermark, floor, shadow outside the character or background pattern. Clean silhouette that remains legible at a small desktop size. Deliver transparent PNG.
-
-No lecture content, participant photos or other personal data were supplied to generate this asset. Do not market it as an official character.
+`companion.png` is the Lecture Companion robot illustration. Its transparent
+background supports display on the desktop and in documentation. The terms
+above also apply to its depiction in screenshots. There is no official
+affiliation with Disney or Pixar.
