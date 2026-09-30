@@ -1,0 +1,47 @@
+name: Refresh portable release documents
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: popovantondev/LectureCompanion
+    steps:
+      - name: Download approved document bundle
+        run: |
+          mkdir -p "$RUNNER_TEMP/release-documents"
+          cd "$RUNNER_TEMP/release-documents"
+          gh release download v2.4 --pattern Documentation-update-20260930.zip
+          unzip -q Documentation-update-20260930.zip
+      - name: Download current portable parts
+        run: |
+          cd "$RUNNER_TEMP/release-documents"
+          mkdir -p release-archive-cleanup-20260930/original
+          gh release download v2.4 --pattern 'LectureCompanion-2.4-Final-Portable.zip.part0?' --dir release-archive-cleanup-20260930/original
+      - name: Repack and verify every archive entry
+        run: |
+          cd "$RUNNER_TEMP/release-documents"
+          python3 repack_companion.py
+      - name: Publish verified replacements
+        run: |
+          cd "$RUNNER_TEMP/release-documents"
+          python3 publish_cleaned_archives.py LectureCompanion
+          python3 update_archive_release_notes.py LectureCompanion
+      - name: Independently verify published documents
+        run: |
+          cd "$RUNNER_TEMP/release-documents"
+          python3 verify_published_companion.py
+      - name: Save verification records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-document-verification
+          path: |
+            ${{ runner.temp }}/release-documents/release-archive-cleanup-20260930/companion-cleanup-plan.json
+            ${{ runner.temp }}/release-documents/release-archive-cleanup-20260930/LectureCompanion-publication.json
+            ${{ runner.temp }}/release-documents/release-archive-cleanup-20260930/LectureCompanion-release-after.json
+            ${{ runner.temp }}/release-documents/release-archive-cleanup-20260930/published-companion-verification.json
