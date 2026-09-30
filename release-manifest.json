@@ -39,10 +39,7 @@
     "Anleitungen/Russisch.html",
     "docs/ENTWICKLUNG.de.md",
     "docs/DEVELOPMENT.en.md",
-    "docs/РАЗРАБОТКА.ru.md",
-    "docs/PORTFOLIO.de.md",
-    "docs/PORTFOLIO.en.md",
-    "docs/PORTFOLIO.ru.md"
+    "docs/РАЗРАБОТКА.ru.md"
   ],
   "sourceFiles": [
     ".gitattributes",
@@ -74,9 +71,6 @@
     "device_runtime.py",
     "docs/DEVELOPMENT.en.md",
     "docs/ENTWICKLUNG.de.md",
-    "docs/PORTFOLIO.de.md",
-    "docs/PORTFOLIO.en.md",
-    "docs/PORTFOLIO.ru.md",
     "docs/screenshots/app-de.png",
     "docs/screenshots/app-en.png",
     "docs/screenshots/app-ru.png",

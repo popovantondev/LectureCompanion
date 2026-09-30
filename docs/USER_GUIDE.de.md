@@ -114,4 +114,4 @@ Ein Test auf einer wirklich sauberen zweiten Windows-Installation steht noch aus
 
 ## 9. Demo ohne Teams und ohne Befehle
 
-`LectureCompanion.exe` ist das normale Programm. `LectureCompanionDemo.exe` öffnet durch Doppelklick eine Demonstration mit erfundenen Beispielen, ohne Teams oder KI-Modelle zu starten. Beide EXEs bleiben neben ihren Unterordnern. Ein Ablauf für Arbeitgeber steht in [Portfolio und 4-Minuten-Demo](docs/PORTFOLIO.de.md).
+`LectureCompanion.exe` ist das normale Programm. `LectureCompanionDemo.exe` öffnet durch Doppelklick eine Demonstration mit erfundenen Beispielen, ohne Teams oder KI-Modelle zu starten. Beide EXEs bleiben neben ihren Unterordnern.

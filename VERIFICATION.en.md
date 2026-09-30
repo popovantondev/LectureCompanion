@@ -14,8 +14,8 @@ The root route no longer depends on missing index.html: / and /health return fil
 
 Answers use lecture + interface languages in one model call, with no duplicate section for matching languages. Tests cover detection, uncertain fragments, accepted questions, token limits and language-pair image caching. Real synthetic DE+RU test: NPU text 19.62 s; LAN/WAN image 24.87 s. Both contained actual sentences in both languages. Single measurements, not general performance claims.
 
-LectureCompanionDemo.exe provides a double-click synthetic demo. See docs/PORTFOLIO.en.md for the evidence-based criteria review and demonstration plan.
+LectureCompanionDemo.exe provides a double-click demo with synthetic examples, without a Teams connection or model startup.
 
-The client excluded a clean second-PC test and a long lecture test from this version’s completion; neither is reported passed.
+A clean second-Windows-PC test and a long lecture test remain outstanding.
 
 The final EXE was rebuilt. LectureCompanionDemo.exe entered demo mode through its filename alone, leaving all three service ports unused. Normal launch used NPU; three real root/health request pairs survived. All 1066 updated app files matched the fresh build by SHA-256. The saved user language was preserved; new profiles remain German.
