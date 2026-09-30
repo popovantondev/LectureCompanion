@@ -18,8 +18,8 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/release-documents"
           cd "$RUNNER_TEMP/release-documents"
-          gh release download v2.4 --pattern Documentation-update-20260930.zip
-          unzip -q Documentation-update-20260930.zip
+          gh release download v2.4 --pattern Documentation-update-20260930-v2.zip
+          unzip -q Documentation-update-20260930-v2.zip
       - name: Download current portable parts
         run: |
           cd "$RUNNER_TEMP/release-documents"
