@@ -2,7 +2,7 @@
 
 [User guide](https://popovantondev.github.io/LectureCompanion/Guide-en.html)
 
-**Windows 11 · Portable · Version 2.4 · Local AI · Unsigned release preview**
+**Windows 11 · Portable · Version 2.4 · Local processing · Unsigned release preview**
 
 [Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
 
@@ -10,7 +10,7 @@
 
 *Synthetic demo. No real meeting, captions, or participant data.*
 
-Lecture Companion helps you follow IT classes in Microsoft Teams. It briefly summarizes new live captions and can explain the currently shared slide on request. Processing stays on your PC — no ChatGPT account, API key, or cloud fallback.
+Lecture Companion helps you follow IT classes in Microsoft Teams. It briefly summarizes new live captions and can explain the currently shared slide on request. Processing stays on your PC — no API key or cloud fallback.
 
 ## What it does
 
@@ -33,7 +33,7 @@ Release 2.4 is publicly available as a pre-release. Download all four ZIP parts 
 
 Captions and requested slide images are processed locally. The app has no cloud fallback and does not automatically upload them. Meeting content may contain personal data: follow your organization’s rules and do not share real captions or screenshots.
 
-AI answers can be wrong. Protected or minimized Teams windows and Teams updates may prevent caption or slide access. Performance and compatibility depend on the PC and its drivers. The EXE is unsigned, and a clean second-Windows-PC test is still outstanding.
+Answers can be wrong. Protected or minimized Teams windows and Teams updates may prevent caption or slide access. Performance and compatibility depend on the PC and its drivers. The EXE is unsigned, and a clean second-Windows-PC test is still outstanding.
 
 ## Documentation and development
 

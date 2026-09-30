@@ -30,7 +30,7 @@ Drivers are OS components that cannot simply run from this ZIP. No drivers or pa
 
 - Slide analysis requires a real screen/window share. A chat image is not a slide.
 
-- Right-click the robot and enable summaries if paused. New speech is checked about once a minute; no new content means no unnecessary AI request.
+- Right-click the robot and enable summaries if paused. New speech is checked about once a minute; no new content means no unnecessary request.
 
 Capture handles moving/covering the window. Minimization, protected content or Teams updates may prevent capture. Missing slides should produce an error, not content guessed from speech. Use this only with the required organizational permission. The assistant never posts to Teams chat.
 
@@ -74,7 +74,7 @@ Blue binary digits sweep across the visor with pauses while processing. Occasion
 
 The clean ZIP contains no real lecture history or private settings. Trimming a larger old development history creates one private `history-before-10.json` backup. Do not share it.
 
-Assistant AI requests stay local. Teams and Windows may use the internet. Windows/third-party components can create ordinary system/user caches outside this folder. Portable means no separate installation, not an isolated Windows sandbox.
+Assistant requests stay local. Teams and Windows may use the internet. Windows/third-party components can create ordinary system/user caches outside this folder. Portable means no separate installation, not an isolated Windows sandbox.
 
 ## 7. Troubleshooting
 

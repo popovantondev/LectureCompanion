@@ -2,7 +2,7 @@
 
 [Benutzerhandbuch](https://popovantondev.github.io/LectureCompanion/Guide-de.html)
 
-**Windows 11 · Portable · Version 2.4 · Lokale KI · Release-Preview, nicht signiert**
+**Windows 11 · Portable · Version 2.4 · Lokale Verarbeitung · Release-Preview, nicht signiert**
 
 [Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
 
@@ -10,7 +10,7 @@
 
 *Synthetische Demo. Kein echtes Meeting, keine echten Untertitel und keine Teilnehmerdaten.*
 
-Lecture Companion hilft dir, einer IT-Vorlesung in Microsoft Teams zu folgen. Die App fasst neue Liveuntertitel kurz zusammen und erklärt auf Wunsch die aktuell geteilte Folie. Die Verarbeitung erfolgt lokal auf dem PC — ohne ChatGPT-Konto, API-Schlüssel oder Cloud-Fallback.
+Lecture Companion hilft dir, einer IT-Vorlesung in Microsoft Teams zu folgen. Die App fasst neue Liveuntertitel kurz zusammen und erklärt auf Wunsch die aktuell geteilte Folie. Die Verarbeitung erfolgt lokal auf dem PC — ohne API-Schlüssel oder Cloud-Fallback.
 
 ## Was die App kann
 
@@ -33,7 +33,7 @@ Das Release 2.4 ist als Vorabversion öffentlich verfügbar. Lade alle vier ZIP-
 
 Untertitel und angeforderte Folienbilder werden lokal verarbeitet. Die App bietet keinen Cloud-Fallback und lädt sie nicht automatisch hoch. Meeting-Inhalte können personenbezogene Daten enthalten: beachte die Regeln deiner Organisation und teile keine echten Untertitel oder Screenshots.
 
-KI-Antworten können Fehler enthalten. Geschützte oder minimierte Teams-Fenster sowie Änderungen an Teams können den Zugriff auf Untertitel oder Folien verhindern. Gerätegeschwindigkeit und Kompatibilität hängen von PC und Treibern ab. Die EXE ist nicht signiert; ein Test auf einem sauberen zweiten Windows-PC steht noch aus.
+Antworten können Fehler enthalten. Geschützte oder minimierte Teams-Fenster sowie Änderungen an Teams können den Zugriff auf Untertitel oder Folien verhindern. Gerätegeschwindigkeit und Kompatibilität hängen von PC und Treibern ab. Die EXE ist nicht signiert; ein Test auf einem sauberen zweiten Windows-PC steht noch aus.
 
 ## Dokumentation und Entwicklung
 

@@ -7,7 +7,7 @@ Prüfdatum: 2026-09-09. Lokaler Host: Windows 11 x64, Intel Core Ultra 7 255U, 3
 - Native UI: vier verbundene Karten, zehn Antworten, Navigation, kein Remap/Restack bei unveränderten Statusdaten, Menü über anderen App-Fenstern, linke Eingabehilfe, mehrzeiliges Feld, drei Sprachen, Binärlauf und Pause, gedrosselter Bewegungston. Synthetische Bilder visuell geprüft.
 - JavaScript: neue Rede vs. 20 Minuten alter Kontext, Fragepriorität, Generierungsgrenzen, Sprachwechsel während einer angenommenen Frage, sprachabhängiger Bildcache, keine doppelte Bildgenerierung.
 - Geräteauswahl: simuliert ohne NPU, CPU-only, GPU schneller, Cache, Hardwarewechsel, NPU-Treiberfehler, vollständiger Testfehler.
-- Echte CPU-Inferenz mit eigenständigem kopiertem Python/OpenVINO: Modellladen 13,197 s; erste kurze Generierung 24,102 s; warme Wiederholung 4,967 s. Identischer kurzer Prompt, höchstens 48 Tokens. Keine allgemeine Geschwindigkeitsgarantie.
+- Echte CPU-Inferenz mit eigenständigem kopiertem Python/OpenVINO: Modellladen 13,197 s; erste kurze Generierung 24,102 s; warme Wiederholung 4,967 s. Identischer kurzer Eingabetext, höchstens 48 Tokens. Keine allgemeine Geschwindigkeitsgarantie.
 - Portable Python importiert OpenVINO/GenAI ausschließlich aus seiner eigenen Verzeichnisstruktur. Auf diesem Gerät wurden CPU, GPU und NPU erkannt.
 
 ## Release-Integration

@@ -54,7 +54,7 @@
 </li>
 <li><p>Für Folien muss eine echte Bildschirm-/Fensterfreigabe laufen. Chat-Bilder sind keine Folien.</p>
 </li>
-<li><p>Rechtsklick auf den Roboter → <strong>Zusammenfassungen starten</strong>, falls pausiert. Etwa einmal pro Minute wird neue Rede geprüft. Ohne neue Inhalte wird keine unnötige KI-Anfrage erzeugt.</p>
+<li><p>Rechtsklick auf den Roboter → <strong>Zusammenfassungen starten</strong>, falls pausiert. Etwa einmal pro Minute wird neue Rede geprüft. Ohne neue Inhalte wird keine unnötige Anfrage erzeugt.</p>
 </li>
 </ul>
 <p>Aufnahmen berücksichtigen Fensterbewegung und Überdeckung. Minimierung, geschützte Inhalte und Teams-Updates können die Aufnahme verhindern. Dann soll eine klare Fehlermeldung erscheinen, kein aus dem Gespräch erfundener Folieninhalt.</p>
@@ -85,7 +85,7 @@
 <ul>
 <li><p><code>Daten</code>: Einstellungen, zehn Antworten, Fensterposition, Testresultate und Protokolle. Entsteht beim ersten Start.</p>
 </li>
-<li><p><code>Modelle</code>: fertige KI-Modelle und später Geräte-Caches.</p>
+<li><p><code>Modelle</code>: fertige Modelle und später Geräte-Caches.</p>
 </li>
 <li><p><code>Laufzeit</code>: Python, Node.js, Ollama und Bibliotheken.</p>
 </li>
@@ -95,7 +95,7 @@
 </li>
 </ul>
 <p>Das frische ZIP enthält keine Unterrichtsverläufe oder privaten Einstellungen. Beim Kürzen eines alten Entwicklungsverlaufs wird einmal <code>history-before-10.json</code> gesichert. Diese private Sicherung niemals weitergeben.</p>
-<p>Die KI-Anfragen bleiben lokal. Teams und Windows selbst nutzen gegebenenfalls das Internet. Windows und Drittkomponenten können gewöhnliche System-/Benutzer-Caches außerhalb der App anlegen. Portable bedeutet keine separate Installation, nicht eine vollständig isolierte Sandbox.</p>
+<p>Die Anfragen bleiben lokal. Teams und Windows selbst nutzen gegebenenfalls das Internet. Windows und Drittkomponenten können gewöhnliche System-/Benutzer-Caches außerhalb der App anlegen. Portable bedeutet keine separate Installation, nicht eine vollständig isolierte Sandbox.</p>
 </section><section class="topic"><h2 id="wenn-etwas-nicht-klappt">7. Wenn etwas nicht klappt</h2>
 <h4 id="nichts-erscheint-windows-blockiert-die-datei">Nichts erscheint / Windows blockiert die Datei</h4>
 <p>Alles entpackt? Alle Unterordner neben der EXE? Nutze eine beschreibbare interne SSD. Prüfe die Herkunft und die mitgelieferte Prüfsumme. Schutzfunktionen nicht abschalten. Die EXE ist nicht digital signiert; auf verwalteten PCs kann IT-Freigabe nötig sein.</p>
@@ -105,7 +105,7 @@
 <p>Ist die richtige Besprechung geöffnet? Sind Liveuntertitel aktiv? Gibt es neue Rede seit der letzten Antwort? Läuft eine echte Bildschirmfreigabe? Eine eigene Frage wartet auf die laufende Antwort, bekommt dann aber Vorrang vor der nächsten automatischen Zusammenfassung.</p>
 <h4 id="teams-ruckelt">Teams ruckelt</h4>
 <p>Zusammenfassungen pausieren und die laufende Anfrage beenden lassen. „Schnell“ wählen. Hintergrund-Bildanalyse hat mindestens drei Minuten Abstand und entlädt das Bildmodell danach. Es gibt keinen harten „95%-GPU“-Limiter. Nutzt Text dieselbe GPU, wird Bild-/Textgenerierung serialisiert.</p>
-<h4 id="ki-antwortet-falsch-oder-unvollstandig">KI antwortet falsch oder unvollständig</h4>
+<h4 id="antwort-falsch-oder-unvollstandig">Antwort falsch oder unvollständig</h4>
 <p>Wichtige Aussagen am Original prüfen. Eine kürzere, klarere Frage stellen. „Gründlich“ garantiert keine richtige Antwort. Ein erreichtes Denklimit löst keinen kostenpflichtigen Cloud-Versuch aus.</p>
 <h4 id="cpugpu-test-wiederholen">CPU/GPU-Test wiederholen</h4>
 <p>Programm schließen. <code>Daten/device-benchmark.json</code> in <code>device-benchmark.alt.json</code> umbenennen. Beim nächsten Start ohne nutzbaren NPU wird neu getestet. Modelle nicht löschen.</p>
@@ -114,5 +114,5 @@
 <p>Updates in einen neuen Ordner entpacken, die alte Version als Rückfall behalten. Für die eigene Nutzung kann <code>Daten</code> bei beendeten Programmen übernommen werden. Anderen Personen nur das <strong>saubere Original-ZIP</strong> geben, nicht den benutzten Ordner mit Unterricht und Protokollen.</p>
 <p>Ein Test auf einer wirklich sauberen zweiten Windows-Installation steht noch aus. Lokale Prüfungen sind keine Garantie für jeden PC.</p>
 </section><section class="topic"><h2 id="demo-ohne-teams-und-ohne-befehle">9. Demo ohne Teams und ohne Befehle</h2>
-<p><code>LectureCompanion.exe</code> ist das normale Programm. <code>LectureCompanionDemo.exe</code> öffnet durch Doppelklick eine Demonstration mit erfundenen Beispielen, ohne Teams oder KI-Modelle zu starten. Beide EXEs bleiben neben ihren Unterordnern.</p>
+<p><code>LectureCompanion.exe</code> ist das normale Programm. <code>LectureCompanionDemo.exe</code> öffnet durch Doppelklick eine Demonstration mit erfundenen Beispielen, ohne Teams oder Modelle zu starten. Beide EXEs bleiben neben ihren Unterordnern.</p>
 </section></main><footer>Windows 11 · x64 · Entwurf 2.4 · <a href="https://github.com/popovantondev/LectureCompanion">GitHub</a> · <a href="https://github.com/popovantondev/LectureCompanion/issues/new/choose">Rückmeldung</a></footer></div></body></html>

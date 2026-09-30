@@ -3,8 +3,8 @@
 ## Vorgeschlagene GitHub-Metadaten
 
 - Repository: `LectureCompanion` (public; Veröffentlichung vom Eigentümer freigegeben am 2026-09-28)
-- Kurzbeschreibung: `Local AI companion for Microsoft Teams lectures · Windows · Deutsch / English / Русский`
-- Topics: `windows`, `microsoft-teams`, `lecture-assistant`, `local-ai`, `portable-app`, `python`, `nodejs`
+- Kurzbeschreibung: `Lecture companion for Microsoft Teams: caption summaries and slide explanations on Windows · Deutsch / English / Русский`
+- Topics: `windows`, `microsoft-teams`, `lecture-assistant`, `portable-app`, `python`, `nodejs`
 - README entry: German default, with separate Russian and English pages and one matching-language synthetic screenshot per page.
 
 ## Deutsch
