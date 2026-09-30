@@ -1,5 +1,8 @@
 name: Refresh portable release documents
 on:
+  push:
+    branches: [maintenance/refresh-release-documents-20260930]
+    paths: [.github/workflows/refresh-release-documents.yml]
   workflow_dispatch:
 permissions:
   contents: write
