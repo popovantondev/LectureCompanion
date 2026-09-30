@@ -30,7 +30,7 @@ Treiber gehören zu Windows und können nicht einfach im ZIP mitlaufen. Der Assi
 
 - Für Folien muss eine echte Bildschirm-/Fensterfreigabe laufen. Chat-Bilder sind keine Folien.
 
-- Rechtsklick auf den Roboter → **Zusammenfassungen starten**, falls pausiert. Etwa einmal pro Minute wird neue Rede geprüft. Ohne neue Inhalte wird keine unnötige KI-Anfrage erzeugt.
+- Rechtsklick auf den Roboter → **Zusammenfassungen starten**, falls pausiert. Etwa einmal pro Minute wird neue Rede geprüft. Ohne neue Inhalte wird keine unnötige Anfrage erzeugt.
 
 Aufnahmen berücksichtigen Fensterbewegung und Überdeckung. Minimierung, geschützte Inhalte und Teams-Updates können die Aufnahme verhindern. Dann soll eine klare Fehlermeldung erscheinen, kein aus dem Gespräch erfundener Folieninhalt.
 
@@ -66,7 +66,7 @@ Während der Verarbeitung laufen blaue Nullen und Einsen mit Pausen über das Vi
 
 - `Daten`: Einstellungen, zehn Antworten, Fensterposition, Testresultate und Protokolle. Entsteht beim ersten Start.
 
-- `Modelle`: fertige KI-Modelle und später Geräte-Caches.
+- `Modelle`: fertige Modelle und später Geräte-Caches.
 
 - `Laufzeit`: Python, Node.js, Ollama und Bibliotheken.
 
@@ -76,7 +76,7 @@ Während der Verarbeitung laufen blaue Nullen und Einsen mit Pausen über das Vi
 
 Das frische ZIP enthält keine Unterrichtsverläufe oder privaten Einstellungen. Beim Kürzen eines alten Entwicklungsverlaufs wird einmal `history-before-10.json` gesichert. Diese private Sicherung niemals weitergeben.
 
-Die KI-Anfragen bleiben lokal. Teams und Windows selbst nutzen gegebenenfalls das Internet. Windows und Drittkomponenten können gewöhnliche System-/Benutzer-Caches außerhalb der App anlegen. Portable bedeutet keine separate Installation, nicht eine vollständig isolierte Sandbox.
+Die Anfragen bleiben lokal. Teams und Windows selbst nutzen gegebenenfalls das Internet. Windows und Drittkomponenten können gewöhnliche System-/Benutzer-Caches außerhalb der App anlegen. Portable bedeutet keine separate Installation, nicht eine vollständig isolierte Sandbox.
 
 ## 7. Wenn etwas nicht klappt
 
@@ -96,7 +96,7 @@ Ist die richtige Besprechung geöffnet? Sind Liveuntertitel aktiv? Gibt es neue 
 
 Zusammenfassungen pausieren und die laufende Anfrage beenden lassen. „Schnell“ wählen. Hintergrund-Bildanalyse hat mindestens drei Minuten Abstand und entlädt das Bildmodell danach. Es gibt keinen harten „95%-GPU“-Limiter. Nutzt Text dieselbe GPU, wird Bild-/Textgenerierung serialisiert.
 
-#### KI antwortet falsch oder unvollständig
+#### Antwort falsch oder unvollständig
 
 Wichtige Aussagen am Original prüfen. Eine kürzere, klarere Frage stellen. „Gründlich“ garantiert keine richtige Antwort. Ein erreichtes Denklimit löst keinen kostenpflichtigen Cloud-Versuch aus.
 
@@ -114,4 +114,4 @@ Ein Test auf einer wirklich sauberen zweiten Windows-Installation steht noch aus
 
 ## 9. Demo ohne Teams und ohne Befehle
 
-`LectureCompanion.exe` ist das normale Programm. `LectureCompanionDemo.exe` öffnet durch Doppelklick eine Demonstration mit erfundenen Beispielen, ohne Teams oder KI-Modelle zu starten. Beide EXEs bleiben neben ihren Unterordnern.
+`LectureCompanion.exe` ist das normale Programm. `LectureCompanionDemo.exe` öffnet durch Doppelklick eine Demonstration mit erfundenen Beispielen, ohne Teams oder Modelle zu starten. Beide EXEs bleiben neben ihren Unterordnern.
