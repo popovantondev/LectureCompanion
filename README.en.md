@@ -1,6 +1,26 @@
 # Lecture Companion
 
-[User guide](https://popovantondev.github.io/LectureCompanion/Guide-en.html)
+<!-- public-release:start -->
+Follow Teams lectures with local caption summaries and explanations of a selected slide.
+
+**Windows 11 · x64 · Preview 2.4**
+
+**[Download](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4)** · **[User guide](https://popovantondev.github.io/LectureCompanion/Guide-en.html)** · **[Report a problem](https://github.com/popovantondev/LectureCompanion/issues/new/choose)**
+
+**Requirements and limitations:** Teams Desktop and compatible drivers; recommended: 32 GB RAM, internal SSD and 25 GB free for the parts, ZIP and extraction. EXE is unsigned; a second clean-PC check is pending.
+
+**First steps:** Download all four parts and JoinPortable.cmd into one folder (about 5.8 GB). Run JoinPortable.cmd to verify and combine them, extract the entire ZIP and open LectureCompanion.exe.
+
+**Application files:**
+
+- [`JoinPortable.cmd`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/JoinPortable.cmd)
+- [`LectureCompanion-2.4-Final-Portable.zip.part01`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part01)
+- [`LectureCompanion-2.4-Final-Portable.zip.part02`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part02)
+- [`LectureCompanion-2.4-Final-Portable.zip.part03`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part03)
+- [`LectureCompanion-2.4-Final-Portable.zip.part04`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part04)
+
+**Checksums:** [`SHA256SUMS`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/SHA256SUMS)
+<!-- public-release:end -->
 
 **Windows 11 · Portable · Version 2.4 · Local processing · Unsigned release preview**
 

@@ -1,6 +1,26 @@
 # Lecture Companion
 
-[Руководство пользователя](https://popovantondev.github.io/LectureCompanion/Guide-ru.html)
+<!-- public-release:start -->
+Помогает следить за лекцией в Teams: локально обобщает субтитры и объясняет выбранный слайд.
+
+**Windows 11 · x64 · Предварительный выпуск 2.4**
+
+**[Скачать](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4)** · **[Инструкция](https://popovantondev.github.io/LectureCompanion/Guide-ru.html)** · **[Сообщить об ошибке](https://github.com/popovantondev/LectureCompanion/issues/new/choose)**
+
+**Требования и ограничения:** Teams Desktop и совместимые драйверы; рекомендуются 32 ГБ RAM, внутренняя SSD и 25 ГБ свободного места для частей, ZIP и распаковки. EXE не подписан; проверка на втором чистом ПК не выполнена.
+
+**Первые шаги:** Скачайте четыре части и JoinPortable.cmd в одну папку (всего около 5,8 ГБ). Запустите JoinPortable.cmd для проверки и сборки ZIP, распакуйте целиком и откройте LectureCompanion.exe.
+
+**Файлы приложения:**
+
+- [`JoinPortable.cmd`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/JoinPortable.cmd)
+- [`LectureCompanion-2.4-Final-Portable.zip.part01`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part01)
+- [`LectureCompanion-2.4-Final-Portable.zip.part02`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part02)
+- [`LectureCompanion-2.4-Final-Portable.zip.part03`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part03)
+- [`LectureCompanion-2.4-Final-Portable.zip.part04`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part04)
+
+**Контрольные суммы:** [`SHA256SUMS`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/SHA256SUMS)
+<!-- public-release:end -->
 
 **Windows 11 · Portable · Версия 2.4 · Локальная обработка · Предрелизная версия без подписи**
 

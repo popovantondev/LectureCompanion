@@ -1,6 +1,26 @@
 # Lecture Companion
 
-[Benutzerhandbuch](https://popovantondev.github.io/LectureCompanion/Guide-de.html)
+<!-- public-release:start -->
+Begleitet Teams-Vorlesungen: fasst Untertitel lokal zusammen und erklärt eine ausgewählte Folie.
+
+**Windows 11 · x64 · Vorabversion 2.4**
+
+**[Herunterladen](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4)** · **[Anleitung](https://popovantondev.github.io/LectureCompanion/Guide-de.html)** · **[Fehler melden](https://github.com/popovantondev/LectureCompanion/issues/new/choose)**
+
+**Voraussetzungen und Grenzen:** Teams Desktop und kompatible Treiber; empfohlen: 32 GB RAM, interne SSD und 25 GB freier Platz für Teile, ZIP und Entpacken. EXE nicht signiert; Prüfung auf einem zweiten sauberen PC steht aus.
+
+**Erste Schritte:** Vier Teile und JoinPortable.cmd in denselben Ordner herunterladen (etwa 5,8 GB). JoinPortable.cmd prüft und verbindet sie; ZIP vollständig entpacken und LectureCompanion.exe öffnen.
+
+**App-Dateien:**
+
+- [`JoinPortable.cmd`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/JoinPortable.cmd)
+- [`LectureCompanion-2.4-Final-Portable.zip.part01`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part01)
+- [`LectureCompanion-2.4-Final-Portable.zip.part02`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part02)
+- [`LectureCompanion-2.4-Final-Portable.zip.part03`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part03)
+- [`LectureCompanion-2.4-Final-Portable.zip.part04`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part04)
+
+**Prüfsummen:** [`SHA256SUMS`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/SHA256SUMS)
+<!-- public-release:end -->
 
 **Windows 11 · Portable · Version 2.4 · Lokale Verarbeitung · Release-Preview, nicht signiert**
 
