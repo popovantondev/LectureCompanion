@@ -1,0 +1,92 @@
+{
+  "name": "Lecture Companion",
+  "version": "2.4",
+  "platform": "Windows 11 · x64",
+  "tag": "v2.4",
+  "description": {
+    "ru": "Помогает следить за лекцией в Teams: локально обобщает субтитры и объясняет выбранный слайд.",
+    "de": "Begleitet Teams-Vorlesungen: fasst Untertitel lokal zusammen und erklärt eine ausgewählte Folie.",
+    "en": "Follow Teams lectures with local caption summaries and explanations of a selected slide."
+  },
+  "requirements": {
+    "ru": "Teams Desktop и совместимые драйверы; рекомендуются 32 ГБ RAM, внутренняя SSD и 25 ГБ свободного места для частей, ZIP и распаковки. EXE не подписан; проверка на втором чистом ПК не выполнена.",
+    "de": "Teams Desktop und kompatible Treiber; empfohlen: 32 GB RAM, interne SSD und 25 GB freier Platz für Teile, ZIP und Entpacken. EXE nicht signiert; Prüfung auf einem zweiten sauberen PC steht aus.",
+    "en": "Teams Desktop and compatible drivers; recommended: 32 GB RAM, internal SSD and 25 GB free for the parts, ZIP and extraction. EXE is unsigned; a second clean-PC check is pending."
+  },
+  "start": {
+    "ru": "Скачайте четыре части и JoinPortable.cmd в одну папку (всего около 5,8 ГБ). Запустите JoinPortable.cmd для проверки и сборки ZIP, распакуйте целиком и откройте LectureCompanion.exe.",
+    "de": "Vier Teile und JoinPortable.cmd in denselben Ordner herunterladen (etwa 5,8 GB). JoinPortable.cmd prüft und verbindet sie; ZIP vollständig entpacken und LectureCompanion.exe öffnen.",
+    "en": "Download all four parts and JoinPortable.cmd into one folder (about 5.8 GB). Run JoinPortable.cmd to verify and combine them, extract the entire ZIP and open LectureCompanion.exe."
+  },
+  "schema_version": 1,
+  "repo": "LectureCompanion",
+  "source_url": "https://github.com/popovantondev/LectureCompanion",
+  "readmes": {
+    "de": [
+      "README.md"
+    ],
+    "en": [
+      "README.en.md"
+    ],
+    "ru": [
+      "README.ru.md"
+    ]
+  },
+  "guides": {
+    "ru": "Guide-ru.html",
+    "de": "Guide-de.html",
+    "en": "Guide-en.html"
+  },
+  "help_url": "https://popovantondev.github.io/LectureCompanion/Guide-{lang}.html",
+  "feedback_url": "https://github.com/popovantondev/LectureCompanion/issues/new/choose",
+  "status": "preview",
+  "release_url": "https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4",
+  "assets": [
+    {
+      "name": "JoinPortable.cmd",
+      "size": 1876,
+      "url": "https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/JoinPortable.cmd"
+    },
+    {
+      "name": "LectureCompanion-2.4-Final-Portable.zip.part01",
+      "size": 1800000000,
+      "url": "https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part01"
+    },
+    {
+      "name": "LectureCompanion-2.4-Final-Portable.zip.part02",
+      "size": 1800000000,
+      "url": "https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part02"
+    },
+    {
+      "name": "LectureCompanion-2.4-Final-Portable.zip.part03",
+      "size": 1800000000,
+      "url": "https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part03"
+    },
+    {
+      "name": "LectureCompanion-2.4-Final-Portable.zip.part04",
+      "size": 384722535,
+      "url": "https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part04"
+    },
+    {
+      "name": "SHA256SUMS",
+      "size": 641,
+      "url": "https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/SHA256SUMS"
+    }
+  ],
+  "downloads": [
+    "JoinPortable.cmd",
+    "LectureCompanion-2.4-Final-Portable.zip.part01",
+    "LectureCompanion-2.4-Final-Portable.zip.part02",
+    "LectureCompanion-2.4-Final-Portable.zip.part03",
+    "LectureCompanion-2.4-Final-Portable.zip.part04"
+  ],
+  "checksums": [
+    "SHA256SUMS"
+  ],
+  "version_files": [
+    {
+      "path": "version.json",
+      "pattern": "\"version\"\\s*:\\s*\"([^\"]+)\""
+    }
+  ]
+}
