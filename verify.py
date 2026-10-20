@@ -1,6 +1,12 @@
 """Fast, model-free checks; native UI is opt-in and Windows only."""
 import argparse,ast,json,os,shutil,subprocess,sys
 from pathlib import Path
+from html.parser import HTMLParser
+
+class GuideImages(HTMLParser):
+    def __init__(self):super().__init__();self.sources=[]
+    def handle_starttag(self,tag,attrs):
+        if tag=='img':self.sources.append(dict(attrs).get('src',''))
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--node',default=shutil.which('node'));parser.add_argument('--ui',action='store_true')
@@ -8,6 +14,12 @@ def main():
     if not args.node:raise RuntimeError('Node.js required for developer tests (--node PATH)')
     manifest=json.loads((root/'release-manifest.json').read_text(encoding='utf-8'))
     assert manifest['version']==json.loads((root/'version.json').read_text())['version']=='2.4'
+    for name in manifest['appDocuments']:
+        if name.endswith('.html'):
+            page=GuideImages();page.feed((root/name).read_text(encoding='utf-8'))
+            for source in page.sources:
+                if source.startswith(('https://','http://','data:')):continue
+                assert (root/name).parent.joinpath(source).is_file(),'Missing guide image: '+name
     for name in manifest['sourceFiles']:
         assert (root/name).is_file(),'Missing release source: '+name
         assert (root/name).resolve().is_relative_to(root.resolve())

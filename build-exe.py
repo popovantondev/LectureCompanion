@@ -33,6 +33,9 @@ def main():
     for name in manifest['appDocuments']+['portable.example.json','version.json']:
         destination=target/name;destination.parent.mkdir(parents=True,exist_ok=True)
         shutil.copy2(source/name,destination)
+    # The same relative illustration path works in source and portable guides.
+    (target/'assets').mkdir(exist_ok=True)
+    shutil.copy2(source/'assets'/'companion.png',target/'assets'/'companion.png')
     # Retain dependency notices in the frozen UI as well as the external runtimes.
     notices=target/'_internal'/'licenses';notices.mkdir(parents=True,exist_ok=True)
     for package in ('Pillow','pyinstaller'):
