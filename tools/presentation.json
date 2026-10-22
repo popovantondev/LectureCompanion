@@ -1,0 +1,37 @@
+{
+  "folder": ".",
+  "shots": {
+    "ru": "docs/screenshots/app-ru.png",
+    "de": "docs/screenshots/app-de.png",
+    "en": "docs/screenshots/app-en.png"
+  },
+  "icon": "presentation-icon.png",
+  "palette": {
+    "accent": "#326aaa",
+    "tint": "#e9f1fc",
+    "hero": "#182f4b",
+    "hero-end": "#355d88"
+  },
+  "flow": {
+    "ru": [
+      "Скачать и собрать 4 части",
+      "Включить субтитры Teams",
+      "Разобрать текст или слайд"
+    ],
+    "de": [
+      "4 Teile laden und zusammenfügen",
+      "Teams-Untertitel einschalten",
+      "Text oder Folie besprechen"
+    ],
+    "en": [
+      "Download and join 4 parts",
+      "Enable Teams captions",
+      "Review text or a slide"
+    ]
+  },
+  "notice": {
+    "ru": "Все четыре части ZIP и JoinPortable.cmd должны находиться в одной папке. Скрипт проверяет размеры и SHA-256. После сборки распакуйте архив на внутренний SSD.",
+    "de": "Alle vier ZIP-Teile und JoinPortable.cmd müssen im selben Ordner liegen. Das Skript prüft Größen und SHA-256. Danach das Archiv auf einer internen SSD entpacken.",
+    "en": "Place all four ZIP parts and JoinPortable.cmd in the same folder. The script checks sizes and SHA-256. Then extract the archive to an internal SSD."
+  }
+}
