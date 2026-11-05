@@ -41,6 +41,14 @@ Lecture Companion helps you follow IT classes in Microsoft Teams. It briefly sum
 - Prefers a compatible Intel NPU and otherwise uses a local CPU/GPU fallback.
 - Supports German, English, and Russian for the interface and new answers.
 
+## Legal notes: only with the consent of everyone involved
+
+Lecture Companion reads live captions from the Teams desktop app and, on request, analyzes a part of the shared screen. Before every meeting, obtain the consent of everyone involved (lecturers and participants) and follow the rules of your organization. If someone declines or withdraws consent, pause the summaries or close the app.
+
+Even though the app does not record audio: secretly recording the non-publicly spoken word can be a criminal offence under [§ 201 of the German Criminal Code (StGB)](https://www.gesetze-im-internet.de/stgb/__201.html), and captions and slide images from a meeting can contain personal data under the [GDPR (DSGVO)](https://www.edpb.europa.eu/sme/be-compliant/process-personal-data-lawfully_en). Clarify purpose, scope and storage location and secure a legal basis in advance, usually consent.
+
+The app processes captions and slide images locally and stores the last ten answers in the “Daten” folder; it writes nothing to the Teams chat. Do not share real captions, screenshots or logs in public issues. This project does not establish lawfulness and does not guarantee data-protection compliance.
+
 ## Download and start
 
 Release 2.4 is publicly available as a pre-release. Download all four ZIP parts and `JoinPortable.cmd` from the [v2.4 release page](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4) and save them in the same folder. Double-click `JoinPortable.cmd`; it checks the part sizes and SHA-256 without installing anything. Extract the resulting ZIP fully to an internal SSD, then run `LectureCompanion.exe`. The [English step-by-step guide](https://popovantondev.github.io/LectureCompanion/Guide-en.html) explains how to use the app.
@@ -51,7 +59,7 @@ Release 2.4 is publicly available as a pre-release. Download all four ZIP parts 
 
 ## Privacy and limitations
 
-Captions and requested slide images are processed locally. The app has no cloud fallback and does not automatically upload them. Meeting content may contain personal data: follow your organization’s rules and do not share real captions or screenshots.
+Captions and requested slide images are processed locally. The app has no cloud fallback and does not automatically upload them. Meeting content can contain personal data; see “Legal notes” above.
 
 Answers can be wrong. Protected or minimized Teams windows and Teams updates may prevent caption or slide access. Performance and compatibility depend on the PC and its drivers. The EXE is unsigned, and a clean second-Windows-PC test is still outstanding.
 

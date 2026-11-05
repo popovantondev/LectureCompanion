@@ -4,15 +4,15 @@
 
 ## 1. In fünf Schritten starten
 
-- Speichere das ganze ZIP auf dem PC. Rechtsklick im Explorer → **Alle extrahieren…**.
+- Speichern Sie das ganze ZIP auf dem PC. Rechtsklick im Explorer → **Alle extrahieren…**.
 
-- Entpacke es auf eine **interne SSD**, in einen Ordner mit Schreibrechten, z. B. Dokumente/LC2.4. Nicht direkt im ZIP, unter „Programme“ oder auf einem langsamen USB-Stick starten.
+- Entpacken Sie es auf eine **interne SSD**, in einen Ordner mit Schreibrechten, z. B. Dokumente/LC2.4. Nicht direkt im ZIP, unter „Programme“ oder auf einem langsamen USB-Stick starten.
 
-- Öffne den entpackten Ordner. Neben `LectureCompanion.exe` müssen `_internal`, `Laufzeit`, `Modelle` und `portable.json` liegen.
+- Öffnen Sie den entpackten Ordner. Neben `LectureCompanion.exe` müssen `_internal`, `Laufzeit`, `Modelle` und `portable.json` liegen.
 
-- Doppelklicke **LectureCompanion.exe**. Kein Setup, kein Terminal, kein API-Schlüssel und kein Modelldownload sind für dieses vollständige Paket nötig.
+- Doppelklicken Sie auf **LectureCompanion.exe**. Kein Setup, kein Terminal, kein API-Schlüssel und kein Modelldownload sind für dieses vollständige Paket nötig.
 
-- Warte auf den Roboter. Startphase und Zeit stehen unter ihm. Der erste Start kann mehrere Minuten dauern. Starte nicht mehrere Kopien. Escape bricht den Start ab.
+- Warten Sie auf den Roboter. Startphase und Zeit stehen unter ihm. Der erste Start kann mehrere Minuten dauern. Starten Sie nicht mehrere Kopien. Escape bricht den Start ab.
 
 ## 2. Voraussetzungen und Gerätetest
 
@@ -24,9 +24,9 @@ Treiber gehören zu Windows und können nicht einfach im ZIP mitlaufen. Der Assi
 
 ## 3. Teams vorbereiten
 
-- Öffne die **Desktop-App** von Teams und die Besprechung.
+- Öffnen Sie die **Desktop-App** von Teams und die Besprechung.
 
-- Schalte im Besprechungsmenü die **Liveuntertitel** ein. Der Assistent liest den Text direkt; er zeichnet kein Mikrofon auf.
+- Schalten Sie im Besprechungsmenü die **Liveuntertitel** ein. Der Assistent liest den Text direkt; er zeichnet kein Mikrofon auf.
 
 - Für Folien muss eine echte Bildschirm-/Fensterfreigabe laufen. Chat-Bilder sind keine Folien.
 
@@ -34,7 +34,15 @@ Treiber gehören zu Windows und können nicht einfach im ZIP mitlaufen. Der Assi
 
 Aufnahmen berücksichtigen Fensterbewegung und Überdeckung. Minimierung, geschützte Inhalte und Teams-Updates können die Aufnahme verhindern. Dann soll eine klare Fehlermeldung erscheinen, kein aus dem Gespräch erfundener Folieninhalt.
 
-Nutze diese Funktion nur mit der erforderlichen Erlaubnis deiner Organisation. Der Begleiter schreibt nichts in den Teams-Chat.
+Nutzen Sie diese Funktion nur mit der erforderlichen Erlaubnis Ihrer Organisation. Der Begleiter schreibt nichts in den Teams-Chat.
+
+## Rechtliches: nur mit Zustimmung aller Beteiligten
+
+Lecture Companion liest Liveuntertitel aus der Teams-Desktop-App und wertet auf Knopfdruck einen Ausschnitt der Bildschirmfreigabe aus. Holen Sie vor jedem Meeting die Einwilligung aller Beteiligten ein (Lehrende und Teilnehmende) und beachten Sie die Regeln Ihrer Organisation. Bei Ablehnung oder Widerruf pausieren Sie die Zusammenfassungen oder beenden die App.
+
+Auch wenn die App keinen Ton aufzeichnet: Das heimliche Aufzeichnen des nichtöffentlich gesprochenen Wortes kann nach [§ 201 StGB](https://www.gesetze-im-internet.de/stgb/__201.html) strafbar sein, und Untertitel sowie Folienbilder aus einem Meeting können personenbezogene Daten im Sinne der [DSGVO](https://www.edpb.europa.eu/sme/be-compliant/process-personal-data-lawfully_en) enthalten. Klären Sie Zweck, Umfang und Speicherort und stellen Sie vorab eine Rechtsgrundlage sicher, in der Regel die Einwilligung.
+
+Die App verarbeitet Untertitel und Folienbilder lokal und speichert die letzten zehn Antworten im Ordner „Daten“; sie schreibt nichts in den Teams-Chat. Teilen Sie keine echten Untertitel, Screenshots oder Protokolle in öffentlichen Issues. Dieses Projekt stellt die Rechtmäßigkeit nicht fest und garantiert keine Datenschutzkonformität.
 
 ## 4. Bedienelemente
 
@@ -54,7 +62,7 @@ Nutze diese Funktion nur mit der erforderlichen Erlaubnis deiner Organisation. D
 
 ## 5. Sprache, Tempo und Klang
 
-**Deutsch ist Standard.** Im Roboter-Menü wählst du DE, EN oder RU. Neue Antworten enthalten zuerst die Sprache der Unterrichtsuntertitel und danach die Sprache der Oberfläche. Sind beide gleich, gibt es nur einen Abschnitt. DE/EN/RU werden lokal erkannt; bei unklarer Sprache ohne bisherigen Kontext wird nur die Oberflächensprache verwendet. Fragen und Folien verwenden dieselbe Regel; pro Antwort erfolgt kein zusätzlicher Übersetzungsaufruf. Alte Antworten bleiben unverändert. Eine bereits angenommene Frage wird in ihrer ursprünglichen Sprache fertig beantwortet.
+**Deutsch ist Standard.** Im Roboter-Menü wählen Sie DE, EN oder RU. Neue Antworten enthalten zuerst die Sprache der Unterrichtsuntertitel und danach die Sprache der Oberfläche. Sind beide gleich, gibt es nur einen Abschnitt. DE/EN/RU werden lokal erkannt; bei unklarer Sprache ohne bisherigen Kontext wird nur die Oberflächensprache verwendet. Fragen und Folien verwenden dieselbe Regel; pro Antwort erfolgt kein zusätzlicher Übersetzungsaufruf. Alte Antworten bleiben unverändert. Eine bereits angenommene Frage wird in ihrer ursprünglichen Sprache fertig beantwortet.
 
 Die Regler-Schaltfläche bietet **Schnell** (kurz, ohne zusätzliches Denken), **Normal** und **Gründlich** (zusätzliches Denken nur bei eigenen Textfragen). Automatische Zusammenfassungen bleiben kurz. Ein Wechsel unterbricht keine laufende Anfrage.
 
@@ -82,11 +90,11 @@ Die Anfragen bleiben lokal. Teams und Windows selbst nutzen gegebenenfalls das I
 
 #### Nichts erscheint / Windows blockiert die Datei
 
-Alles entpackt? Alle Unterordner neben der EXE? Nutze eine beschreibbare interne SSD. Prüfe die Herkunft und die mitgelieferte Prüfsumme. Schutzfunktionen nicht abschalten. Die EXE ist nicht digital signiert; auf verwalteten PCs kann IT-Freigabe nötig sein.
+Alles entpackt? Alle Unterordner neben der EXE? Nutzen Sie eine beschreibbare interne SSD. Prüfen Sie die Herkunft und die mitgelieferte Prüfsumme. Schutzfunktionen nicht abschalten. Die EXE ist nicht digital signiert; auf verwalteten PCs kann IT-Freigabe nötig sein.
 
 #### Start dauert sehr lange
 
-Erststart und Gerätetest brauchen Zeit. Achte auf Phase und Dauer. Schließe speicherintensive Programme; starte keine zweite Kopie. Details stehen unter `Daten/npu.log`, `Daten/server.log` und `Daten/device-benchmark.json`.
+Erststart und Gerätetest brauchen Zeit. Achten Sie auf Phase und Dauer. Schließen Sie speicherintensive Programme; starten Sie keine zweite Kopie. Details stehen unter `Daten/npu.log`, `Daten/server.log` und `Daten/device-benchmark.json`.
 
 #### Keine Zusammenfassung / kein Screenshot
 

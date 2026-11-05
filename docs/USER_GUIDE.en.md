@@ -34,6 +34,14 @@ Drivers are OS components that cannot simply run from this ZIP. No drivers or pa
 
 Capture handles moving/covering the window. Minimization, protected content or Teams updates may prevent capture. Missing slides should produce an error, not content guessed from speech. Use this only with the required organizational permission. The assistant never posts to Teams chat.
 
+## Legal notes: only with the consent of everyone involved
+
+Lecture Companion reads live captions from the Teams desktop app and, on request, analyzes a part of the shared screen. Before every meeting, obtain the consent of everyone involved (lecturers and participants) and follow the rules of your organization. If someone declines or withdraws consent, pause the summaries or close the app.
+
+Even though the app does not record audio: secretly recording the non-publicly spoken word can be a criminal offence under [§ 201 of the German Criminal Code (StGB)](https://www.gesetze-im-internet.de/stgb/__201.html), and captions and slide images from a meeting can contain personal data under the [GDPR (DSGVO)](https://www.edpb.europa.eu/sme/be-compliant/process-personal-data-lawfully_en). Clarify purpose, scope and storage location and secure a legal basis in advance, usually consent.
+
+The app processes captions and slide images locally and stores the last ten answers in the “Daten” folder; it writes nothing to the Teams chat. Do not share real captions, screenshots or logs in public issues. This project does not establish lawfulness and does not guarantee data-protection compliance.
+
 ## 4. Controls
 
 - **Click:** a short explanation of new speech. A slide is included only if you explicitly enable the click-to-analyze option.

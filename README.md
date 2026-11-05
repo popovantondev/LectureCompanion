@@ -30,7 +30,7 @@ Begleitet Teams-Vorlesungen: fasst Untertitel lokal zusammen und erklärt eine a
 
 *Synthetische Demo. Kein echtes Meeting, keine echten Untertitel und keine Teilnehmerdaten.*
 
-Lecture Companion hilft dir, einer IT-Vorlesung in Microsoft Teams zu folgen. Die App fasst neue Liveuntertitel kurz zusammen und erklärt auf Wunsch die aktuell geteilte Folie. Die Verarbeitung erfolgt lokal auf dem PC — ohne API-Schlüssel oder Cloud-Fallback.
+Lecture Companion hilft Ihnen, einer IT-Vorlesung in Microsoft Teams zu folgen. Die App fasst neue Liveuntertitel kurz zusammen und erklärt auf Wunsch die aktuell geteilte Folie. Die Verarbeitung erfolgt lokal auf dem PC — ohne API-Schlüssel oder Cloud-Fallback.
 
 ## Was die App kann
 
@@ -41,9 +41,17 @@ Lecture Companion hilft dir, einer IT-Vorlesung in Microsoft Teams zu folgen. Di
 - Verwendet bevorzugt einen kompatiblen Intel NPU, sonst einen lokalen CPU-/GPU-Fallback.
 - Unterstützt Deutsch, Englisch und Russisch für Oberfläche und neue Antworten.
 
+## Rechtliches: nur mit Zustimmung aller Beteiligten
+
+Lecture Companion liest Liveuntertitel aus der Teams-Desktop-App und wertet auf Knopfdruck einen Ausschnitt der Bildschirmfreigabe aus. Holen Sie vor jedem Meeting die Einwilligung aller Beteiligten ein (Lehrende und Teilnehmende) und beachten Sie die Regeln Ihrer Organisation. Bei Ablehnung oder Widerruf pausieren Sie die Zusammenfassungen oder beenden die App.
+
+Auch wenn die App keinen Ton aufzeichnet: Das heimliche Aufzeichnen des nichtöffentlich gesprochenen Wortes kann nach [§ 201 StGB](https://www.gesetze-im-internet.de/stgb/__201.html) strafbar sein, und Untertitel sowie Folienbilder aus einem Meeting können personenbezogene Daten im Sinne der [DSGVO](https://www.edpb.europa.eu/sme/be-compliant/process-personal-data-lawfully_en) enthalten. Klären Sie Zweck, Umfang und Speicherort und stellen Sie vorab eine Rechtsgrundlage sicher, in der Regel die Einwilligung.
+
+Die App verarbeitet Untertitel und Folienbilder lokal und speichert die letzten zehn Antworten im Ordner „Daten“; sie schreibt nichts in den Teams-Chat. Teilen Sie keine echten Untertitel, Screenshots oder Protokolle in öffentlichen Issues. Dieses Projekt stellt die Rechtmäßigkeit nicht fest und garantiert keine Datenschutzkonformität.
+
 ## Download und Start
 
-Das Release 2.4 ist als Vorabversion öffentlich verfügbar. Lade alle vier ZIP-Teile und `JoinPortable.cmd` von der [Release-Seite v2.4](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4) herunter und speichere sie im selben Ordner. Starte `JoinPortable.cmd` per Doppelklick; es prüft Dateigrößen und SHA-256, ohne etwas zu installieren. Entpacke das erzeugte ZIP vollständig auf eine interne SSD und starte `LectureCompanion.exe`. Die [deutsche Schritt-für-Schritt-Anleitung](https://popovantondev.github.io/LectureCompanion/Guide-de.html) erklärt die Nutzung.
+Das Release 2.4 ist als Vorabversion öffentlich verfügbar. Laden Sie alle vier ZIP-Teile und `JoinPortable.cmd` von der [Release-Seite v2.4](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4) herunter und speichern Sie sie im selben Ordner. Starten Sie `JoinPortable.cmd` per Doppelklick; es prüft Dateigrößen und SHA-256, ohne etwas zu installieren. Entpacken Sie das erzeugte ZIP vollständig auf eine interne SSD und starten Sie `LectureCompanion.exe`. Die [deutsche Schritt-für-Schritt-Anleitung](https://popovantondev.github.io/LectureCompanion/Guide-de.html) erklärt die Nutzung.
 
 - [Deutsche Schritt-für-Schritt-Anleitung](docs/USER_GUIDE.de.md)
 - Windows 11 x64; 32 GB RAM empfohlen. Kompatible Treiber und die Teams-Desktop-App müssen bereits installiert sein.
@@ -51,7 +59,7 @@ Das Release 2.4 ist als Vorabversion öffentlich verfügbar. Lade alle vier ZIP-
 
 ## Datenschutz und Grenzen
 
-Untertitel und angeforderte Folienbilder werden lokal verarbeitet. Die App bietet keinen Cloud-Fallback und lädt sie nicht automatisch hoch. Meeting-Inhalte können personenbezogene Daten enthalten: beachte die Regeln deiner Organisation und teile keine echten Untertitel oder Screenshots.
+Untertitel und angeforderte Folienbilder werden lokal verarbeitet. Die App bietet keinen Cloud-Fallback und lädt sie nicht automatisch hoch. Meeting-Inhalte können personenbezogene Daten enthalten; Näheres steht unter „Rechtliches“.
 
 Antworten können Fehler enthalten. Geschützte oder minimierte Teams-Fenster sowie Änderungen an Teams können den Zugriff auf Untertitel oder Folien verhindern. Gerätegeschwindigkeit und Kompatibilität hängen von PC und Treibern ab. Die EXE ist nicht signiert; ein Test auf einem sauberen zweiten Windows-PC steht noch aus.
 

@@ -6,9 +6,17 @@
     "en": "docs/screenshots/app-en.png"
   },
   "icon": "presentation-icon.png",
+  "stack": "Python · JavaScript",
   "palette": {
     "accent": "#326aaa",
     "tint": "#e9f1fc",
+    "hero": "#182f4b",
+    "hero-end": "#355d88"
+  },
+  "palette_dark": {
+    "accent": "#7db4f0",
+    "accent-ink": "#07203f",
+    "tint": "#12263f",
     "hero": "#182f4b",
     "hero-end": "#355d88"
   },
@@ -33,5 +41,177 @@
     "ru": "Все четыре части ZIP и JoinPortable.cmd должны находиться в одной папке. Скрипт проверяет размеры и SHA-256. После сборки распакуйте архив на внутренний SSD.",
     "de": "Alle vier ZIP-Teile und JoinPortable.cmd müssen im selben Ordner liegen. Das Skript prüft Größen und SHA-256. Danach das Archiv auf einer internen SSD entpacken.",
     "en": "Place all four ZIP parts and JoinPortable.cmd in the same folder. The script checks sizes and SHA-256. Then extract the archive to an internal SSD."
+  },
+  "legal": {
+    "de": {
+      "title": "Rechtliches: nur mit Zustimmung aller Beteiligten",
+      "text": "Die App liest Teams-Liveuntertitel und wertet auf Knopfdruck einen Ausschnitt der Bildschirmfreigabe aus. Holen Sie vorab die Einwilligung aller Beteiligten ein und beachten Sie die Regeln Ihrer Organisation. Das heimliche Aufzeichnen des nichtöffentlich gesprochenen Wortes kann nach § 201 StGB strafbar sein; Meeting-Inhalte können personenbezogene Daten im Sinne der DSGVO enthalten.",
+      "link": "Einwilligung und Daten →"
+    },
+    "en": {
+      "title": "Legal notes: only with the consent of everyone involved",
+      "text": "The app reads Teams live captions and, on request, analyzes a part of the shared screen. Obtain the consent of everyone involved beforehand and follow your organization’s rules. Secretly recording the non-publicly spoken word can be a criminal offence under § 201 of the German Criminal Code (StGB); meeting content can contain personal data under the GDPR (DSGVO).",
+      "link": "Consent and data →"
+    },
+    "ru": {
+      "title": "Правовые замечания: только с согласия всех участников",
+      "text": "Приложение читает живые субтитры Teams и по нажатию кнопки анализирует фрагмент демонстрации экрана. Заранее получите согласие всех участников и соблюдайте правила своей организации. Тайная запись непубличной речи может быть уголовно наказуема по § 201 StGB; содержимое встреч может включать персональные данные в смысле DSGVO (GDPR).",
+      "link": "Согласие и данные →"
+    }
+  },
+  "bento": {
+    "de": {
+      "inst_text": "Die Schritte aus „In fünf Schritten starten“ und der README (Windows 11 x64).",
+      "term": [
+        [
+          "ps",
+          "1. Vier ZIP-Teile und JoinPortable.cmd von der Release-Seite in einen Ordner laden (ca. 5,8 GB)"
+        ],
+        [
+          "ps",
+          "2. JoinPortable.cmd doppelklicken: prüft Größen und SHA-256, installiert nichts"
+        ],
+        [
+          "ps",
+          "3. Das erzeugte ZIP vollständig auf eine interne SSD entpacken"
+        ],
+        [
+          "ps",
+          "4. LectureCompanion.exe starten (der erste Start kann dauern)"
+        ],
+        [
+          "ok",
+          "5. In Teams die Liveuntertitel einschalten"
+        ],
+        [
+          "dim",
+          "   Ohne Teams ausprobieren: LectureCompanionDemo.exe"
+        ]
+      ],
+      "tile": {
+        "title": "Ihre Daten",
+        "text": "Untertitel und Folienbilder werden lokal verarbeitet, ohne API-Schlüssel und ohne Cloud-Fallback. Nur Teams und Windows selbst nutzen gegebenenfalls das Internet.",
+        "live": "Läuft lokal"
+      },
+      "features": [
+        "Neue Untertitel getrennt vom Kontext erkennen",
+        "Folienausschnitt auf Knopfdruck",
+        "Antwort zuerst in der Vorlesungssprache",
+        "Bis zu zehn Antworten als Kartenstapel",
+        "Intel NPU bevorzugt, sonst CPU/GPU",
+        "Oberfläche DE · EN · RU",
+        "Fragen direkt stellen",
+        "Synthetische Demo ohne Teams"
+      ],
+      "checks": [
+        "JoinPortable.cmd prüft Größen und SHA-256; Prüfsummen (SHA256SUMS) im Release",
+        "Modellfreie Prüfungen auf GitHub Actions (Windows): verify.py",
+        "Prüfbericht mit Messwerten eines PCs (VERIFICATION.md)",
+        "Version {v} mit Änderungsprotokoll (CHANGELOG)",
+        "Anleitung auf Deutsch, Englisch und Russisch"
+      ]
+    },
+    "en": {
+      "inst_text": "The steps from “First launch” and the README (Windows 11 x64).",
+      "term": [
+        [
+          "ps",
+          "1. Download the four ZIP parts and JoinPortable.cmd from the release page into one folder (about 5.8 GB)"
+        ],
+        [
+          "ps",
+          "2. Double-click JoinPortable.cmd: it checks sizes and SHA-256 and installs nothing"
+        ],
+        [
+          "ps",
+          "3. Extract the resulting ZIP completely to an internal SSD"
+        ],
+        [
+          "ps",
+          "4. Start LectureCompanion.exe (the first start can take a while)"
+        ],
+        [
+          "ok",
+          "5. Turn on live captions in Teams"
+        ],
+        [
+          "dim",
+          "   Try it without Teams: LectureCompanionDemo.exe"
+        ]
+      ],
+      "tile": {
+        "title": "Your data",
+        "text": "Captions and slide images are processed locally, with no API key and no cloud fallback. Only Teams and Windows themselves may use the internet.",
+        "live": "Runs locally"
+      },
+      "features": [
+        "Detects new captions separately from context",
+        "Slide capture on demand",
+        "Answers first in the lecture language",
+        "Up to ten answers as a card stack",
+        "Intel NPU preferred, else CPU/GPU",
+        "Interface DE · EN · RU",
+        "Ask questions directly",
+        "Synthetic demo without Teams"
+      ],
+      "checks": [
+        "JoinPortable.cmd checks sizes and SHA-256; checksums (SHA256SUMS) in the release",
+        "Model-free checks on GitHub Actions (Windows): verify.py",
+        "Validation report with measurements from one PC (VERIFICATION.md)",
+        "Version {v} with changelog",
+        "Guide in German, English and Russian"
+      ]
+    },
+    "ru": {
+      "inst_text": "Шаги из раздела «Первый запуск» и README (Windows 11 x64).",
+      "term": [
+        [
+          "ps",
+          "1. Скачать четыре части ZIP и JoinPortable.cmd со страницы выпуска в одну папку (около 5,8 ГБ)"
+        ],
+        [
+          "ps",
+          "2. Дважды щёлкнуть JoinPortable.cmd: он проверяет размеры и SHA-256, ничего не устанавливает"
+        ],
+        [
+          "ps",
+          "3. Распаковать полученный ZIP целиком на внутренний SSD"
+        ],
+        [
+          "ps",
+          "4. Запустить LectureCompanion.exe (первый запуск может быть долгим)"
+        ],
+        [
+          "ok",
+          "5. Включить в Teams живые субтитры"
+        ],
+        [
+          "dim",
+          "   Попробовать без Teams: LectureCompanionDemo.exe"
+        ]
+      ],
+      "tile": {
+        "title": "Ваши данные",
+        "text": "Субтитры и изображения слайдов обрабатываются локально, без ключей API и облачной подстраховки. Интернет при необходимости используют только сами Teams и Windows.",
+        "live": "Работает локально"
+      },
+      "features": [
+        "Новые субтитры отдельно от контекста",
+        "Снимок слайда по нажатию кнопки",
+        "Ответ сначала на языке лекции",
+        "До десяти ответов в виде стопки карточек",
+        "Intel NPU в приоритете, иначе CPU/GPU",
+        "Интерфейс DE · EN · RU",
+        "Вопросы напрямую",
+        "Демо без Teams с искусственными данными"
+      ],
+      "checks": [
+        "JoinPortable.cmd проверяет размеры и SHA-256; контрольные суммы (SHA256SUMS) в релизе",
+        "Проверки без моделей в GitHub Actions (Windows): verify.py",
+        "Отчёт о проверке с замерами на одном ПК (VERIFICATION.md)",
+        "Версия {v} и журнал изменений",
+        "Руководство на немецком, английском и русском"
+      ]
+    }
   }
 }

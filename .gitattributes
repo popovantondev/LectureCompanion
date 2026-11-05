@@ -7,3 +7,5 @@
 *.ps1 text eol=crlf
 *.png binary
 
+assets/kit/* text eol=lf
+assets/kit/* linguist-vendored
