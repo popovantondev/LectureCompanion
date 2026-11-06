@@ -137,7 +137,7 @@
     });
     return best;
   }
-  var unlocked = false, ctx = null, soundOn = true, lastSound = {}, buffers = {};
+  var unlocked = false, ctx = null, lastSound = {}, buffers = {};
   function ensureCtx() {
     if (ctx || reduced()) return ctx;
     try { var C = window.AudioContext || window.webkitAudioContext; if (C) ctx = new C(); } catch (e) { ctx = null; }
@@ -176,7 +176,7 @@
     return buffer;
   }
   function play(kind) {
-    if (!unlocked || !soundOn || reduced()) return;
+    if (!unlocked || reduced()) return;
     var c = ensureCtx(), now = performance.now();
     if (!c || now - (lastSound[kind] || -1e4) < 700) return;
     lastSound[kind] = now;
@@ -189,7 +189,6 @@
     } catch (e) { }
   }
   var EYES = [{ x: 481, y: 382 }, { x: 717, y: 382 }], K = 9.08, COVER = '#06080c';
-  var ICON_SOUND = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="robot-on" d="M16.5 9a4 4 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/><path class="robot-off" d="M17 9.5l5 5M22 9.5l-5 5"/></svg>';
   var ICON_SEND = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.500l6.500 6.500-6.500 6.500"/></svg>';
   var scenes = 0;
   function el(tag, cls) { var n = doc.createElement(tag); if (cls) n.className = cls; return n; }
@@ -225,20 +224,17 @@
       '<div class="robot-pop" id="robot-pop-' + id + '"><form class="robot-pill" autocomplete="off"><label class="robot-sr" for="' + qid + '">' + T.label +
       '</label><input type="text" id="' + qid + '" name="q" maxlength="300" placeholder="' + T.ph + '" enterkeyhint="send"><button class="robot-send" type="submit" aria-label="' +
       T.send + '">' + ICON_SEND + '</button></form><div class="robot-answer" hidden aria-live="polite" aria-busy="false"><p class="robot-typed" aria-hidden="true"></p><span class="robot-sr"></span>' +
-      '<div class="robot-links"></div><button class="robot-close" type="button" aria-label="' + T.close + '">×</button></div></div>' +
-      '<button class="robot-sound" type="button" aria-pressed="true" title="' + T.snd + '" aria-label="' + T.snd + '">' + ICON_SOUND + '</button>');
+      '<div class="robot-links"></div><button class="robot-close" type="button" aria-label="' + T.close + '">×</button></div></div>');
     function q(sel) { return stage.querySelector(sel); }
     var stack = dock ? stage.querySelector('.robot-stack') : null, meta = null;
     var form = q('.robot-pill'), input = q('input'), answer = q('.robot-answer'), typed = q('.robot-typed'),
-        spoken = q('.robot-answer .robot-sr'), linkBox = q('.robot-links'), closeBtn = q('.robot-close'), snd = q('.robot-sound');
+        spoken = q('.robot-answer .robot-sr'), linkBox = q('.robot-links'), closeBtn = q('.robot-close');
     if (dock) {
-      lift.appendChild(snd);
       meta = el('p', 'robot-meta');
       answer.insertBefore(meta, typed);
       stack.appendChild(answer);
       stage.classList.add('is-open');
     }
-    snd.addEventListener('click', function () { soundOn = !soundOn; snd.setAttribute('aria-pressed', String(soundOn)); });
     var svgRoot = hit.querySelector('svg');
     function all(name) { return [].slice.call(svgRoot.querySelectorAll('[data-eye="' + name + '"]')); }
     var lids = all('lid'), lines = all('line'), pulses = all('pulse'), bits = all('bit');
@@ -401,6 +397,18 @@
         var busy = state !== 'idle' || !answer.hidden || input.value || stage.contains(doc.activeElement) && doc.activeElement !== hit;
         if (!busy && !stage.matches(':hover')) close(false);
       }, 450);
+    }
+    // Dock (landing preview): the robot is always open; hover, focus or touch lifts it and plays the reveal sound.
+    function lift_(on) {
+      if (!dock) return;
+      if (on && !stage.classList.contains('is-lift')) play('reveal');
+      stage.classList.toggle('is-lift', on);
+    }
+    if (dock) {
+      lift.addEventListener('pointerenter', function () { lift_(true); });
+      lift.addEventListener('pointerleave', function () { if (!lift.contains(doc.activeElement) || !doc.activeElement.matches(':focus-visible')) lift_(false); });
+      hit.addEventListener('focus', function () { if (!quiet) lift_(true); });
+      hit.addEventListener('blur', function () { lift_(false); });
     }
     stage.addEventListener('pointerenter', function () { open(false); });
     stage.addEventListener('pointerleave', leaveSoon);

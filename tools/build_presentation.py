@@ -135,8 +135,8 @@ def page_css(cfg):
         + '.ppk-start h2{margin:0 0 8px}.ppk-start p{margin:0;color:var(--ppk-muted)}.ppk-start .ppk-actions{margin:0}\n'
         + '.ppk-notice{margin:14px 0 0;padding:12px 14px;border-radius:var(--ppk-radius-m);background:var(--ppk-tint);color:var(--ppk-ink);font-size:15px}\n'
         + '.ppk-stage a{display:grid;place-items:center;max-width:100%}\n'
-        + '.ppk-legal{margin:28px 0;padding:18px 22px;border:1px solid var(--ppk-line);border-left:4px solid var(--ppk-accent);border-radius:var(--ppk-radius-m);background:var(--ppk-tint)}\n'
-        + '.ppk-legal h2{margin:0 0 8px;font-size:1.15rem}.ppk-legal p{margin:0}\n'
+        + '.ppk-legal{margin:18px 0;padding:10px 16px;border:1px solid var(--ppk-line);border-left:4px solid var(--ppk-accent);border-radius:var(--ppk-radius-m);background:var(--ppk-tint);font-size:13px;line-height:1.5}\n'
+        + '.ppk-legal h2{margin:0 0 4px;font-size:14px;line-height:1.4}.ppk-legal p{margin:0}\n'
         + '@media (max-width:760px){.ppk-start{grid-template-columns:1fr;padding:22px}}\n')
 
 
@@ -201,7 +201,7 @@ def scene_html(cfg, lang):
 def robot_head(cfg):
     if not cfg.get('robot'):
         return ''
-    return '<link rel="stylesheet" href="assets/robot.css">\n<script src="assets/robot.js" defer></script>\n'
+    return '<link rel="stylesheet" href="assets/robot.css?v=r3">\n<script src="assets/robot.js?v=r3" defer></script>\n'
 
 
 def pill_html(d, lang):
