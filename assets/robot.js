@@ -188,7 +188,7 @@
       src.start();
     } catch (e) { }
   }
-  var EYES = [{ x: 481, y: 382 }, { x: 717, y: 382 }], K = 9.08, COVER = '#06080c';
+  var EYES = [{ x: 481, y: 382 }, { x: 717, y: 382 }], K = 9.08, COVER = '#06080c', BITS = 14, GAP = 0.14;
   var ICON_SEND = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.500l6.500 6.500-6.500 6.500"/></svg>';
   var scenes = 0;
   function el(tag, cls) { var n = doc.createElement(tag); if (cls) n.className = cls; return n; }
@@ -197,10 +197,9 @@
     EYES.forEach(function (e) {
       s += '<ellipse data-eye="lid" cx="' + e.x + '" cy="' + e.y + '" rx="' + 9 * K + '" ry="' + 14 * K + '" fill="url(#robot-cov-' + id + ')"/>';
       s += '<line data-eye="line" x1="' + (e.x - 4 * K) + '" x2="' + (e.x + 4 * K) + '" y1="' + e.y + '" y2="' + e.y + '" stroke="#8EE7FF" stroke-width="' + 2 * K + '" stroke-linecap="round"/>';
-      s += '<ellipse data-eye="pulse" cx="' + e.x + '" cy="' + e.y + '" rx="' + 3 * K + '" ry="' + 2 * K + '" fill="#73DAFF"/>';
     });
     s += '<g clip-path="url(#robot-clip-' + id + ')">';
-    for (var i = 0; i < 10; i++) s += '<text data-eye="bit" text-anchor="middle" dominant-baseline="central">0</text>';
+    for (var i = 0; i < BITS; i++) s += '<text data-eye="bit" text-anchor="middle" dominant-baseline="central">0</text>';
     return s + '</g></svg>';
   }
   function init(stage) {
@@ -243,10 +242,10 @@
     }
     var svgRoot = hit.querySelector('svg');
     function all(name) { return [].slice.call(svgRoot.querySelectorAll('[data-eye="' + name + '"]')); }
-    var lids = all('lid'), lines = all('line'), pulses = all('pulse'), bits = all('bit');
+    var lids = all('lid'), lines = all('line'), bits = all('bit');
     function show(list, on) { list.forEach(function (n) { n.style.visibility = on ? 'visible' : 'hidden'; }); }
     function eyes(mode) {
-      show(lids, mode !== 'open'); show(lines, mode === 'closed'); show(pulses, mode === 'think'); show(bits, false);
+      show(lids, mode !== 'open'); show(lines, mode === 'closed'); show(bits, false);
     }
     var isOpen = dock, quiet = false, state = 'idle', timers = [], raf = 0, leaveTimer = 0;
     function later(fn, ms) { var t = setTimeout(fn, ms); timers.push(t); return t; }
@@ -270,24 +269,29 @@
       eyes(n > 0 && n % 2 === 0 ? 'closed' : 'open');
       if (n > 0) later(function () { blink(n - 1); }, 170);
     }
+    function place(base, digits) {
+      bits.forEach(function (b, i) {
+        var linear = base - i * GAP;
+        if (Math.abs(linear) > 1) { b.style.visibility = 'hidden'; return; }
+        var angle = linear * 1.35, scale = Math.max(0.16, Math.cos(angle));
+        b.textContent = digits.charAt(i);
+        b.setAttribute('transform', 'translate(' + (599 + 27 * K * Math.sin(angle)).toFixed(1) + ' 392) scale(' + scale.toFixed(3) + ' 1)');
+        b.style.visibility = 'visible';
+      });
+    }
+    function randBits() { var d = ''; for (var i = 0; i < BITS; i++) d += Math.random() < 0.5 ? '0' : '1'; return d; }
+    // While thinking, small digits run across the face instead of the eyes (a still row with reduced motion).
     function thinkLoop() {
-      var start = performance.now(), last = 0, cycle = -1, digits = '';
+      var start = performance.now(), last = 0, cycle = -1, digits = '', span = 2 + (BITS - 1) * GAP;
       eyes('think');
+      if (reduced()) { place(1 - GAP / 2, randBits()); return; }
       function frame(now) {
         if (state !== 'think') return;
         if (now - last >= 33) {
           last = now;
-          var t = (now - start) / 1000, c = Math.floor(t / 2.7), pos = t % 2.7;
-          if (c !== cycle) { cycle = c; digits = ''; for (var i = 0; i < 10; i++) digits += Math.random() < 0.5 ? '0' : '1'; }
-          pulses.forEach(function (p, i) { p.setAttribute('ry', (2 + 2 * (1 + Math.sin(t + i * 0.7))) * K); });
-          bits.forEach(function (b, i) {
-            var linear = -1.7 + pos / 1.85 * 5.7 - i * 0.30;
-            if (pos >= 1.85 || Math.abs(linear) > 1) { b.style.visibility = 'hidden'; return; }
-            var angle = linear * 1.35, scale = Math.max(0.16, Math.cos(angle));
-            b.textContent = digits.charAt(i);
-            b.setAttribute('transform', 'translate(' + (599 + 27 * K * Math.sin(angle)).toFixed(1) + ' 392) scale(' + scale.toFixed(3) + ' 1)');
-            b.style.visibility = 'visible';
-          });
+          var t = (now - start) / 1000, c = Math.floor(t / 1.9);
+          if (c !== cycle) { cycle = c; digits = randBits(); }
+          place(-1 + (t % 1.9) / 1.9 * span, digits);
         }
         raf = requestAnimationFrame(frame);
       }
@@ -411,7 +415,6 @@
       if (!q) { setAnswer(T.hint, ''); return; }
       var topic = findTopic(q), text = topic ? pick(topic.a[LANG]) : T.unk, link = topic ? T.more : T.link;
       input.value = '';
-      if (reduced()) { setAnswer(text, link, true); return; }
       state = 'think';
       typed.textContent = ''; spoken.textContent = ''; linkBox.textContent = '';
       typed.appendChild(el('span', 'robot-dots')).innerHTML = '<i></i><i></i><i></i>';
@@ -419,7 +422,9 @@
       thinkLoop();
       later(function () {
         if (raf) cancelAnimationFrame(raf);
-        raf = 0; state = 'type'; eyes('open');
+        raf = 0;
+        if (reduced()) { setAnswer(text, link, true); return; }
+        state = 'type'; eyes('open');
         typed.textContent = '';
         answer.classList.add('is-typing');
         blink(4); play('answer');

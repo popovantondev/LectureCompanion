@@ -47,6 +47,17 @@ class PublicDocsTests(unittest.TestCase):
                 self.assertRegex(html,r'<a\b[^>]*href="'+pages[lang]+r'"[^>]*>\s*'+labels[lang]+r'\s*</a>',str(guide))
                 self.assertTrue((folder/pages[lang]).is_file(),str(folder/pages[lang]))
         self.assertGreaterEqual(found,3)
+    def test_guides_have_live_robot_scene_and_no_empty_block(self):
+        root=Path(__file__).resolve().parents[1];found=0
+        for lang in ('ru','de','en'):
+            html=(root/f'Guide-{lang}.html').read_text(encoding='utf-8')
+            if 'http-equiv="refresh"' in html:continue
+            found+=1
+            self.assertRegex(html,r'<figure class="robot-preview">\s*<div class="robot-stage robot-dock"[^>]*data-robot-mode="dock"[^>]*>',lang)
+            self.assertIn('<article class="robot-demo-card',html,lang)
+            self.assertNotIn('guide-screenshot"',html.split('</style>')[-1],lang)
+            self.assertNotRegex(html,r'<section class="overview">\s*</section>',lang)
+        self.assertEqual(found,3)
 class NetworkRetryTests(unittest.TestCase):
     def test_transient_connection_error_is_retried(self):
         import io
