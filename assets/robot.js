@@ -28,7 +28,13 @@
     }
   };
   var TOPICS = [
-    { k: 'ты кто|кто ты|who are you|wer bist|bist du|are you|=ии|=ai|=ki|google|гугл|бот',
+    { k: '=привет|здравств|=хай|=hi|=hey|=hello|=hallo|=moin|guten tag|guten morgen|как дела|как ты|wie geht|how are you',
+      a: {
+        ru: ['Привет! У меня всё хорошо — спросите о Lecture Companion.', 'Здравствуйте! Спрашивайте о программе.'],
+        de: ['Hallo! Mir geht es gut – fragen Sie mich zu Lecture Companion.', 'Guten Tag! Fragen zur Software? Gern.'],
+        en: ['Hi! I’m doing well – ask me about Lecture Companion.', 'Hello! Ask me about the program.']
+      } },
+    { g: 1, k: 'ты кто|кто ты|who are you|wer bist|bist du|are you|=ии|=ai|=ki|google|гугл|бот',
       a: {
         ru: 'Я демонстрационный робот этой страницы: отвечаю готовыми текстами о Lecture Companion и никуда не отправляю ваш вопрос.',
         de: 'Ich bin der Demo-Roboter dieser Seite: Ich antworte mit vorgefertigten Texten über Lecture Companion und sende Ihre Frage nirgendwohin.',
@@ -40,7 +46,7 @@
         de: 'Holen Sie vorher die Einwilligung aller Beteiligten ein: Heimliches Aufzeichnen nichtöffentlicher Rede kann nach § 201 StGB strafbar sein, und Untertitel und Folien können personenbezogene Daten (DSGVO) enthalten.',
         en: 'Get everyone’s consent first: secretly recording non-public speech can be a criminal offence under § 201 StGB, and subtitles and slides may contain personal data (GDPR).'
       } },
-    { k: 'микрофон|записыва|запись|аудио|mikro|aufnahme|aufzeichn|aufnehm|microphone|record|audio',
+    { g: 1, k: 'микрофон|записыва|запись|аудио|mikro|aufnahme|aufzeichn|aufnehm|microphone|record|audio',
       a: {
         ru: 'Микрофон программа не записывает: она читает живые субтитры из настольного Teams напрямую.',
         de: 'Das Programm nimmt kein Mikrofon auf: Es liest die Live-Untertitel direkt aus Teams Desktop.',
@@ -64,19 +70,19 @@
         de: 'Laden Sie die vier ZIP-Teile und JoinPortable.cmd in einen Ordner (etwa 5,8 GB), führen Sie JoinPortable.cmd aus (prüft Größen und SHA-256, installiert nichts), entpacken Sie das ZIP auf eine interne SSD und starten Sie LectureCompanion.exe.',
         en: 'Download the four ZIP parts and JoinPortable.cmd into one folder (about 5.8 GB), run JoinPortable.cmd (checks sizes and SHA-256, installs nothing), extract the ZIP to an internal SSD and open LectureCompanion.exe.'
       } },
-    { k: 'язык|немецк|русск|англий|=de|=en|=ru|sprache|deutsch|russisch|englisch|language|german|russian|english|перевод|translat|ubersetz',
+    { g: 1, k: 'язык|немецк|русск|англий|=de|=en|=ru|sprache|deutsch|russisch|englisch|language|german|russian|english|перевод|translat|ubersetz',
       a: {
         ru: 'Интерфейс — DE, EN и RU. Ответы идут сначала на языке субтитров лекции, затем на языке интерфейса.',
         de: 'Die Oberfläche gibt es auf DE, EN und RU. Antworten kommen zuerst in der Sprache der Untertitel, dann in der Oberflächensprache.',
         en: 'The interface comes in DE, EN and RU. Answers use the subtitle language first, then the interface language.'
       } },
-    { k: 'режим|быстро|обычно|вдумчив|modus|modi|schnell|grundlich|normal|mode|fast|balanced|deep',
+    { g: 1, k: 'режим|быстро|обычно|вдумчив|modus|modi|schnell|grundlich|normal|mode|fast|balanced|deep',
       a: {
         ru: 'Три режима: «Быстро» — коротко, без дополнительных рассуждений; «Обычно» — сбалансированно; «Вдумчиво» — дополнительные рассуждения только для текстовых вопросов.',
         de: 'Drei Modi: „Schnell“ – kurz, ohne zusätzliches Denken; „Normal“; „Gründlich“ – zusätzliches Denken nur bei Textfragen.',
         en: 'Three modes: Fast (short, no extra reasoning), Balanced and Deep (extra reasoning for text questions only).'
       } },
-    { k: 'демо|попроб|пример|demo|ausprobier|beispiel|try|example|без teams|ohne teams|without teams',
+    { g: 1, k: 'демо|попроб|пример|demo|ausprobier|beispiel|try|example|без teams|ohne teams|without teams',
       a: {
         ru: 'Попробовать можно без Teams: LectureCompanionDemo.exe открывает вымышленные примеры, не запуская Teams или модели.',
         de: 'Ausprobieren geht ohne Teams: LectureCompanionDemo.exe zeigt erfundene Beispiele, ohne Teams oder Modelle zu starten.',
@@ -88,19 +94,19 @@
         de: 'Sie brauchen Teams Desktop und Live-Untertitel; neue Rede wird etwa einmal pro Minute geprüft. Eine Folie wird nur bei echter Bildschirmfreigabe analysiert. In den Teams-Chat schreibt das Programm nichts.',
         en: 'You need Teams desktop and live subtitles; new speech is checked about once a minute. A slide is analysed only during a real screen share. The program writes nothing to the Teams chat.'
       } },
-    { k: 'приватн|конфиденц|локальн|облак|облач|=api|интернет|данн|хранит|private|local|cloud|internet|daten|lokal|store|data',
+    { g: 1, k: 'приватн|конфиденц|локальн|облак|облач|=api|интернет|данн|хранит|private|local|cloud|internet|daten|lokal|store|data',
       a: {
         ru: 'Субтитры и изображения слайдов обрабатываются локально, без ключей API и облака. Интернет при необходимости используют только Teams и Windows. Десять последних ответов лежат в папке «Daten».',
         de: 'Untertitel und Folienbilder werden lokal verarbeitet, ohne API-Schlüssel und Cloud. Das Internet nutzen bei Bedarf nur Teams und Windows. Die zehn letzten Antworten liegen im Ordner „Daten“.',
         en: 'Subtitles and slide images are processed locally, without API keys or a cloud. If needed, only Teams and Windows use the internet. The last ten answers are kept in the “Daten” folder.'
       } },
-    { k: 'цена|стоит|стоимост|бесплатн|платн|лиценз|kost|preis|lizenz|cost|price|free|licen',
+    { g: 1, k: 'цена|стоит|стоимост|бесплатн|платн|лиценз|kost|preis|lizenz|cost|price|free|licen',
       a: {
         ru: 'Ключей API и облака нет. Неизменённую официальную EXE можно скачать и запускать для личного некоммерческого использования; менять и распространять её нельзя. Исходный код и робот — только для просмотра.',
         de: 'Es gibt keine API-Schlüssel und keine Cloud. Die unveränderte offizielle EXE darf privat und nicht kommerziell geladen und ausgeführt werden; ändern oder weitergeben ist nicht erlaubt. Quellcode und Roboter sind nur zur Ansicht.',
         en: 'There are no API keys and no cloud. The unmodified official EXE may be downloaded and run for personal, non-commercial use; modifying or redistributing it is not allowed. Source code and robot are for viewing only.'
       } },
-    { k: 'делает|умеет|зачем|назначен|что такое lecture|что за программа|что это за программа|для чего|функци|возможност|macht|wofur|wozu|was ist das|was ist lecture|was kann|funktion|what does|what is it|what is this|what is lecture|what can|purpose|feature',
+    { g: 1, k: 'делает|умеет|зачем|назначен|что такое lecture|что за программа|что это за программа|для чего|функци|возможност|macht|wofur|wozu|was ist das|was ist lecture|was kann|funktion|what does|what is it|what is this|what is lecture|what can|purpose|feature',
       w: .5,
       a: {
         ru: 'Lecture Companion помогает следить за лекцией в Teams: локально обобщает субтитры и объясняет выбранный слайд.',
@@ -112,10 +118,12 @@
     return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ß/g, 'ss');
   }
   TOPICS.forEach(function (t) { t.keys = t.k.split('|').map(norm); });
+  function pick(a) { a = [].concat(a); return a[Math.floor(Math.random() * a.length)]; }
   function findTopic(question) {
     var text = norm(question);
     var tokens = text.split(/[^a-z0-9\u0400-\u04ff§]+/).filter(Boolean);
     var best = null, top = 0;
+    var anchor = /lecture|companion|лекци|программ|приложен|робот|teams|тимс|vorlesung|programm|roboter|robot|program|software|\bapp\b/.test(text);
     TOPICS.forEach(function (topic) {
       var score = 0;
       topic.keys.forEach(function (kw) {
@@ -123,6 +131,7 @@
         else if (kw.charAt(0) === '=') { if (tokens.indexOf(kw.slice(1)) > -1) score += 1; }
         else if (tokens.some(function (tk) { return tk.indexOf(kw) === 0; })) score += 1;
       });
+      if (topic.g && score < 2 && !anchor) return;
       score *= topic.w || 1;
       if (score > top) { top = score; best = topic; }
     });
@@ -335,7 +344,7 @@
       answer.hidden = false;
       if (dock) relayout();
       if (!q) { setAnswer(T.hint, ''); return; }
-      var topic = findTopic(q), text = topic ? topic.a[LANG] : T.unk, link = topic ? T.more : T.link;
+      var topic = findTopic(q), text = topic ? pick(topic.a[LANG]) : T.unk, link = topic ? T.more : T.link;
       input.value = '';
       if (reduced()) { setAnswer(text, link); return; }
       state = 'think';
