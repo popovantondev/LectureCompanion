@@ -58,6 +58,28 @@ class PublicDocsTests(unittest.TestCase):
             self.assertNotIn('guide-screenshot"',html.split('</style>')[-1],lang)
             self.assertNotRegex(html,r'<section class="overview">\s*</section>',lang)
         self.assertEqual(found,3)
+class RobotTemplateTests(unittest.TestCase):
+    """The robot answers common questions offline: every phrase below must hit a topic (not 'I don't know'); small talk keeps working."""
+    SCRIPT="""var fs=require('fs');var src=fs.readFileSync(process.argv[1],'utf8');
+var code=src.slice(src.indexOf('  var TOPICS = ['),src.indexOf('  var unlocked'));
+var Q=JSON.parse(process.argv[2]);var out=[];
+['ru','de','en'].forEach(function(LANG){var f=new Function('LANG',code+';return findTopic;')(LANG);
+Q[LANG].forEach(function(q){out.push([LANG,q[0],f(q[0])?1:0,q[1]])})});console.log(JSON.stringify(out));"""
+    def test_common_questions_get_a_template_answer(self):
+        import os, shutil, subprocess
+        node=os.environ.get('NODE') or shutil.which('node') or r'C:\Users\Public\CLODE\tools\node\node.exe'
+        if not Path(node).exists() and not shutil.which(node):self.skipTest('node not found')
+        robot=os.environ.get('ROBOT_JS') or str(Path(__file__).resolve().parents[1]/'assets'/'robot.js')
+        topics={'ru':['Работает ли без интернета?','Защита данных','Какие данные отправляются?','Сколько стоит?','Это бесплатно?','Какие языки поддерживает?','Какие системные требования?','Сколько нужно места на диске','Нужна ли видеокарта?','Как установить?','Безопасно ли? Это не вирус?','Для чего это нужно?','Где руководство?','Не работает, что делать?','Работает ли без интрнета?'],
+          'de':['Funktioniert es ohne Internet?','Datenschutz','Welche Daten werden gesendet?','Was kostet das?','Ist das kostenlos','Welche Sprachen gibt es?','Welche Systemanforderungen gibt es?','wie viel Speicherplatz brauche ich','Brauche ich eine Grafikkarte?','Wie installiere ich es?','Ist das sicher? Kein Virus?','Wofür ist das gut','Wo ist die Anleitung?','Es funktioniert nicht, was tun?','Funktioniert es ohne Internte?'],
+          'en':['Does it work without internet?','Data protection','What data is sent?','How much does it cost?','Is it free?','Which languages are supported?','What are the system requirements?','how much disk space do I need','Do I need a graphics card?','How do I install it?','Is it safe? Not a virus?','What is it for?','Where is the guide?','It is not working, what now?','Does it work without interent?']}
+        smalltalk={'ru':['Привет','Как дела?'],'de':['Hallo','Wie geht es dir?'],'en':['Hi','How are you?']}
+        silly={'ru':'расскажи анекдот про кота','de':'wie wird das Wetter morgen','en':'tell me a joke about cats'}
+        data={l:[[q,'topic'] for q in topics[l]+smalltalk[l]]+[[silly[l],'none']] for l in topics}
+        run=subprocess.run([node,'-e',self.SCRIPT,robot,json.dumps(data,ensure_ascii=False)],capture_output=True,encoding='utf-8')
+        self.assertEqual(run.returncode,0,run.stderr)
+        for lang,question,hit,kind in json.loads(run.stdout):
+            self.assertEqual(bool(hit),kind=='topic',lang+': '+question)
 class NetworkRetryTests(unittest.TestCase):
     def test_transient_connection_error_is_retried(self):
         import io

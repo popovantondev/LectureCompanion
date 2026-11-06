@@ -201,7 +201,7 @@ def scene_html(cfg, lang):
 def robot_head(cfg):
     if not cfg.get('robot'):
         return ''
-    return '<link rel="stylesheet" href="assets/robot.css?v=r6">\n<script src="assets/robot.js?v=r5" defer></script>\n'
+    return '<link rel="stylesheet" href="assets/robot.css?v=r6">\n<script src="assets/robot.js?v=r6" defer></script>\n'
 
 
 def pill_html(d, lang):
@@ -305,7 +305,7 @@ def redirect_html(d):
 '''
 
 
-def main():
+def build_site():
     cfg, d = load()
     site = site_dir(cfg)
     site.mkdir(exist_ok=True)
@@ -313,6 +313,13 @@ def main():
     for lang in LANGS:
         (site / landing(lang)).write_text(landing_html(cfg, d, lang), encoding='utf-8', newline='\n')
     (site / 'index-de.html').write_text(redirect_html(d), encoding='utf-8', newline='\n')
+
+
+def main():
+    build_site()
+    import site_images
+    cfg, d = load()
+    site_images.optimize(site_dir(cfg), d['repo'], ROOT, 'index*.html')
 
 
 if __name__ == '__main__':
