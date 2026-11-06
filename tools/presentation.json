@@ -80,7 +80,7 @@
         ],
         "front": "Тема: защита данных.\nГлавное: доступ получают только нужные сотрудники.\nТебе: нового задания нет.",
         "label": "Демо-ответы робота (вымышленные)",
-        "caption": "Демонстрация: карточки вымышленные. Задайте роботу вопрос о программе — он ответит готовым текстом из руководства, ничего не отправит и не будет искать в интернете."
+        "caption": "Демо: вымышленные карточки, ответы из руководства, без интернета."
       }
     },
     "de": {
@@ -103,7 +103,7 @@
         ],
         "front": "Thema: Datenschutz.\nWichtig: Nur berechtigte Mitarbeitende erhalten Zugriff.\nFür Sie: Keine neue Aufgabe.",
         "label": "Demo-Antworten des Roboters (erfunden)",
-        "caption": "Demonstration: Die Karten sind erfunden. Stellen Sie dem Roboter eine Frage zum Programm – er antwortet mit einem vorgefertigten Text aus der Anleitung, sendet nichts und sucht nicht im Internet."
+        "caption": "Demo: erfundene Karten, Antworten aus der Anleitung, ohne Internet."
       }
     },
     "en": {
@@ -126,7 +126,7 @@
         ],
         "front": "Topic: Data protection.\nMain point: Only authorized staff get access.\nFor you: No new assignment.",
         "label": "Robot demo answers (fictional)",
-        "caption": "Demonstration: the cards are fictional. Ask the robot a question about the program – it replies with a ready-made text from the guide and neither sends anything nor searches the internet."
+        "caption": "Demo: fictional cards, answers from the guide, no internet."
       }
     }
   },

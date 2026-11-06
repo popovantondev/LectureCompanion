@@ -12,7 +12,7 @@
 .robot-stage.is-open .robot-lift{transform:translateY(-2%)}
 .robot-lift svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
 .robot-lift svg [data-eye]{visibility:hidden}
-.robot-lift svg [data-eye="bit"]{font-family:ui-monospace,"Cascadia Code",Consolas,monospace;font-weight:700;font-size:200px;fill:#69ddff}
+.robot-lift svg [data-eye="bit"]{font-family:ui-monospace,"Cascadia Code",Consolas,monospace;font-weight:700;font-size:100px;fill:#69ddff}
 /* Pill and answer slide out from under the robot. */
 .robot-pop{position:absolute;z-index:1;left:50%;top:calc(100% - 26px);width:min(340px,calc(100vw - 32px));box-sizing:border-box;padding-top:22px;color:var(--ppk-ink,#172a42);text-align:left;opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-16px);transition:transform .24s cubic-bezier(.215,.61,.355,1),opacity .24s ease-out,visibility 0s linear .24s}
 .robot-stage.is-open .robot-pop{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0);transition-delay:0s}
@@ -67,7 +67,14 @@
 .robot-dock .robot-lift{width:var(--robot-w);margin:14px auto 4px}
 .robot-dock .robot-lift{transition:transform .18s cubic-bezier(.215,.61,.355,1)}
 .robot-dock.is-lift .robot-lift{transform:translateY(-6%)}
-.robot-dock.is-open .robot-pop,.robot-dock .robot-pop{position:static;z-index:auto;width:100%;margin:0;padding:0;opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:none}
+/* The question field is tucked away until the robot is hovered, focused or touched; its place stays reserved (no layout jump). */
+.robot-stage.robot-dock .robot-pop{position:static;z-index:auto;width:100%;margin:0;padding:0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(18px);transition:transform .24s cubic-bezier(.215,.61,.355,1),opacity .24s ease-out,visibility 0s linear .24s}
+.robot-stage.robot-dock.is-ask .robot-pop{opacity:1;visibility:visible;pointer-events:auto;transform:none;transition-delay:0s}
+.robot-stack:focus-visible{outline:3px solid #8ee7ff;outline-offset:4px;border-radius:18px}
+.robot-stack,.robot-answer.is-nav{touch-action:pan-x}
+.robot-stack .is-away{display:none}
+.robot-count{position:absolute;right:12px;bottom:8px;color:var(--ppk-muted,#52647b);font-size:11px;line-height:1;font-variant-numeric:tabular-nums}
+.robot-answer.is-nav{padding-bottom:24px}
 .robot-dock .robot-pill{border-radius:999px}
 .robot-dock .robot-answer .robot-meta{margin-bottom:6px!important}
 @media (max-width:520px){

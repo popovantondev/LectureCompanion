@@ -229,11 +229,17 @@
     var stack = dock ? stage.querySelector('.robot-stack') : null, meta = null;
     var form = q('.robot-pill'), input = q('input'), answer = q('.robot-answer'), typed = q('.robot-typed'),
         spoken = q('.robot-answer .robot-sr'), linkBox = q('.robot-links'), closeBtn = q('.robot-close');
+    var pop = q('.robot-pop');
     if (dock) {
       meta = el('p', 'robot-meta');
       answer.insertBefore(meta, typed);
       stack.appendChild(answer);
+      stack.tabIndex = 0;
       stage.classList.add('is-open');
+    } else {
+      count = el('span', 'robot-count');
+      count.setAttribute('aria-hidden', 'true');
+      answer.appendChild(count);
     }
     var svgRoot = hit.querySelector('svg');
     function all(name) { return [].slice.call(svgRoot.querySelectorAll('[data-eye="' + name + '"]')); }
@@ -279,7 +285,7 @@
             if (pos >= 1.85 || Math.abs(linear) > 1) { b.style.visibility = 'hidden'; return; }
             var angle = linear * 1.35, scale = Math.max(0.16, Math.cos(angle));
             b.textContent = digits.charAt(i);
-            b.setAttribute('transform', 'translate(' + (599 + 27 * K * Math.sin(angle)).toFixed(1) + ' 392) scale(' + (0.68 * scale).toFixed(3) + ' 1)');
+            b.setAttribute('transform', 'translate(' + (599 + 27 * K * Math.sin(angle)).toFixed(1) + ' 392) scale(' + scale.toFixed(3) + ' 1)');
             b.style.visibility = 'visible';
           });
         }
@@ -287,13 +293,25 @@
       }
       raf = requestAnimationFrame(frame);
     }
-    function setAnswer(text, link) {
+    // Guide mode keeps the answers of this visit so the wheel / arrows / swipe can leaf through them.
+    var hist = [], histView = null, count; // count: the "2 / 3" label, made above
+    function showCount() {
+      if (!count) return;
+      var n = hist.length, at = histView === null ? n : histView + 1;
+      count.textContent = n > 1 ? at + ' / ' + n : '';
+      answer.classList.toggle('is-nav', n > 1);
+    }
+    function paint(text, link) {
       typed.textContent = text;
       spoken.textContent = text;
       linkBox.textContent = '';
       if (link) {
         var a = el('a'); a.href = guide; a.textContent = link; linkBox.appendChild(a);
       }
+    }
+    function setAnswer(text, link, record) {
+      paint(text, link);
+      if (!dock && record) { hist.push({ text: text, link: link }); if (hist.length > 10) hist.shift(); histView = null; showCount(); }
       answer.classList.remove('is-typing');
       answer.setAttribute('aria-busy', 'false');
       state = 'idle'; eyes('open');
@@ -310,17 +328,67 @@
       node.children[2].textContent = ' · ' + (stage.getAttribute('data-demo-meta') || '');
     }
     // Dock mode: the newest card is in front, older ones peek out behind it (at most three).
+    // dockView = index of the card in front (null = the newest); cards after it are put away, cards before it peek out behind.
+    var dockView = null;
+    function dockItems() {
+      var list = [].slice.call(stack.querySelectorAll('.robot-demo-card'));
+      if (!answer.hidden) list.push(answer);
+      return list;
+    }
     function relayout() {
       var cards = [].slice.call(stack.querySelectorAll('.robot-demo-card'));
       while (cards.length > 6) stack.removeChild(cards.shift());
-      var back = answer.hidden ? cards.slice(0, -1) : cards;
-      cards.forEach(function (c) { c.classList.remove('is-back'); c.hidden = false; c.style.removeProperty('--d'); });
-      back.forEach(function (c, i) {
-        var d = back.length - i;
-        c.classList.add('is-back'); c.style.setProperty('--d', String(Math.min(d, 4)));
-        if (d > 3) c.hidden = true;
+      var list = dockItems();
+      if (dockView === null || dockView > list.length - 1) dockView = list.length - 1;
+      list.forEach(function (c, i) {
+        c.classList.remove('is-back', 'is-away'); c.style.removeProperty('--d');
+        if (i > dockView) c.classList.add('is-away');
+        else if (i < dockView) {
+          var d = dockView - i;
+          c.classList.add('is-back'); c.style.setProperty('--d', String(Math.min(d, 4)));
+          if (d > 3) c.classList.add('is-away');
+        }
       });
     }
+    // Leaf through the stack: dir -1 = older (up), +1 = newer (down). Returns true when the stack can be leafed at all.
+    function leaf(dir) {
+      if (dock) {
+        var list = dockItems(), at = dockView === null ? list.length - 1 : dockView, to = Math.max(0, Math.min(list.length - 1, at + dir));
+        if (to !== at) { dockView = to; relayout(); }
+        return list.length > 1;
+      }
+      var n = hist.length;
+      if (n < 2) return false;
+      if (state !== 'idle' || answer.hidden) return true;
+      var from = histView === null ? n - 1 : histView, next = Math.max(0, Math.min(n - 1, from + dir));
+      if (next !== from) { histView = next; paint(hist[next].text, hist[next].link); showCount(); }
+      return true;
+    }
+    var wheelSum = 0, wheelAt = 0, swipeY = null, swipeX = 0;
+    function onWheel(e) {
+      if (!(dock || hist.length > 1)) return;
+      e.preventDefault();
+      var now = performance.now(), dy = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? 300 : 1);
+      if (now - wheelAt > 350) wheelSum = 0;
+      wheelAt = now;
+      wheelSum += dy;
+      if (Math.abs(wheelSum) < 30) return;
+      leaf(wheelSum > 0 ? 1 : -1);
+      wheelSum = 0; wheelAt = now + 150;
+    }
+    function swipeStart(e) { if (e.pointerType !== 'mouse') { swipeY = e.clientY; swipeX = e.clientX; } }
+    function swipeEnd(e) {
+      if (swipeY === null) return;
+      var dy = e.clientY - swipeY, dx = e.clientX - swipeX;
+      swipeY = null;
+      if (Math.abs(dy) > 36 && Math.abs(dy) > Math.abs(dx)) leaf(dy > 0 ? -1 : 1);
+    }
+    [dock ? stack : answer].forEach(function (zone) {
+      zone.addEventListener('wheel', onWheel, { passive: false });
+      zone.addEventListener('pointerdown', swipeStart);
+      zone.addEventListener('pointerup', swipeEnd);
+      zone.addEventListener('pointercancel', function () { swipeY = null; });
+    });
     function pushBack() {
       var card = el('article', 'robot-demo-card'), m = el('p', 'robot-meta'), t = el('p', 'robot-text');
       fillMeta(m, answer.getAttribute('data-time') || stamp());
@@ -338,11 +406,12 @@
         typed.textContent = ''; spoken.textContent = ''; linkBox.textContent = '';
       }
       answer.hidden = false;
-      if (dock) relayout();
+      if (dock) { dockView = null; relayout(); }
+      else { histView = null; if (count) count.textContent = ''; }
       if (!q) { setAnswer(T.hint, ''); return; }
       var topic = findTopic(q), text = topic ? pick(topic.a[LANG]) : T.unk, link = topic ? T.more : T.link;
       input.value = '';
-      if (reduced()) { setAnswer(text, link); return; }
+      if (reduced()) { setAnswer(text, link, true); return; }
       state = 'think';
       typed.textContent = ''; spoken.textContent = ''; linkBox.textContent = '';
       typed.appendChild(el('span', 'robot-dots')).innerHTML = '<i></i><i></i><i></i>';
@@ -359,7 +428,7 @@
           i++;
           typed.textContent = chars.slice(0, i).join('');
           if (i < chars.length) later(step, 25 + Math.random() * 10);
-          else { stopAll(); setAnswer(text, link); }
+          else { stopAll(); setAnswer(text, link, true); }
         })();
       }, 800 + Math.random() * 800);
     }
@@ -392,31 +461,65 @@
     }
     function leaveSoon() {
       clearTimeout(leaveTimer);
-      if (dock) return;
+      if (dock) { dockLeave(); return; }
       leaveTimer = setTimeout(function () {
         var busy = state !== 'idle' || !answer.hidden || input.value || stage.contains(doc.activeElement) && doc.activeElement !== hit;
         if (!busy && !stage.matches(':hover')) close(false);
       }, 450);
     }
-    // Dock (landing preview): the robot is always open; hover, focus or touch lifts it and plays the reveal sound.
+    // Dock (landing preview): the card stack is always there; hover, focus or touch lifts the robot, slides the question
+    // field out from under it and plays the reveal sound. Leaving (or Esc) tucks the field away again.
+    var askTimer = 0;
     function lift_(on) {
       if (!dock) return;
+      clearTimeout(askTimer);
       if (on && !stage.classList.contains('is-lift')) play('reveal');
       stage.classList.toggle('is-lift', on);
+      stage.classList.toggle('is-ask', on);
+      hit.setAttribute('aria-expanded', on ? 'true' : 'false');
+    }
+    function dockHold() {
+      var a = doc.activeElement;
+      return lift.matches(':hover') || pop.matches(':hover') || input.value || a === input ||
+        (a === hit && hit.matches(':focus-visible'));
+    }
+    function dockLeave() {
+      clearTimeout(askTimer);
+      askTimer = setTimeout(function () {
+        if (state !== 'idle') { dockLeave(); return; }
+        if (!dockHold()) lift_(false);
+      }, 450);
     }
     if (dock) {
-      lift.addEventListener('pointerenter', function () { lift_(true); });
-      lift.addEventListener('pointerleave', function () { if (!lift.contains(doc.activeElement) || !doc.activeElement.matches(':focus-visible')) lift_(false); });
+      [lift, pop].forEach(function (n) {
+        n.addEventListener('pointerenter', function () { lift_(true); });
+        n.addEventListener('pointerleave', dockLeave);
+      });
       hit.addEventListener('focus', function () { if (!quiet) lift_(true); });
-      hit.addEventListener('blur', function () { lift_(false); });
+      hit.addEventListener('blur', dockLeave);
+      input.addEventListener('focus', function () { lift_(true); });
     }
+    function canLeaf() { return dock || hist.length > 1; }
+    stage.addEventListener('keydown', function (e) {
+      if ((e.key !== 'ArrowUp' && e.key !== 'ArrowDown') || !canLeaf()) return;
+      var t = e.target;
+      if (t !== input && t !== hit && t !== stack && !(stack && stack.contains(t))) { if (dock || !answer.contains(t)) return; }
+      e.preventDefault();
+      leaf(e.key === 'ArrowUp' ? -1 : 1);
+    });
     stage.addEventListener('pointerenter', function () { open(false); });
     stage.addEventListener('pointerleave', leaveSoon);
     stage.addEventListener('focusin', function () { if (!quiet) open(false); });
     stage.addEventListener('focusout', function (e) { if (!e.relatedTarget || !stage.contains(e.relatedTarget)) leaveSoon(); });
-    hit.addEventListener('click', function () { open(true); });
+    hit.addEventListener('click', function () { lift_(true); open(true); });
     stage.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && (isOpen && (!dock || !answer.hidden))) { e.preventDefault(); close(true); }
+      if (e.key !== 'Escape') return;
+      if (dock && stage.classList.contains('is-ask')) {
+        e.preventDefault();
+        if (!answer.hidden) close(false);
+        lift_(false);
+        quiet = true; try { hit.focus(); } catch (x) { } quiet = false;
+      } else if (isOpen && (!dock || !answer.hidden)) { e.preventDefault(); close(true); }
     });
     doc.addEventListener('pointerdown', function (e) { if (!dock && isOpen && !stage.contains(e.target)) close(false); });
     form.addEventListener('submit', function (e) { e.preventDefault(); ask(input.value); });
