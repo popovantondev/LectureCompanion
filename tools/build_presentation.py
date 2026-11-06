@@ -175,6 +175,25 @@ def legal_html(cfg, lang):
             f'<p>{e(lg["text"])} <a href="Guide-{lang}.html#rechtliches">{e(lg["link"])}</a></p>\n</aside>')
 
 
+def robot_html(cfg, lang):
+    """Optional "Ask the robot" block (same assets/robot.js as the guide hero); texts come from presentation.json."""
+    r = cfg.get('robot', {}).get(lang)
+    if not r:
+        return ''
+    alt = {'ru': 'Робот Lecture Companion', 'de': 'Roboter von Lecture Companion', 'en': 'Lecture Companion robot'}[lang]
+    return (f'<section class="ppk-section robot-section ppk-reveal" id="robot" aria-labelledby="robot-title">\n'
+            f'<div class="robot-card">\n<div class="robot-copy">\n<h2 id="robot-title">{e(r["title"])}</h2>\n'
+            f'<p>{e(r["text"])}</p>\n<p class="robot-note">{e(r["note"])}</p>\n</div>\n'
+            f'<div class="robot-stage" data-robot data-guide="Guide-{lang}.html"><img src="assets/robot-companion.webp" width="540" height="591" alt="{e(alt)}" decoding="async"></div>\n'
+            f'</div>\n</section>')
+
+
+def robot_head(cfg):
+    if not cfg.get('robot'):
+        return ''
+    return '<link rel="stylesheet" href="assets/robot.css">\n<script src="assets/robot.js" defer></script>\n'
+
+
 def pill_html(d, lang):
     t = TEXT[lang]
     if d['status'] == 'source' or not re.match(r'^\d', d['version']):
@@ -212,7 +231,7 @@ def landing_html(cfg, d, lang):
 <link rel="icon" href="{e(cfg['icon'])}">
 {head_assets(cfg)}
 <link rel="stylesheet" href="presentation.css?v={kit_version(cfg)}">
-</head>
+{robot_head(cfg)}</head>
 <body class="ppk-page">
 <a class="ppk-skip" href="#main">{e(t['skip'])}</a>
 {nav_html(cfg, d, lang, 'landing')}
@@ -235,6 +254,8 @@ def landing_html(cfg, d, lang):
 <figcaption>{e(caption)}</figcaption>
 </figure>
 </div>
+
+{robot_html(cfg, lang)}
 
 {legal_html(cfg, lang)}
 
