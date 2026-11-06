@@ -198,7 +198,7 @@
   function init(stage) {
     var img = stage.querySelector('img');
     if (!img || stage.getAttribute('data-robot-ready')) return;
-    var T = UI[LANG], id = ++scenes;
+    var T = UI[LANG], id = ++scenes, dock = stage.getAttribute('data-robot-mode') === 'dock';
     var guide = stage.getAttribute('data-guide') || 'Guide-' + LANG + '.html';
     stage.setAttribute('data-robot-ready', '1');
     var lift = el('div', 'robot-lift'), hit = el('button', 'robot-hit'), qid = 'robot-q-' + id;
@@ -219,8 +219,16 @@
       '<div class="robot-links"></div><button class="robot-close" type="button" aria-label="' + T.close + '">×</button></div></div>' +
       '<button class="robot-sound" type="button" aria-pressed="true" title="' + T.snd + '" aria-label="' + T.snd + '">' + ICON_SOUND + '</button>');
     function q(sel) { return stage.querySelector(sel); }
+    var stack = dock ? stage.querySelector('.robot-stack') : null, meta = null;
     var form = q('.robot-pill'), input = q('input'), answer = q('.robot-answer'), typed = q('.robot-typed'),
         spoken = q('.robot-answer .robot-sr'), linkBox = q('.robot-links'), closeBtn = q('.robot-close'), snd = q('.robot-sound');
+    if (dock) {
+      lift.appendChild(snd);
+      meta = el('p', 'robot-meta');
+      answer.insertBefore(meta, typed);
+      stack.appendChild(answer);
+      stage.classList.add('is-open');
+    }
     snd.addEventListener('click', function () { soundOn = !soundOn; snd.setAttribute('aria-pressed', String(soundOn)); });
     var svgRoot = hit.querySelector('svg');
     function all(name) { return [].slice.call(svgRoot.querySelectorAll('[data-eye="' + name + '"]')); }
@@ -229,7 +237,7 @@
     function eyes(mode) {
       show(lids, mode !== 'open'); show(lines, mode === 'closed'); show(pulses, mode === 'think'); show(bits, false);
     }
-    var isOpen = false, quiet = false, state = 'idle', timers = [], raf = 0, leaveTimer = 0;
+    var isOpen = dock, quiet = false, state = 'idle', timers = [], raf = 0, leaveTimer = 0;
     function later(fn, ms) { var t = setTimeout(fn, ms); timers.push(t); return t; }
     function stopAll() {
       timers.forEach(clearTimeout); timers = [];
@@ -285,10 +293,47 @@
       answer.setAttribute('aria-busy', 'false');
       state = 'idle'; eyes('open');
     }
+    function p2(n) { return (n < 10 ? '0' : '') + n; }
+    function stamp() { var d = new Date(); return p2(d.getHours()) + ':' + p2(d.getMinutes()) + ':' + p2(d.getSeconds()); }
+    function metaMarkup(time) {
+      return '<span class="robot-tag"></span><span></span><span class="robot-meta-extra"></span>';
+    }
+    function fillMeta(node, time) {
+      node.innerHTML = metaMarkup();
+      node.children[0].textContent = stage.getAttribute('data-demo-tag') || '';
+      node.children[1].textContent = time;
+      node.children[2].textContent = ' · ' + (stage.getAttribute('data-demo-meta') || '');
+    }
+    // Dock mode: the newest card is in front, older ones peek out behind it (at most three).
+    function relayout() {
+      var cards = [].slice.call(stack.querySelectorAll('.robot-demo-card'));
+      while (cards.length > 6) stack.removeChild(cards.shift());
+      var back = answer.hidden ? cards.slice(0, -1) : cards;
+      cards.forEach(function (c) { c.classList.remove('is-back'); c.hidden = false; c.style.removeProperty('--d'); });
+      back.forEach(function (c, i) {
+        var d = back.length - i;
+        c.classList.add('is-back'); c.style.setProperty('--d', String(Math.min(d, 4)));
+        if (d > 3) c.hidden = true;
+      });
+    }
+    function pushBack() {
+      var card = el('article', 'robot-demo-card'), m = el('p', 'robot-meta'), t = el('p', 'robot-text');
+      fillMeta(m, answer.getAttribute('data-time') || stamp());
+      t.textContent = spoken.textContent;
+      card.appendChild(m); card.appendChild(t);
+      stack.insertBefore(card, answer);
+    }
     function ask(raw) {
       var q = String(raw).replace(/\s+/g, ' ').trim().slice(0, 300);
       stopAll();
+      if (dock) {
+        if (!answer.hidden && spoken.textContent) pushBack();
+        answer.setAttribute('data-time', stamp());
+        fillMeta(meta, answer.getAttribute('data-time'));
+        typed.textContent = ''; spoken.textContent = ''; linkBox.textContent = '';
+      }
       answer.hidden = false;
+      if (dock) relayout();
       if (!q) { setAnswer(T.hint, ''); return; }
       var topic = findTopic(q), text = topic ? topic.a[LANG] : T.unk, link = topic ? T.more : T.link;
       input.value = '';
@@ -325,6 +370,13 @@
     }
     function close(returnFocus) {
       clearTimeout(leaveTimer);
+      if (dock) {
+        stopAll();
+        answer.hidden = true; typed.textContent = ''; spoken.textContent = ''; linkBox.textContent = '';
+        relayout();
+        if (returnFocus) { quiet = true; try { hit.focus(); } catch (e) { } quiet = false; }
+        return;
+      }
       if (!isOpen) return;
       stopAll();
       isOpen = false;
@@ -335,6 +387,7 @@
     }
     function leaveSoon() {
       clearTimeout(leaveTimer);
+      if (dock) return;
       leaveTimer = setTimeout(function () {
         var busy = state !== 'idle' || !answer.hidden || input.value || stage.contains(doc.activeElement) && doc.activeElement !== hit;
         if (!busy && !stage.matches(':hover')) close(false);
@@ -346,9 +399,9 @@
     stage.addEventListener('focusout', function (e) { if (!e.relatedTarget || !stage.contains(e.relatedTarget)) leaveSoon(); });
     hit.addEventListener('click', function () { open(true); });
     stage.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && isOpen) { e.preventDefault(); close(true); }
+      if (e.key === 'Escape' && (isOpen && (!dock || !answer.hidden))) { e.preventDefault(); close(true); }
     });
-    doc.addEventListener('pointerdown', function (e) { if (isOpen && !stage.contains(e.target)) close(false); });
+    doc.addEventListener('pointerdown', function (e) { if (!dock && isOpen && !stage.contains(e.target)) close(false); });
     form.addEventListener('submit', function (e) { e.preventDefault(); ask(input.value); });
     input.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') { e.preventDefault(); ask(input.value); }

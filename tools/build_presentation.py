@@ -175,17 +175,27 @@ def legal_html(cfg, lang):
             f'<p>{e(lg["text"])} <a href="Guide-{lang}.html#rechtliches">{e(lg["link"])}</a></p>\n</aside>')
 
 
-def robot_html(cfg, lang):
-    """Optional "Ask the robot" block (same assets/robot.js as the guide hero); texts come from presentation.json."""
+def scene_html(cfg, lang):
+    """Hero preview for the robot: stack of fictional answer cards, the live robot (assets/robot.js, dock mode), question field.
+    Without JavaScript this is the same stack and the plain robot picture. Returns '' when the program has no robot scene."""
     r = cfg.get('robot', {}).get(lang)
-    if not r:
+    if not r or 'scene' not in r:
         return ''
+    sc = r['scene']
     alt = {'ru': 'Робот Lecture Companion', 'de': 'Roboter von Lecture Companion', 'en': 'Lecture Companion robot'}[lang]
-    return (f'<section class="ppk-section robot-section ppk-reveal" id="robot" aria-labelledby="robot-title">\n'
-            f'<div class="robot-card">\n<div class="robot-copy">\n<h2 id="robot-title">{e(r["title"])}</h2>\n'
-            f'<p>{e(r["text"])}</p>\n<p class="robot-note">{e(r["note"])}</p>\n</div>\n'
-            f'<div class="robot-stage" data-robot data-guide="Guide-{lang}.html"><img src="assets/robot-companion.webp" width="540" height="591" alt="{e(alt)}" decoding="async"></div>\n'
-            f'</div>\n</section>')
+    cards = ''
+    for i, text in enumerate(sc['back'] + [sc['front']]):
+        body = ' <br>'.join(e(x) for x in text.split('\n'))
+        depth = len(sc['back']) - i
+        attrs = f' is-back" style="--d:{depth}' if depth > 0 else ''
+        cards += (f'<article class="robot-demo-card{attrs}"><p class="robot-meta"><span class="robot-tag">{e(sc["tag"])}</span>'
+                  f'<span>{e(sc["times"][i])}</span><span class="robot-meta-extra"> · {e(sc["meta"])}</span></p>'
+                  f'<p class="robot-text">{body}</p></article>\n')
+    return (f'<figure class="robot-preview">\n<div class="robot-stage robot-dock" data-robot data-robot-mode="dock" data-guide="Guide-{lang}.html" '
+            f'data-demo-tag="{e(sc["tag"])}" data-demo-meta="{e(sc["meta"])}">\n'
+            f'<div class="robot-stack" role="group" aria-label="{e(sc["label"])}">\n{cards}</div>\n'
+            f'<img src="assets/robot-companion.webp" width="540" height="591" alt="{e(alt)}" decoding="async">\n</div>\n'
+            f'<figcaption>{e(sc["caption"])}</figcaption>\n</figure>')
 
 
 def robot_head(cfg):
@@ -218,6 +228,8 @@ def landing_html(cfg, d, lang):
         extra = t['source_note'] + ' ' + extra
     notice = f'<p class="ppk-notice">{e(extra.strip())}</p>' if extra.strip() else ''
     guide = 'Guide-' + lang + '.html'
+    shot_alt = e(d['name'] + ' — ' + caption)
+    preview = scene_html(cfg, lang) or (f'<figure class="ppk-preview">\n<div class="ppk-stage"><a href="{e(shot)}"><img src="{e(shot)}" alt="{shot_alt}" decoding="async"></a></div>\n<figcaption>{e(caption)}</figcaption>\n</figure>')
     primary = f'<a class="ppk-btn ppk-btn-primary" href="{e(target)}">{e(action)}</a>\n' if ready else ''
     title = f'{d["name"]} — {t["guide"]} · {status}'
     return f'''<!doctype html>
@@ -249,13 +261,8 @@ def landing_html(cfg, d, lang):
 <p class="ppk-requirements"><strong>{e(t['requirements'])}</strong>{e(d['requirements'][lang])}</p>
 {notice}
 </div>
-<figure class="ppk-preview">
-<div class="ppk-stage"><a href="{e(shot)}"><img src="{e(shot)}" alt="{e(d['name'])} — {e(caption)}" decoding="async"></a></div>
-<figcaption>{e(caption)}</figcaption>
-</figure>
+{preview}
 </div>
-
-{robot_html(cfg, lang)}
 
 {legal_html(cfg, lang)}
 
