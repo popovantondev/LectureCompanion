@@ -27,12 +27,15 @@
       unk: "I don't know – please check the guide.", link: 'Open the guide →', more: 'More in the guide →'
     }
   };
+  // k: keywords split by "|" (normalised: lower case, no accents, ß = ss). "=word" = whole word only; a word with a space = phrase
+  // (2 points); plain word = word prefix (1 point, one wrong letter is forgiven for words of 5+ letters). g: generic topic, answers only
+  // when the question names the program or hits two keywords. w: weight. On a tie the topic higher in the list wins.
   var TOPICS = [
-    { k: '=привет|здравств|=хай|=hi|=hey|=hello|=hallo|=moin|guten tag|guten morgen|как дела|как ты|wie geht|how are you',
+    { k: '=привет|приветик|здравств|=хай|=салют|=здорово|добрый день|добрый вечер|доброе утро|как дела|как ты|как жизнь|как поживаешь|как настроение|как самочувствие|что нового|=hi|=hey|=hello|=hallo|=moin|=servus|=yo|=howdy|guten tag|guten morgen|guten abend|wie geht es|wie gehts|wie geht\'s|wie geht dir|wie lauft|alles gut|was gibt|how are you|how is it going|hows it going|how are things|whats up|how do you do|good morning|good evening|good afternoon',
       a: {
-        ru: ['Привет! У меня всё хорошо — спросите о Lecture Companion.', 'Здравствуйте! Спрашивайте о программе.'],
-        de: ['Hallo! Mir geht es gut – fragen Sie mich zu Lecture Companion.', 'Guten Tag! Fragen zur Software? Gern.'],
-        en: ['Hi! I’m doing well – ask me about Lecture Companion.', 'Hello! Ask me about the program.']
+        ru: ['Привет! У меня всё хорошо — спросите о Lecture Companion.', 'Здравствуйте! Спрашивайте о программе.', 'Всё отлично, спасибо! Могу рассказать, что умеет Lecture Companion.', 'Добрый день! Дела хорошо — о чём рассказать в программе?'],
+        de: ['Hallo! Mir geht es gut – fragen Sie mich zu Lecture Companion.', 'Guten Tag! Fragen zur Software? Gern.', 'Danke, bestens! Ich erzähle gern, was Lecture Companion kann.', 'Hallo! Alles gut hier – was möchten Sie über das Programm wissen?'],
+        en: ['Hi! I’m doing well – ask me about Lecture Companion.', 'Hello! Ask me about the program.', 'All good, thanks! I can tell you what Lecture Companion does.', 'Hey! Doing great – what would you like to know about the program?']
       } },
     { g: 1, k: 'ты кто|кто ты|who are you|wer bist|bist du|are you|=ии|=ai|=ki|google|гугл|бот',
       a: {
@@ -52,29 +55,71 @@
         de: 'Das Programm nimmt kein Mikrofon auf: Es liest die Live-Untertitel direkt aus Teams Desktop.',
         en: 'The program does not record the microphone: it reads the live subtitles straight from Teams desktop.'
       } },
-    { k: 'озу|оператив|памят|=ram|arbeitsspeicher|speicher|=gb|=гб|32|16|memory',
+    { k: 'без интернет|нужен ли интернет|интернет|офлайн|оффлайн|без сети|=сети|=сеть|offline|online|ohne internet|internet|ohne netz|=netz|netzwerk|without internet|no internet|=wifi|=wlan|network|a network',
+      a: {
+        ru: 'Программа ничего не отправляет в облако: субтитры и слайды обрабатываются локально, без ключей API. Интернет при необходимости используют только Teams и Windows.',
+        de: 'Das Programm schickt nichts in eine Cloud: Untertitel und Folien werden lokal verarbeitet, ohne API-Schlüssel. Das Internet nutzen bei Bedarf nur Teams und Windows.',
+        en: 'The program sends nothing to a cloud: subtitles and slides are processed locally, without API keys. If needed, only Teams and Windows use the internet.'
+      } },
+    { k: 'защит|данн|конфиденц|приватн|облак|облач|отправля|отправл|передает|передаёт|утечк|хранит|хранен|=api|datenschutz|daten|privat|cloud|gesendet|senden|ubertrag|gespeichert|hochlad|privacy|private|data|upload|sent|send|stored|store|local|lokal|локальн',
+      a: {
+        ru: 'Субтитры и изображения слайдов обрабатываются локально: ни облака, ни ключей API, автоматически ничего не загружается. Последние десять ответов лежат в папке «Daten»; в чат Teams программа ничего не пишет.',
+        de: 'Untertitel und Folienbilder werden lokal verarbeitet: keine Cloud, keine API-Schlüssel, nichts wird automatisch hochgeladen. Die zehn letzten Antworten liegen im Ordner „Daten“; in den Teams-Chat schreibt das Programm nichts.',
+        en: 'Subtitles and slide images are processed locally: no cloud, no API keys, nothing is uploaded automatically. The last ten answers are kept in the “Daten” folder; the program writes nothing to the Teams chat.'
+      } },
+    { k: 'цена|цены|стоит|стоимост|бесплатн|платн|платить|оплат|подписк|лиценз|kost|preis|lizenz|kostenlos|gratis|umsonst|zahlen|=abo|cost|price|pricing|free|licen|pay|subscription',
+      a: {
+        ru: 'О цене в документации ничего не сказано. Сказано: ключей API и облака нет; неизменённую официальную EXE можно скачать и запускать для личного некоммерческого использования, но нельзя менять и распространять.',
+        de: 'Zum Preis steht in der Dokumentation nichts. Bekannt ist: keine API-Schlüssel, keine Cloud; die unveränderte offizielle EXE darf privat und nicht kommerziell geladen und ausgeführt werden, Ändern und Weitergeben ist nicht erlaubt.',
+        en: 'The documentation names no price. What it says: no API keys and no cloud; the unmodified official EXE may be downloaded and run for personal, non-commercial use, but not modified or redistributed.'
+      } },
+    { k: 'язык|языки|немецк|русск|англий|=de|=en|=ru|sprache|sprachen|deutsch|russisch|englisch|language|languages|german|russian|english|перевод|translat|ubersetz',
+      a: {
+        ru: 'Интерфейс и новые ответы — на немецком, английском и русском (по умолчанию немецкий, переключается в меню робота). Ответы идут сначала на языке субтитров лекции, затем на языке интерфейса.',
+        de: 'Oberfläche und neue Antworten gibt es auf Deutsch, Englisch und Russisch (Standard ist Deutsch, umschaltbar im Roboter-Menü). Antworten kommen zuerst in der Sprache der Untertitel, dann in der Oberflächensprache.',
+        en: 'The interface and new answers come in German, English and Russian (German is the default, switchable in the robot menu). Answers use the subtitle language first, then the interface language.'
+      } },
+    { k: 'озу|оператив|=ram|arbeitsspeicher|=speicher|=gb|=гб|32|16|memory|память|памяти',
       a: {
         ru: 'Желательно 32 ГБ ОЗУ. На 16 ГБ может не хватить одновременно для Teams и моделей.',
         de: 'Empfohlen sind 32 GB RAM. Mit 16 GB kann es für Teams und die Modelle zugleich nicht reichen.',
         en: '32 GB of RAM is recommended. 16 GB may not be enough for Teams and the models at once.'
       } },
-    { k: 'требован|системн|windows|=x64|=mac|=macos|=linux|=arm|совместим|=npu|=gpu|=cpu|intel|anforderung|voraussetz|kompatibel|requirement|compatible',
+    { k: 'npu|gpu|cpu|intel|видеокарт|процессор|графическ|ускорител|grafikkarte|prozessor|grafik|graphics|processor|openvino|accelerator',
+      a: {
+        ru: 'Первым используется совместимый Intel NPU; если его нет или модель не запускается, программа проверяет совместимые CPU/GPU и сохраняет самый быстрый. Всё считается локально.',
+        de: 'Zuerst wird ein kompatibler Intel-NPU genutzt; fehlt er oder startet das Modell nicht, prüft das Programm kompatible CPU/GPU und merkt sich das schnellste Gerät. Alles läuft lokal.',
+        en: 'A compatible Intel NPU is used first; if there is none or the model does not start, the program tests compatible CPU/GPU devices and keeps the fastest one. Everything runs locally.'
+      } },
+    { k: 'требован|системн|windows|виндовс|=x64|=mac|=macos|=linux|=arm|совместим|мощн|компьютер|=пк|=pc|ноутбук|железо|места|место|диск|=ssd|анфорд|anforderung|systemanforder|voraussetz|kompatibel|rechner|laptop|speicherplatz|festplatte|platz|requirement|requirements|compatible|computer|hardware|disk|space|storage|specs',
       a: {
         ru: 'Windows 11 x64, желательно 32 ГБ ОЗУ и внутренний SSD; нужны Teams Desktop и драйверы, около 25 ГБ места. Windows ARM, macOS и Linux не поддерживаются.',
         de: 'Windows 11 x64, möglichst 32 GB RAM und interne SSD; dazu Teams Desktop, Treiber und rund 25 GB Platz. Windows ARM, macOS und Linux werden nicht unterstützt.',
         en: 'Windows 11 x64, ideally 32 GB of RAM and an internal SSD; you need Teams Desktop, drivers and about 25 GB of space. Windows ARM, macOS and Linux are not supported.'
       } },
-    { k: 'установ|скача|загруз|download|install|herunterlad|laden|einricht|joinportable|zip|распаков|запуст|=exe|starten|setup|размер|teile|parts',
+    { k: 'не подписан|nicht signiert|not signed|безопасн|вирус|подпис|антивирус|smartscreen|defender|доверя|sicher|signier|virenscanner|antivirus|virus|safe|safety|signed|unsigned|trust|malware',
+      a: {
+        ru: 'EXE не подписан цифровой подписью, на рабочем ПК может понадобиться одобрение IT. Проверьте источник и контрольную сумму, защиту Windows не отключайте. Проверка на втором чистом ПК пока не проведена.',
+        de: 'Die EXE ist nicht digital signiert; auf einem Arbeits-PC kann eine Freigabe der IT nötig sein. Prüfen Sie Quelle und Prüfsumme und lassen Sie den Schutz aktiviert. Eine Prüfung auf einem zweiten sauberen PC steht noch aus.',
+        en: 'The EXE is not digitally signed; on a work PC IT approval may be needed. Check the source and the checksum and keep your protection switched on. A check on a second clean PC is still pending.'
+      } },
+    { k: 'установ|скача|загруз|download|install|herunterlad|laden|einricht|joinportable|zip|распаков|запуст|=exe|starten|setup|размер|teile|parts|как начать|с чего начать|first steps|get started|erste schritte|loslegen|anfangen|wie fange|fange an|start|how do i start|how to start|how do i begin',
       a: {
         ru: 'Скачайте четыре части ZIP и JoinPortable.cmd в одну папку (около 5,8 ГБ), запустите JoinPortable.cmd (проверяет размеры и SHA-256, ничего не ставит), распакуйте ZIP на внутренний SSD и откройте LectureCompanion.exe.',
         de: 'Laden Sie die vier ZIP-Teile und JoinPortable.cmd in einen Ordner (etwa 5,8 GB), führen Sie JoinPortable.cmd aus (prüft Größen und SHA-256, installiert nichts), entpacken Sie das ZIP auf eine interne SSD und starten Sie LectureCompanion.exe.',
         en: 'Download the four ZIP parts and JoinPortable.cmd into one folder (about 5.8 GB), run JoinPortable.cmd (checks sizes and SHA-256, installs nothing), extract the ZIP to an internal SSD and open LectureCompanion.exe.'
       } },
-    { g: 1, k: 'язык|немецк|русск|англий|=de|=en|=ru|sprache|deutsch|russisch|englisch|language|german|russian|english|перевод|translat|ubersetz',
+    { k: 'ошибка при|ошибка в|fehler beim|fehler bei|error on|error when|error at|error during|не работает|ошибк|не запуска|завис|медленн|долго|сбой|проблем|не отвечает|fehler|klappt nicht|funktioniert nicht|nicht starten|langsam|hangt|problem|probleme|error|not working|doesnt work|slow|crash|freez|stuck|troubleshoot',
       a: {
-        ru: 'Интерфейс — DE, EN и RU. Ответы идут сначала на языке субтитров лекции, затем на языке интерфейса.',
-        de: 'Die Oberfläche gibt es auf DE, EN und RU. Antworten kommen zuerst in der Sprache der Untertitel, dann in der Oberflächensprache.',
-        en: 'The interface comes in DE, EN and RU. Answers use the subtitle language first, then the interface language.'
+        ru: 'Первый запуск и тест устройств идут дольше обычного: смотрите на этап и время. Ошибки пишутся в Daten/npu.log, Daten/server.log и Daten/device-benchmark.json; подробнее — в разделе руководства «Если что-то не работает».',
+        de: 'Der erste Start und der Gerätetest dauern länger als sonst: Achten Sie auf Phase und Zeit. Fehler stehen in Daten/npu.log, Daten/server.log und Daten/device-benchmark.json; mehr im Abschnitt „Wenn etwas nicht klappt“ der Anleitung.',
+        en: 'The first start and the device test take longer than usual: watch the stage and the time. Errors are logged in Daten/npu.log, Daten/server.log and Daten/device-benchmark.json; more in the guide section “Troubleshooting”.'
+      } },
+    { k: 'руководств|инструкц|справк|помощ|документац|гайд|мануал|guide|anleitung|handbuch|hilfe|dokumentation|manual|help|docs|documentation|tutorial|где почитать|подробнее',
+      a: {
+        ru: 'Пошаговое руководство есть на трёх языках: первый запуск, требования, подготовка Teams, правовые замечания, управление роботом, папки и данные, решение проблем, перенос и демо без Teams. Ссылка ниже.',
+        de: 'Die Schritt-für-Schritt-Anleitung gibt es in drei Sprachen: erster Start, Voraussetzungen, Teams vorbereiten, Rechtliches, Bedienung, Ordner und Daten, Fehlersuche, Verschieben und Demo ohne Teams. Link unten.',
+        en: 'The step-by-step guide comes in three languages: first launch, requirements, preparing Teams, legal notes, controls, folders and privacy, troubleshooting, moving and the demo without Teams. Link below.'
       } },
     { g: 1, k: 'режим|быстро|обычно|вдумчив|modus|modi|schnell|grundlich|normal|mode|fast|balanced|deep',
       a: {
@@ -82,7 +127,7 @@
         de: 'Drei Modi: „Schnell“ – kurz, ohne zusätzliches Denken; „Normal“; „Gründlich“ – zusätzliches Denken nur bei Textfragen.',
         en: 'Three modes: Fast (short, no extra reasoning), Balanced and Deep (extra reasoning for text questions only).'
       } },
-    { g: 1, k: 'демо|попроб|пример|demo|ausprobier|beispiel|try|example|без teams|ohne teams|without teams',
+    { k: 'демо|попроб|пример|demo|ausprobier|beispiel|testen|try|example|без teams|ohne teams|without teams',
       a: {
         ru: 'Попробовать можно без Teams: LectureCompanionDemo.exe открывает вымышленные примеры, не запуская Teams или модели.',
         de: 'Ausprobieren geht ohne Teams: LectureCompanionDemo.exe zeigt erfundene Beispiele, ohne Teams oder Modelle zu starten.',
@@ -94,19 +139,7 @@
         de: 'Sie brauchen Teams Desktop und Live-Untertitel; neue Rede wird etwa einmal pro Minute geprüft. Eine Folie wird nur bei echter Bildschirmfreigabe analysiert. In den Teams-Chat schreibt das Programm nichts.',
         en: 'You need Teams desktop and live subtitles; new speech is checked about once a minute. A slide is analysed only during a real screen share. The program writes nothing to the Teams chat.'
       } },
-    { g: 1, k: 'приватн|конфиденц|локальн|облак|облач|=api|интернет|данн|хранит|private|local|cloud|internet|daten|lokal|store|data',
-      a: {
-        ru: 'Субтитры и изображения слайдов обрабатываются локально, без ключей API и облака. Интернет при необходимости используют только Teams и Windows. Десять последних ответов лежат в папке «Daten».',
-        de: 'Untertitel und Folienbilder werden lokal verarbeitet, ohne API-Schlüssel und Cloud. Das Internet nutzen bei Bedarf nur Teams und Windows. Die zehn letzten Antworten liegen im Ordner „Daten“.',
-        en: 'Subtitles and slide images are processed locally, without API keys or a cloud. If needed, only Teams and Windows use the internet. The last ten answers are kept in the “Daten” folder.'
-      } },
-    { g: 1, k: 'цена|стоит|стоимост|бесплатн|платн|лиценз|kost|preis|lizenz|cost|price|free|licen',
-      a: {
-        ru: 'Ключей API и облака нет. Неизменённую официальную EXE можно скачать и запускать для личного некоммерческого использования; менять и распространять её нельзя. Исходный код и робот — только для просмотра.',
-        de: 'Es gibt keine API-Schlüssel und keine Cloud. Die unveränderte offizielle EXE darf privat und nicht kommerziell geladen und ausgeführt werden; ändern oder weitergeben ist nicht erlaubt. Quellcode und Roboter sind nur zur Ansicht.',
-        en: 'There are no API keys and no cloud. The unmodified official EXE may be downloaded and run for personal, non-commercial use; modifying or redistributing it is not allowed. Source code and robot are for viewing only.'
-      } },
-    { g: 1, k: 'делает|умеет|зачем|назначен|что такое lecture|что за программа|что это за программа|для чего|функци|возможност|macht|wofur|wozu|was ist das|was ist lecture|was kann|funktion|what does|what is it|what is this|what is lecture|what can|purpose|feature',
+    { g: 1, k: 'делает|умеет|зачем|назначен|что такое lecture|что за программа|что это за программа|что это|для чего|функци|возможност|macht|wofur|wozu|wofur ist|wozu ist|wozu dient|wofur dient|ist das gut|was ist das|was ist lecture|was kann|funktion|what does|what is it|what is this|what is lecture|what can|purpose|feature',
       w: .5,
       a: {
         ru: 'Lecture Companion помогает следить за лекцией в Teams: локально обобщает субтитры и объясняет выбранный слайд.',
@@ -118,6 +151,28 @@
     return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ß/g, 'ss');
   }
   TOPICS.forEach(function (t) { t.keys = t.k.split('|').map(norm); });
+  // True when a and b differ by at most one letter (one wrong, missing, extra or swapped letter).
+  function near(a, b) {
+    if (a === b) return true;
+    var la = a.length, lb = b.length, i = 0;
+    if (Math.abs(la - lb) > 1) return false;
+    while (i < la && i < lb && a.charAt(i) === b.charAt(i)) i++;
+    if (la === lb) {
+      if (a.slice(i + 1) === b.slice(i + 1)) return true;
+      return a.charAt(i) === b.charAt(i + 1) && a.charAt(i + 1) === b.charAt(i) && a.slice(i + 2) === b.slice(i + 2);
+    }
+    return la > lb ? a.slice(i + 1) === b.slice(i) : a.slice(i) === b.slice(i + 1);
+  }
+  // 1 for a word that starts with the keyword, 0.6 for a one-letter slip (keywords of 6+ letters), else 0.
+  function hasWord(tokens, kw) {
+    var best = 0;
+    tokens.forEach(function (tk) {
+      if (tk.indexOf(kw) === 0) { best = 1; return; }
+      if (best || kw.length < 6) return;
+      for (var d = -1; d <= 1; d++) if (tk.length >= kw.length + d && near(tk.slice(0, kw.length + d), kw)) { best = 0.6; return; }
+    });
+    return best;
+  }
   function pick(a) { a = [].concat(a); return a[Math.floor(Math.random() * a.length)]; }
   function findTopic(question) {
     var text = norm(question);
@@ -129,7 +184,7 @@
       topic.keys.forEach(function (kw) {
         if (kw.indexOf(' ') > -1) { if (text.indexOf(kw) > -1) score += 2; }
         else if (kw.charAt(0) === '=') { if (tokens.indexOf(kw.slice(1)) > -1) score += 1; }
-        else if (tokens.some(function (tk) { return tk.indexOf(kw) === 0; })) score += 1;
+        else { var hit = hasWord(tokens, kw); if (hit) score += hit; }
       });
       if (topic.g && score < 2 && !anchor) return;
       score *= topic.w || 1;
