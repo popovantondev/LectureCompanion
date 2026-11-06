@@ -1,6 +1,10 @@
+<div align="center">
+  <img src="presentation-icon.png" width="128" alt="Lecture Companion Symbol">
+</div>
+
 # Lecture Companion
 
-[Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
+[Русский](README.ru.md) · **Deutsch** · [English](README.en.md)
 
 <!-- public-release:start -->
 Begleitet Teams-Vorlesungen: fasst Untertitel lokal zusammen und erklärt eine ausgewählte Folie.
@@ -24,7 +28,7 @@ Begleitet Teams-Vorlesungen: fasst Untertitel lokal zusammen und erklärt eine a
 **Prüfsummen:** [`SHA256SUMS`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/SHA256SUMS)
 <!-- public-release:end -->
 
-**Windows 11 · Portable · Version 2.4 · Lokale Verarbeitung · Release-Preview, nicht signiert**
+**[Webseite](https://popovantondev.github.io/LectureCompanion/)** · **[Im Browser ausprobieren](https://popovantondev.github.io/LectureCompanion/index.html)**
 
 ![Lecture Companion — deutsche Oberfläche mit synthetischen Beispielen](docs/screenshots/app-de.png)
 

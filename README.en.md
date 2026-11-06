@@ -1,6 +1,10 @@
+<div align="center">
+  <img src="presentation-icon.png" width="128" alt="Lecture Companion icon">
+</div>
+
 # Lecture Companion
 
-[Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
+[Русский](README.ru.md) · [Deutsch](README.md) · **English**
 
 <!-- public-release:start -->
 Follow Teams lectures with local caption summaries and explanations of a selected slide.
@@ -24,7 +28,7 @@ Follow Teams lectures with local caption summaries and explanations of a selecte
 **Checksums:** [`SHA256SUMS`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/SHA256SUMS)
 <!-- public-release:end -->
 
-**Windows 11 · Portable · Version 2.4 · Local processing · Unsigned release preview**
+**[Website](https://popovantondev.github.io/LectureCompanion/index-en.html)** · **[Try in the browser](https://popovantondev.github.io/LectureCompanion/index-en.html)**
 
 ![Lecture Companion — English interface with synthetic examples](docs/screenshots/app-en.png)
 

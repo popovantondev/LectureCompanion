@@ -1,6 +1,10 @@
+<div align="center">
+  <img src="presentation-icon.png" width="128" alt="Значок Lecture Companion">
+</div>
+
 # Lecture Companion
 
-[Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
+**Русский** · [Deutsch](README.md) · [English](README.en.md)
 
 <!-- public-release:start -->
 Помогает следить за лекцией в Teams: локально обобщает субтитры и объясняет выбранный слайд.
@@ -24,7 +28,7 @@
 **Контрольные суммы:** [`SHA256SUMS`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/SHA256SUMS)
 <!-- public-release:end -->
 
-**Windows 11 · Portable · Версия 2.4 · Локальная обработка · Предрелизная версия без подписи**
+**[Сайт](https://popovantondev.github.io/LectureCompanion/index-ru.html)** · **[Попробовать в браузере](https://popovantondev.github.io/LectureCompanion/index-ru.html)**
 
 ![Lecture Companion — русский интерфейс и синтетические примеры](docs/screenshots/app-ru.png)
 
