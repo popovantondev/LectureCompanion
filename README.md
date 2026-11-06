@@ -1,5 +1,7 @@
 # Lecture Companion
 
+[Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
+
 <!-- public-release:start -->
 Begleitet Teams-Vorlesungen: fasst Untertitel lokal zusammen und erklärt eine ausgewählte Folie.
 
@@ -23,8 +25,6 @@ Begleitet Teams-Vorlesungen: fasst Untertitel lokal zusammen und erklärt eine a
 <!-- public-release:end -->
 
 **Windows 11 · Portable · Version 2.4 · Lokale Verarbeitung · Release-Preview, nicht signiert**
-
-[Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
 
 ![Lecture Companion — deutsche Oberfläche mit synthetischen Beispielen](docs/screenshots/app-de.png)
 

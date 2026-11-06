@@ -1,5 +1,7 @@
 # Lecture Companion
 
+[Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
+
 <!-- public-release:start -->
 Помогает следить за лекцией в Teams: локально обобщает субтитры и объясняет выбранный слайд.
 
@@ -23,8 +25,6 @@
 <!-- public-release:end -->
 
 **Windows 11 · Portable · Версия 2.4 · Локальная обработка · Предрелизная версия без подписи**
-
-[Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
 
 ![Lecture Companion — русский интерфейс и синтетические примеры](docs/screenshots/app-ru.png)
 

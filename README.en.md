@@ -1,5 +1,7 @@
 # Lecture Companion
 
+[Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
+
 <!-- public-release:start -->
 Follow Teams lectures with local caption summaries and explanations of a selected slide.
 
@@ -23,8 +25,6 @@ Follow Teams lectures with local caption summaries and explanations of a selecte
 <!-- public-release:end -->
 
 **Windows 11 · Portable · Version 2.4 · Local processing · Unsigned release preview**
-
-[Deutsch](README.md) · [Русский](README.ru.md) · [English](README.en.md)
 
 ![Lecture Companion — English interface with synthetic examples](docs/screenshots/app-en.png)
 
