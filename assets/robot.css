@@ -82,7 +82,27 @@
   .robot-stack{min-height:290px}
   .robot-demo-card.is-back{margin-left:calc(var(--d,1) * 7px);margin-right:calc(var(--d,1) * 7px)}
 }
-@media (prefers-reduced-motion:reduce){
+/* Guide ("wide" scene): same card width as the landing, a little larger and more room in height; the landing keeps its own size. */
+.robot-wide{margin-block:12px}
+.robot-wide figcaption{margin-top:14px}
+.robot-wide .robot-dock{--robot-w:220px;max-width:640px;margin-inline:auto;font-size:15px}
+.robot-wide .robot-stack{min-height:238px}
+.robot-wide .robot-demo-card,.robot-wide .robot-dock .robot-answer{padding:15px 48px 17px 20px;border-radius:22px;font-size:15.5px}
+.robot-wide .robot-meta{font-size:14px}
+.robot-wide .robot-tag{font-size:13px}
+.robot-wide .robot-demo-card:not(.is-back){min-height:142px}
+.robot-wide .robot-demo-card.is-back{height:46px;margin:0 calc(var(--d,1) * 12px) -16px;padding:9px 18px 0}
+.robot-wide .robot-demo-card.is-back .robot-text{font-size:14.5px}
+.robot-wide .robot-count{right:16px;bottom:10px;font-size:13px}
+.robot-wide .robot-dock>img,.robot-wide .robot-dock .robot-lift{margin:24px auto 6px}
+.robot-wide .robot-stage.robot-dock .robot-pop{margin-top:-8px}
+@media (max-width:520px){
+  .robot-wide .robot-dock{--robot-w:160px;font-size:14px}
+  .robot-wide .robot-stack{min-height:238px}
+  .robot-wide .robot-demo-card,.robot-wide .robot-dock .robot-answer{padding:12px 36px 14px 14px;font-size:14.5px}
+  .robot-wide .robot-demo-card.is-back{margin-left:calc(var(--d,1) * 8px);margin-right:calc(var(--d,1) * 8px);height:42px}
+  .robot-wide .robot-dock>img,.robot-wide .robot-dock .robot-lift{margin:30px auto 6px}
+}@media (prefers-reduced-motion:reduce){
   .robot-lift,.robot-pop{transition:none!important}
   .robot-answer,.robot-dots i,.robot-answer.is-typing .robot-typed:after{animation:none!important}
 }

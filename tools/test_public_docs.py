@@ -53,7 +53,7 @@ class PublicDocsTests(unittest.TestCase):
             html=(root/f'Guide-{lang}.html').read_text(encoding='utf-8')
             if 'http-equiv="refresh"' in html:continue
             found+=1
-            self.assertRegex(html,r'<figure class="robot-preview">\s*<div class="robot-stage robot-dock"[^>]*data-robot-mode="dock"[^>]*>',lang)
+            self.assertRegex(html,r'<figure class="robot-preview robot-wide">\s*<div class="robot-stage robot-dock"[^>]*data-robot-mode="dock"[^>]*>',lang)
             self.assertIn('<article class="robot-demo-card',html,lang)
             self.assertNotIn('guide-screenshot"',html.split('</style>')[-1],lang)
             self.assertNotRegex(html,r'<section class="overview">\s*</section>',lang)
