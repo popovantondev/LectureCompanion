@@ -1,10 +1,25 @@
-<div align="center">
-  <img src="presentation-icon.png" width="128" alt="Lecture Companion icon">
-</div>
+<!-- ppk-readme:head:start -->
+<a href="https://popovantondev.github.io/LectureCompanion/index-en.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/header-en-dark.4cdeab26.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/header-en-light.471243a8.svg" width="880" height="188" alt="Lecture Companion — Follows Teams lectures and explains a selected slide. Windows 11 · x64, Preview 2.4"></picture></a>
+<!-- ppk-readme:head:end -->
 
 # Lecture Companion
 
 [Русский](README.ru.md) · [Deutsch](README.md) · **English**
+
+<!-- ppk-readme:body:start -->
+<p>
+<a href="https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-download-en-dark.eb425cf9.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-download-en-light.f3d36975.svg" width="136" height="36" alt="Download"></picture></a>
+<a href="https://popovantondev.github.io/LectureCompanion/index-en.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-website-en-dark.2af84c32.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-website-en-light.9254a78b.svg" width="120" height="36" alt="Website"></picture></a>
+<a href="https://popovantondev.github.io/LectureCompanion/Guide-en.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-guide-en-dark.9ec0c2df.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-guide-en-light.890c0dd6.svg" width="141" height="36" alt="User guide"></picture></a>
+<a href="https://popovantondev.github.io/LectureCompanion/index-en.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-demo-en-dark.c1390ebc.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-demo-en-light.ab3ec09c.svg" width="171" height="36" alt="Try in browser"></picture></a>
+<a href="https://github.com/popovantondev/LectureCompanion/issues/new/choose"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-bug-en-dark.8965f4a1.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-bug-en-light.c8e913df.svg" width="196" height="36" alt="Report a problem"></picture></a>
+</p>
+
+<p><a href="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-en.png"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/preview-en-dark.4080ebfc.webp"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/preview-en-light.e7f6e739.webp" width="880" height="516" alt="Lecture Companion interface"></picture></a><br>
+<sub><a href="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-en.png">Full screenshot</a></sub></p>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/divider-dark.5ffb706c.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/divider-light.18a5cc17.svg" width="880" height="6" alt="Divider"></picture>
+<!-- ppk-readme:body:end -->
 
 <!-- public-release:start -->
 Follow Teams lectures with local caption summaries and explanations of a selected slide.
@@ -27,10 +42,6 @@ Follow Teams lectures with local caption summaries and explanations of a selecte
 
 **Checksums:** [`SHA256SUMS`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/SHA256SUMS)
 <!-- public-release:end -->
-
-**[Website](https://popovantondev.github.io/LectureCompanion/index-en.html)** · **[Try in the browser](https://popovantondev.github.io/LectureCompanion/index-en.html)**
-
-![Lecture Companion — English interface with synthetic examples](docs/screenshots/app-en.png)
 
 *Synthetic demo. No real meeting, captions, or participant data.*
 

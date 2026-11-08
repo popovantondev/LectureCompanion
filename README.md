@@ -1,10 +1,25 @@
-<div align="center">
-  <img src="presentation-icon.png" width="128" alt="Lecture Companion Symbol">
-</div>
+<!-- ppk-readme:head:start -->
+<a href="https://popovantondev.github.io/LectureCompanion/index.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/header-de-dark.d82567ba.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/header-de-light.bde23b83.svg" width="880" height="188" alt="Lecture Companion — Begleitet Teams-Vorlesungen und erklärt ausgewählte Folien. Windows 11 · x64, Vorabversion 2.4"></picture></a>
+<!-- ppk-readme:head:end -->
 
 # Lecture Companion
 
 [Русский](README.ru.md) · **Deutsch** · [English](README.en.md)
+
+<!-- ppk-readme:body:start -->
+<p>
+<a href="https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-download-de-dark.8c37af51.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-download-de-light.b63ba3b0.svg" width="171" height="36" alt="Herunterladen"></picture></a>
+<a href="https://popovantondev.github.io/LectureCompanion/index.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-website-de-dark.87774505.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-website-de-light.67d55c1a.svg" width="129" height="36" alt="Webseite"></picture></a>
+<a href="https://popovantondev.github.io/LectureCompanion/Guide-de.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-guide-de-dark.c97100f5.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-guide-de-light.d1e89aca.svg" width="134" height="36" alt="Anleitung"></picture></a>
+<a href="https://popovantondev.github.io/LectureCompanion/index.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-demo-de-dark.ea8e303d.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-demo-de-light.30f4f665.svg" width="203" height="36" alt="Im Browser testen"></picture></a>
+<a href="https://github.com/popovantondev/LectureCompanion/issues/new/choose"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-bug-de-dark.2d244ac0.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-bug-de-light.7c147606.svg" width="168" height="36" alt="Fehler melden"></picture></a>
+</p>
+
+<p><a href="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-de.png"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/preview-de-dark.7799a5a1.webp"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/preview-de-light.f2d08a5c.webp" width="880" height="516" alt="Oberfläche von Lecture Companion"></picture></a><br>
+<sub><a href="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-de.png">Ganzer Screenshot</a></sub></p>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/divider-dark.5ffb706c.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/divider-light.18a5cc17.svg" width="880" height="6" alt="Trennlinie"></picture>
+<!-- ppk-readme:body:end -->
 
 <!-- public-release:start -->
 Begleitet Teams-Vorlesungen: fasst Untertitel lokal zusammen und erklärt eine ausgewählte Folie.
@@ -27,10 +42,6 @@ Begleitet Teams-Vorlesungen: fasst Untertitel lokal zusammen und erklärt eine a
 
 **Prüfsummen:** [`SHA256SUMS`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/SHA256SUMS)
 <!-- public-release:end -->
-
-**[Webseite](https://popovantondev.github.io/LectureCompanion/)** · **[Im Browser ausprobieren](https://popovantondev.github.io/LectureCompanion/index.html)**
-
-![Lecture Companion — deutsche Oberfläche mit synthetischen Beispielen](docs/screenshots/app-de.png)
 
 *Synthetische Demo. Kein echtes Meeting, keine echten Untertitel und keine Teilnehmerdaten.*
 

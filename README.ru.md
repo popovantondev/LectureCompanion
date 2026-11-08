@@ -1,10 +1,25 @@
-<div align="center">
-  <img src="presentation-icon.png" width="128" alt="Значок Lecture Companion">
-</div>
+<!-- ppk-readme:head:start -->
+<a href="https://popovantondev.github.io/LectureCompanion/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/header-ru-dark.f8f3dd72.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/header-ru-light.0e0adb6e.svg" width="880" height="188" alt="Lecture Companion — Следит за лекцией в Teams и объясняет выбранный слайд. Windows 11 · x64, Предварительный выпуск 2.4"></picture></a>
+<!-- ppk-readme:head:end -->
 
 # Lecture Companion
 
 **Русский** · [Deutsch](README.md) · [English](README.en.md)
+
+<!-- ppk-readme:body:start -->
+<p>
+<a href="https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-download-ru-dark.e23e766a.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-download-ru-light.f43bfb2a.svg" width="120" height="36" alt="Скачать"></picture></a>
+<a href="https://popovantondev.github.io/LectureCompanion/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-website-ru-dark.c9480e1b.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-website-ru-light.47f82a6a.svg" width="92" height="36" alt="Сайт"></picture></a>
+<a href="https://popovantondev.github.io/LectureCompanion/Guide-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-guide-ru-dark.7da72a70.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-guide-ru-light.b2a932da.svg" width="161" height="36" alt="Руководство"></picture></a>
+<a href="https://popovantondev.github.io/LectureCompanion/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-demo-ru-dark.ea12fbf6.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-demo-ru-light.0b326f38.svg" width="261" height="36" alt="Попробовать в браузере"></picture></a>
+<a href="https://github.com/popovantondev/LectureCompanion/issues/new/choose"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-bug-ru-dark.2c6c9965.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/btn-bug-ru-light.8f62fbe5.svg" width="234" height="36" alt="Сообщить об ошибке"></picture></a>
+</p>
+
+<p><a href="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-ru.png"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/preview-ru-dark.e8eda04e.webp"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/preview-ru-light.7b6cd2d4.webp" width="880" height="516" alt="Интерфейс программы Lecture Companion"></picture></a><br>
+<sub><a href="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-ru.png">Снимок целиком</a></sub></p>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/divider-dark.5ffb706c.svg"><img src="https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/divider-light.18a5cc17.svg" width="880" height="6" alt="Разделитель"></picture>
+<!-- ppk-readme:body:end -->
 
 <!-- public-release:start -->
 Помогает следить за лекцией в Teams: локально обобщает субтитры и объясняет выбранный слайд.
@@ -27,10 +42,6 @@
 
 **Контрольные суммы:** [`SHA256SUMS`](https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/SHA256SUMS)
 <!-- public-release:end -->
-
-**[Сайт](https://popovantondev.github.io/LectureCompanion/index-ru.html)** · **[Попробовать в браузере](https://popovantondev.github.io/LectureCompanion/index-ru.html)**
-
-![Lecture Companion — русский интерфейс и синтетические примеры](docs/screenshots/app-ru.png)
 
 *Синтетическое демо: без реальной встречи, субтитров и данных участников.*
 
