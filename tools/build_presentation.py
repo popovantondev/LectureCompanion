@@ -225,7 +225,7 @@ def scene_html(cfg, lang):
 def robot_head(cfg):
     if not cfg.get('robot'):
         return ''
-    return '<link rel="stylesheet" href="assets/robot.css?v=r6">\n<script src="assets/robot.js?v=r6" defer></script>\n'
+    return '<link rel="stylesheet" href="assets/robot.css?v=r6">\n<script src="assets/robot.js?v=r7" defer></script>\n'
 
 
 def pill_html(d, lang):

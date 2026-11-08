@@ -327,7 +327,8 @@
     function place(base, digits) {
       bits.forEach(function (b, i) {
         var linear = base - i * GAP;
-        if (Math.abs(linear) > 1) { b.style.visibility = 'hidden'; return; }
+        // Past 0.9 the turned digit is so narrow that it runs into its neighbour: drop it before that.
+        if (Math.abs(linear) > 0.9) { b.style.visibility = 'hidden'; return; }
         var angle = linear * 1.35, scale = Math.max(0.16, Math.cos(angle));
         b.textContent = digits.charAt(i);
         b.setAttribute('transform', 'translate(' + (599 + 27 * K * Math.sin(angle)).toFixed(1) + ' 392) scale(' + scale.toFixed(3) + ' 1)');
