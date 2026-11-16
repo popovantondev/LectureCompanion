@@ -54,7 +54,7 @@
 .robot-dock .robot-answer{animation:none}
 .robot-demo-card p,.robot-dock .robot-answer p{margin:0}
 .robot-meta{display:flex;flex-wrap:wrap;align-items:center;gap:0 6px;margin:0 0 6px!important;color:var(--ppk-muted,#52647b);font-size:12px;line-height:1.5}
-.robot-tag{padding:0 7px;border-radius:999px;background:var(--ppk-tint,#e9f1fc);color:var(--ppk-accent,#326aaa);font-size:11px;font-weight:700;line-height:1.7}
+.robot-tag{padding:0 7px;border-radius:999px;background:var(--ppk-tint,#e9f1fc);color:var(--ppk-accent,#326aaa);font-size:12px;font-weight:700;line-height:1.7}
 .robot-demo-card.is-back{z-index:calc(4 - var(--d,1));height:38px;margin:0 calc(var(--d,1) * 10px) -14px;padding:7px 14px 0;overflow:hidden;background:color-mix(in srgb,var(--ppk-panel,#fff) 82%,var(--ppk-tint,#e9f1fc));box-shadow:0 6px 16px -10px #02122f66;opacity:calc(1.12 - var(--d,1) * .18)}
 .robot-demo-card.is-back{display:flex;align-items:baseline;gap:8px}
 .robot-demo-card.is-back .robot-meta{flex:none;margin:0!important}
