@@ -81,6 +81,8 @@
   .robot-dock{--robot-w:140px}
   .robot-stack{min-height:290px}
   .robot-demo-card.is-back{margin-left:calc(var(--d,1) * 7px);margin-right:calc(var(--d,1) * 7px)}
+  /* phones: a card peeking from behind shows only its topic, so the whole text fits without an ellipsis */
+  .robot-demo-card.is-back .robot-meta{display:none}
 }
 /* Guide ("wide" scene): same card width as the landing, a little larger and more room in height; the landing keeps its own size. */
 .robot-wide{margin-block:12px}
